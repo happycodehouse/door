@@ -67,7 +67,7 @@ $breakpoints: (
     /// $font-size, $letter-spacing, $line-height : photoshop value
     /// $margin-bottom : marginBlock * value
     //font-size: $font-size * 1px;
-    @if font-size == null {
+    @if $font-size == null {
         font-size: 1rem;
     } @else {
         font-size: to_vw($font-size);
@@ -191,7 +191,6 @@ $breakpoints: (
     word-break: keep-all;
     word-wrap: break-word;
 }
-
 
 /* Grid */
 @include media(tablet, false) {

@@ -1,0 +1,467 @@
+@charset "UTF-8";
+/* base */
+/* Font */
+/* Base */
+/* Path */
+/* Grid */
+/* mediaQuery */
+/* Font Size */
+/* Ellipsis */
+/* PX TO VW (to vw) */
+/* Flex */
+/* Background */
+/* wordBreak */
+/* Grid */
+@media (min-width: 1025px) {
+  .col-1 {
+    flex: 0 0 auto;
+    flex-basis: 8.3333333333%;
+    width: 8.3333333333%;
+    padding: 0 calc(max(calc(20px * var(--base-ratio)), calc(calc(20 / var(--base-size)) * var(--base-percent))) * 0.5);
+    box-sizing: border-box;
+    position: relative;
+  }
+  .offset-1 {
+    margin-left: 8.3333333333%;
+    position: relative;
+  }
+  .col-2 {
+    flex: 0 0 auto;
+    flex-basis: 16.6666666667%;
+    width: 16.6666666667%;
+    padding: 0 calc(max(calc(20px * var(--base-ratio)), calc(calc(20 / var(--base-size)) * var(--base-percent))) * 0.5);
+    box-sizing: border-box;
+    position: relative;
+  }
+  .offset-2 {
+    margin-left: 16.6666666667%;
+    position: relative;
+  }
+  .col-3 {
+    flex: 0 0 auto;
+    flex-basis: 25%;
+    width: 25%;
+    padding: 0 calc(max(calc(20px * var(--base-ratio)), calc(calc(20 / var(--base-size)) * var(--base-percent))) * 0.5);
+    box-sizing: border-box;
+    position: relative;
+  }
+  .offset-3 {
+    margin-left: 25%;
+    position: relative;
+  }
+  .col-4 {
+    flex: 0 0 auto;
+    flex-basis: 33.3333333333%;
+    width: 33.3333333333%;
+    padding: 0 calc(max(calc(20px * var(--base-ratio)), calc(calc(20 / var(--base-size)) * var(--base-percent))) * 0.5);
+    box-sizing: border-box;
+    position: relative;
+  }
+  .offset-4 {
+    margin-left: 33.3333333333%;
+    position: relative;
+  }
+  .col-5 {
+    flex: 0 0 auto;
+    flex-basis: 41.6666666667%;
+    width: 41.6666666667%;
+    padding: 0 calc(max(calc(20px * var(--base-ratio)), calc(calc(20 / var(--base-size)) * var(--base-percent))) * 0.5);
+    box-sizing: border-box;
+    position: relative;
+  }
+  .offset-5 {
+    margin-left: 41.6666666667%;
+    position: relative;
+  }
+  .col-6 {
+    flex: 0 0 auto;
+    flex-basis: 50%;
+    width: 50%;
+    padding: 0 calc(max(calc(20px * var(--base-ratio)), calc(calc(20 / var(--base-size)) * var(--base-percent))) * 0.5);
+    box-sizing: border-box;
+    position: relative;
+  }
+  .offset-6 {
+    margin-left: 50%;
+    position: relative;
+  }
+  .col-7 {
+    flex: 0 0 auto;
+    flex-basis: 58.3333333333%;
+    width: 58.3333333333%;
+    padding: 0 calc(max(calc(20px * var(--base-ratio)), calc(calc(20 / var(--base-size)) * var(--base-percent))) * 0.5);
+    box-sizing: border-box;
+    position: relative;
+  }
+  .offset-7 {
+    margin-left: 58.3333333333%;
+    position: relative;
+  }
+  .col-8 {
+    flex: 0 0 auto;
+    flex-basis: 66.6666666667%;
+    width: 66.6666666667%;
+    padding: 0 calc(max(calc(20px * var(--base-ratio)), calc(calc(20 / var(--base-size)) * var(--base-percent))) * 0.5);
+    box-sizing: border-box;
+    position: relative;
+  }
+  .offset-8 {
+    margin-left: 66.6666666667%;
+    position: relative;
+  }
+  .col-9 {
+    flex: 0 0 auto;
+    flex-basis: 75%;
+    width: 75%;
+    padding: 0 calc(max(calc(20px * var(--base-ratio)), calc(calc(20 / var(--base-size)) * var(--base-percent))) * 0.5);
+    box-sizing: border-box;
+    position: relative;
+  }
+  .offset-9 {
+    margin-left: 75%;
+    position: relative;
+  }
+  .col-10 {
+    flex: 0 0 auto;
+    flex-basis: 83.3333333333%;
+    width: 83.3333333333%;
+    padding: 0 calc(max(calc(20px * var(--base-ratio)), calc(calc(20 / var(--base-size)) * var(--base-percent))) * 0.5);
+    box-sizing: border-box;
+    position: relative;
+  }
+  .offset-10 {
+    margin-left: 83.3333333333%;
+    position: relative;
+  }
+  .col-11 {
+    flex: 0 0 auto;
+    flex-basis: 91.6666666667%;
+    width: 91.6666666667%;
+    padding: 0 calc(max(calc(20px * var(--base-ratio)), calc(calc(20 / var(--base-size)) * var(--base-percent))) * 0.5);
+    box-sizing: border-box;
+    position: relative;
+  }
+  .offset-11 {
+    margin-left: 91.6666666667%;
+    position: relative;
+  }
+  .col-12 {
+    flex: 0 0 auto;
+    flex-basis: 100%;
+    width: 100%;
+    padding: 0 calc(max(calc(20px * var(--base-ratio)), calc(calc(20 / var(--base-size)) * var(--base-percent))) * 0.5);
+    box-sizing: border-box;
+    position: relative;
+  }
+  .offset-12 {
+    margin-left: 100%;
+    position: relative;
+  }
+}
+/* reset */
+html,
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+p,
+table,
+th,
+td,
+form,
+fieldset,
+legend,
+input,
+textarea,
+button,
+select {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Pretendard", Helvetica, Arial, sans-serif;
+  color: #666;
+  font-weight: 400;
+  line-height: 1;
+  -webkit-text-size-adjust: 100%;
+}
+
+html,
+body {
+  font-size: max(calc(16px * var(--base-ratio)), calc(calc(16 / var(--base-size)) * var(--base-percent)));
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong {
+  margin: 0;
+  font-size: 100%;
+  font-weight: normal;
+  line-height: 1;
+  margin-block-end: 0;
+  margin-block-start: 0;
+}
+
+select,
+button,
+input,
+textarea,
+pre {
+  font-family: "Pretendard", Helvetica, Arial, sans-serif;
+  font-size: max(calc(16px * var(--base-ratio)), calc(calc(16 / var(--base-size)) * var(--base-percent)));
+  color: #666;
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+fieldset,
+img,
+button {
+  border: 0;
+}
+
+img,
+input,
+button {
+  vertical-align: top;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+address,
+em {
+  font-style: normal;
+}
+
+ol,
+ul,
+li {
+  list-style: none;
+}
+
+hr {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover,
+a:active {
+  text-decoration: none;
+}
+
+legend {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+}
+
+caption {
+  overflow: hidden;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  line-height: 0;
+}
+
+button {
+  background: none;
+  cursor: pointer;
+  -webkit-apperance: none;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+textarea {
+  resize: none;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.blind {
+  display: none;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+/* select arrow none */
+input[type=text],
+input[type=password],
+input[type=number],
+input[type=tel],
+input[type=email],
+input[type=button],
+input[type=submit] {
+  border-radius: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+textarea {
+  border-radius: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #999;
+}
+
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  color: #999;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  color: #999;
+}
+
+input::-ms-input-placeholder,
+textarea::-ms-input-placeholder {
+  color: #999;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #999;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px white inset;
+}
+
+/* input:[type=search] clear btn css 초기화 IE의 경우 */
+input::-ms-clear,
+input::-ms-reveal {
+  display: none;
+}
+
+/* input:[type=search] clear btn css 초기화 크롬의 경우 */
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button,
+input::-webkit-search-results-button,
+input::-webkit-search-results-decoration {
+  display: none;
+}
+
+.hide {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+.swiper-scrollbar-drag {
+  cursor: pointer;
+}
+
+/* touch기능으로 mobile/tablet 판별하여 css에 root var 추가 <-- coarse 터치기기 : fine 웹 */
+@media (min-width: 1025px) and (pointer: fine) {
+  :root {
+    --pointer: fine;
+  }
+}
+@media (max-width: 1024px), (max-width: 1366px) and (pointer: coarse) {
+  :root {
+    --pointer: coarse;
+  }
+}
+@font-face {
+  font-family: "SUIT";
+  font-weight: 300;
+  src: url("/src/main/webapp/resources/fonts/SUIT-Light.woff2") format("woff2");
+}
+@font-face {
+  font-family: "SUIT";
+  font-weight: 400;
+  src: url("/src/main/webapp/resources/fonts/SUIT-Regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "SUIT";
+  font-weight: 500;
+  src: url("/src/main/webapp/resources/fonts/SUIT-Medium.woff2") format("woff2");
+}
+@font-face {
+  font-family: "SUIT";
+  font-weight: 700;
+  src: url("/src/main/webapp/resources/fonts/SUIT-Bold.woff2") format("woff2");
+}
+/* layout */
+html {
+  --window-w: 100vw;
+  --window-h: 100vh;
+}
+
+:root {
+  --base-ratio: 0.75;
+  --base-size: 1536;
+  --base-percent: 100vw;
+}
+@media (max-width: 1024px) {
+  :root {
+    --base-ratio: 1;
+    --base-size: 1;
+    --base-percent: 1px;
+  }
+}

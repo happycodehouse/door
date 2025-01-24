@@ -1,0 +1,16 @@
+html {
+  --window-w: 100vw;
+  --window-h: 100vh;
+}
+
+:root {
+  --base-ratio: 0.75;
+  --base-size: 1536;
+  --base-percent: 100vw;
+
+  @include media(false, tablet) {
+    --base-ratio: 1;
+    --base-size: 1;
+    --base-percent: 1px;
+  }
+}
