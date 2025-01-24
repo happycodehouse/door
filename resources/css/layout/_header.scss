@@ -1,0 +1,18 @@
+#header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  height: to_vw(80);
+  border: 1px solid red;
+
+  .header_inner {
+    display: flex;
+    align-items: center;
+  }
+}
+
+#gnb {
+  display: flex;
+}
