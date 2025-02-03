@@ -12,9 +12,9 @@ window.addEventListener('load', function() {
           if (this.status === 200) {
             el.innerHTML = this.responseText;
 
-            if (typeof initBanner === 'function') {
+/*            if (typeof initBanner === 'function') {
               initBanner();
-            }
+            }*/
           } else {
             console.error('Error loading:', includePath, 'Status:', this.status);
           }

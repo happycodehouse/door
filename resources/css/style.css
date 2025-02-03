@@ -466,19 +466,12 @@ html {
   }
 }
 
-.container {
-  border: 2px solid blue;
-  padding-top: max(calc(80px * var(--base-ratio)), calc(calc(80 / var(--base-size)) * var(--base-percent)));
-}
-
 #header {
   position: absolute;
   top: 0;
   left: 0;
   z-index: 999;
   width: 100%;
-  height: max(calc(80px * var(--base-ratio)), calc(calc(80 / var(--base-size)) * var(--base-percent)));
-  border: 1px solid red;
 }
 #header .header_inner {
   display: flex;
