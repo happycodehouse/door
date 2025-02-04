@@ -1,7 +1,7 @@
 @charset "UTF-8";
 @use "sass:math";
 
-/* mediaQuery */
+// mediaQuery
 $breakpoints: (
         mobile: 768px,
         tablet: 1025px,
@@ -61,7 +61,7 @@ $breakpoints: (
     }
 }
 
-/* Font Size */
+// Font Size
 @mixin fontSize($font-size: null, $line-height: null, $letter-spacing: null) {
     /// ❓ 선택값
     /// $font-size, $letter-spacing, $line-height : photoshop value
@@ -86,7 +86,7 @@ $breakpoints: (
     }
 }
 
-/* Ellipsis */
+// Ellipsis
 @mixin ellipsis($lines: false, $font-size: null, $lh: null, $use: true) {
     /// @ 값이 없을 경우
     /// 기본적으로 1줄 말줄임
@@ -117,8 +117,7 @@ $breakpoints: (
         word-wrap: normal;
     }
 }
-
-/* PX TO VW (to vw) */
+// PX TO VW (to vw)
 @function to_vw($px-size) {
     $minus: 0;
     $size: 0;
@@ -152,7 +151,7 @@ $breakpoints: (
     }
 }
 
-/* Flex */
+// Flex
 @mixin flex($mode: flex, $justify-content: start, $align-items: normal, $wrap: wrap) {
     display: $mode;
     flex-wrap: $wrap;
@@ -160,7 +159,7 @@ $breakpoints: (
     align-items: $align-items;
 }
 
-/* Background */
+// Background
 @mixin background($img, $bgp: null, $bgr: null, $bgz: null) {
     /// ❗ 필수값
     /// $img : 이미지 경로 및 파일명 => 'kr/common/logo.png'
@@ -186,13 +185,13 @@ $breakpoints: (
     background-size: $bgz;
 }
 
-/* wordBreak */
+// wordBreak
 @mixin wordBreak {
     word-break: keep-all;
     word-wrap: break-word;
 }
 
-/* Grid */
+// Grid
 @include media(tablet, false) {
     @for $i from 1 to $gridCntP + 1 {
         .col-#{$i} {

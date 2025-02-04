@@ -1,17 +1,5 @@
 @charset "UTF-8";
 /* base */
-/* Font */
-/* Base */
-/* Path */
-/* Grid */
-/* mediaQuery */
-/* Font Size */
-/* Ellipsis */
-/* PX TO VW (to vw) */
-/* Flex */
-/* Background */
-/* wordBreak */
-/* Grid */
 @media (min-width: 1025px) {
   .col-1 {
     flex: 0 0 auto;
@@ -481,3 +469,5 @@ html {
 #gnb {
   display: flex;
 }
+
+/* pages */
