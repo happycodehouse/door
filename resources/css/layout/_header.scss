@@ -4,14 +4,47 @@
   left: 0;
   z-index: 999;
   width: 100%;
-  //height: to_vw();
+  height: to_vw(100);
 
   .header_inner {
     display: flex;
     align-items: center;
+    gap: to_vw(20);
+    height: 100%;
+    padding: 0 to_vw(20);
+  }
+
+  .logo {
+    a {
+      font-family: $LexendGiga;
+      @include fontSize(16);
+      font-weight: 900;
+      color: $black;
+    }
+  }
+}
+
+#hamburger {
+  position: relative;
+  width: to_vw(48);
+  height: to_vw(10);
+
+  span {
+    position: absolute;
   }
 }
 
 #gnb {
   display: flex;
+  flex-direction: column;
+  gap: to_vw(6);
+
+  li {
+    a {
+      font-family: $LexendGiga;
+      @include fontSize(14);
+      font-weight: 300;
+      color: $black;
+    }
+  }
 }
