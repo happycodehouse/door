@@ -8,13 +8,19 @@
 
   .header_inner {
     display: flex;
+    justify-content: flex-end;
     align-items: center;
     gap: to_vw(20);
     height: 100%;
-    padding: 0 to_vw(20);
+    padding: 0 to_vw(8);
   }
 
   .logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
     a {
       font-family: $LexendGiga;
       @include fontSize(16);
@@ -24,19 +30,10 @@
   }
 }
 
-#hamburger {
-  position: relative;
-  width: to_vw(48);
-  height: to_vw(10);
-
-  span {
-    position: absolute;
-  }
-}
-
 #gnb {
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
   gap: to_vw(6);
 
   li {

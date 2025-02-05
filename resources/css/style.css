@@ -494,10 +494,17 @@ html {
 }
 #header .header_inner {
   display: flex;
+  justify-content: flex-end;
   align-items: center;
   gap: max(calc(20px * var(--base-ratio)), calc(calc(20 / var(--base-size)) * var(--base-percent)));
   height: 100%;
-  padding: 0 max(calc(20px * var(--base-ratio)), calc(calc(20 / var(--base-size)) * var(--base-percent)));
+  padding: 0 max(calc(8px * var(--base-ratio)), calc(calc(8 / var(--base-size)) * var(--base-percent)));
+}
+#header .logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 #header .logo a {
   font-family: "Lexend Giga", sans-serif;
@@ -508,18 +515,10 @@ html {
   color: #0a0a0a;
 }
 
-#hamburger {
-  position: relative;
-  width: max(calc(48px * var(--base-ratio)), calc(calc(48 / var(--base-size)) * var(--base-percent)));
-  height: max(calc(10px * var(--base-ratio)), calc(calc(10 / var(--base-size)) * var(--base-percent)));
-}
-#hamburger span {
-  position: absolute;
-}
-
 #gnb {
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
   gap: max(calc(6px * var(--base-ratio)), calc(calc(6 / var(--base-size)) * var(--base-percent)));
 }
 #gnb li a {
