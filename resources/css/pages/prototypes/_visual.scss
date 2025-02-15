@@ -1,0 +1,17 @@
+.sec_visual {
+  &.ver01 {
+    height: 200vh;
+
+    .inner {
+      border: 3px solid red;
+      position: relative;
+      height: 100vh;
+
+      .source_info {
+        position: absolute;
+        bottom: to_vw(20);
+        left: to_vw(20);
+      }
+    }
+  }
+}

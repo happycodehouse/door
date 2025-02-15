@@ -12,7 +12,9 @@
 @import "layout/footer";
 
 /* pages */
+@import "main";
 @import "pages/about";
 @import "pages/maintenance";
 @import "pages/projects";
-@import "pages/prototypes";
+@import "pages/prototypes/prototypes";
+@import "pages/prototypes/visual";

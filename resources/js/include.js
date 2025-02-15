@@ -1,7 +1,8 @@
 window.addEventListener('load', function() {
-  let allElements = document.querySelectorAll('[data-include-path]');
+  let allHtmlElements = document.querySelectorAll('[data-include-path]');
+  let allScriptElements = document.querySelectorAll('[data-include-path-script]');
 
-  allElements.forEach(function(el) {
+  allHtmlElements.forEach(function(el) {
     let includePath = el.dataset.includePath;
 
     if (includePath) {

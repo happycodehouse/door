@@ -15,6 +15,11 @@ html {
   }
 }
 
-.container {
-  padding-top: to_vw(100);
+.sticky {
+  position: sticky;
+  top: to_vw(-1);
+  left: 0;
+  width: 100%;
+  height: calc(100vh + to_vw(2));
+  overflow: hidden;
 }

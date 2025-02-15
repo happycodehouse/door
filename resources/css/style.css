@@ -480,8 +480,13 @@ html {
   }
 }
 
-.container {
-  padding-top: max(calc(100px * var(--base-ratio)), calc(calc(100 / var(--base-size)) * var(--base-percent)));
+.sticky {
+  position: sticky;
+  top: max(calc(calc(calc(1 / var(--base-size)) * var(--base-percent)) * -1));
+  left: 0;
+  width: 100%;
+  height: calc(100vh + max(calc(2px * var(--base-ratio)), calc(calc(2 / var(--base-size)) * var(--base-percent))));
+  overflow: hidden;
 }
 
 #header {
@@ -531,3 +536,16 @@ html {
 }
 
 /* pages */
+.sec_visual.ver01 {
+  height: 200vh;
+}
+.sec_visual.ver01 .inner {
+  border: 3px solid red;
+  position: relative;
+  height: 100vh;
+}
+.sec_visual.ver01 .inner .source_info {
+  position: absolute;
+  bottom: max(calc(20px * var(--base-ratio)), calc(calc(20 / var(--base-size)) * var(--base-percent)));
+  left: max(calc(20px * var(--base-ratio)), calc(calc(20 / var(--base-size)) * var(--base-percent)));
+}
