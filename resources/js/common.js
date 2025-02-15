@@ -1,8 +1,11 @@
 gsap.registerPlugin(ScrollTrigger);
 
-let door = door || {},
+let door = {},
     mediaQuery = window.matchMedia("(min-width: 1025px)"),
-    lenis
+    lenis;
+
+let $window = $(window),
+    $body = $("body");
 
 door.utils = {
     smoothScroll: function () {
@@ -26,4 +29,20 @@ door.utils = {
         breakPoint(mediaQuery);
         mediaQuery.addEventListener("change", breakPoint);
     },
+    isSmoothStop: function (boolean) {
+        if (boolean === true) {
+            if (lenis) {
+                lenis.stop();
+            }
+        } else {
+            if (lenis) {
+                lenis.start();
+            }
+        }
+    },
+    init: function () {
+        door.utils.smoothScroll();
+    }
 }
+
+door.utils.init();
