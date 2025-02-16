@@ -9,19 +9,19 @@
     }
 
     .bg_wrap {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100vh;
-      border: 3px solid red;
 
       .bg {
         width: 100%;
-        height: 100%;
-        border: 3px solid pink;
-        @include background("main/bear-motocycle.png", 100% 100%, no-repeat, cover);
-
+        height: 80vh;
+        @include background("main/bear-motocycle.svg", 100% 100%, no-repeat, cover);
       }
     }
   }

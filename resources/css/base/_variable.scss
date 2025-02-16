@@ -5,15 +5,18 @@ $Suit: "SUIT", sans-serif;
 $LexendGiga : "Lexend Giga", sans-serif;
 
 // Color
-$black: #0a0a0a;
+$black: #0A0A0A;
+$white: #FFFFFF;
 
 // Base
 $font-size: 0;
 $fontSize-default: 16;
 
 // Path
-$fontPathCommon: "../../fonts/";
-$imgPathCommon: "../../images/";
+//$fontPathCommon: "../fonts/";
+//$imgPathCommon: "../images/";
+ $fontPathCommon: "/door/resources/fonts/";
+$imgPathCommon: "/door/resources/images/";
 
 // Grid
 $gridCntP: 12;
