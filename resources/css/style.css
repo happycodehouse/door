@@ -495,7 +495,8 @@ html {
   left: 0;
   z-index: 999;
   width: 100%;
-  height: max(calc(100px * var(--base-ratio)), calc(calc(100 / var(--base-size)) * var(--base-percent)));
+  padding: max(calc(24px * var(--base-ratio)), calc(calc(24 / var(--base-size)) * var(--base-percent)));
+  height: auto;
 }
 #header .header_inner {
   display: flex;
@@ -515,7 +516,7 @@ html {
   font-family: "Lexend Giga", sans-serif;
   font-size: max(calc(16px * var(--base-ratio)), calc(calc(16 / var(--base-size)) * var(--base-percent)));
   line-height: 1;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.02em;
   font-weight: 900;
   color: #0A0A0A;
 }
@@ -530,9 +531,14 @@ html {
   font-family: "Lexend Giga", sans-serif;
   font-size: max(calc(14px * var(--base-ratio)), calc(calc(14 / var(--base-size)) * var(--base-percent)));
   line-height: 1;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.02em;
   font-weight: 300;
   color: #0A0A0A;
+}
+#gnb li.active a {
+  font-size: max(calc(24px * var(--base-ratio)), calc(calc(24 / var(--base-size)) * var(--base-percent)));
+  line-height: 1;
+  letter-spacing: 0.02em;
 }
 
 /* pages */
@@ -551,6 +557,12 @@ html {
   width: 100%;
   height: 100vh;
 }
+.main .main_intro .bg_wrap .mass_wrap {
+  border: 1px solid red;
+}
+.main .main_intro .bg_wrap .mass_wrap .mass {
+  position: absolute;
+}
 .main .main_intro .bg_wrap .bg {
   width: 100%;
   height: 80vh;
@@ -558,16 +570,79 @@ html {
   background-size: cover;
 }
 
+.prototypes .sec_category {
+  padding-top: max(calc(100px * var(--base-ratio)), calc(calc(100 / var(--base-size)) * var(--base-percent)));
+}
+.prototypes .sec_category h3 {
+  font-size: max(calc(36px * var(--base-ratio)), calc(calc(36 / var(--base-size)) * var(--base-percent)));
+  line-height: 1;
+  letter-spacing: 0.02em;
+  font-weight: 700;
+  color: #0A0A0A;
+}
+
 .sec_visual.ver01 {
   height: 200vh;
 }
 .sec_visual.ver01 .inner {
-  border: 3px solid red;
   position: relative;
-  height: 100vh;
+  height: 100%;
+}
+.sec_visual.ver01 .inner .txt_wrap {
+  position: absolute;
+  top: max(calc(120px * var(--base-ratio)), calc(calc(120 / var(--base-size)) * var(--base-percent)));
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  width: 100%;
+  text-align: center;
+}
+.sec_visual.ver01 .inner .txt_wrap span {
+  display: block;
+  font-size: max(calc(18px * var(--base-ratio)), calc(calc(18 / var(--base-size)) * var(--base-percent)));
+  line-height: 1;
+  letter-spacing: 0.02em;
+  font-weight: 700;
+  margin-bottom: max(calc(10px * var(--base-ratio)), calc(calc(10 / var(--base-size)) * var(--base-percent)));
+}
+.sec_visual.ver01 .inner .txt_wrap p {
+  font-size: max(calc(12px * var(--base-ratio)), calc(calc(12 / var(--base-size)) * var(--base-percent)));
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  font-weight: 300;
+}
+.sec_visual.ver01 .inner .bg_wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  --clip: 44% 13% 0 13%;
+  clip-path: inset(var(--clip));
+}
+.sec_visual.ver01 .inner .bg_wrap .bg {
+  width: 100%;
+  height: 100%;
+  background: url("/door/resources/images/cloud.jpg") 100% 100% no-repeat;
+  background-size: cover;
+  transform: translateY(50%);
+}
+.sec_visual.ver01 .inner .bg_wrap .dim {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.2);
 }
 .sec_visual.ver01 .inner .source_info {
   position: absolute;
   bottom: max(calc(20px * var(--base-ratio)), calc(calc(20 / var(--base-size)) * var(--base-percent)));
   left: max(calc(20px * var(--base-ratio)), calc(calc(20 / var(--base-size)) * var(--base-percent)));
+}
+.sec_visual.ver01 .inner .source_info span {
+  font-size: max(calc(12px * var(--base-ratio)), calc(calc(12 / var(--base-size)) * var(--base-percent)));
+  line-height: 1;
+  letter-spacing: 0.02em;
 }

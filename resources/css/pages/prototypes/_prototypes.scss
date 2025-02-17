@@ -1,5 +1,13 @@
 @charset "UTF-8";
 
 .prototypes {
-  
+    .sec_category {
+        padding-top: to_vw(100);
+
+        h3 {
+            @include fontSize(36);
+            font-weight: 700;
+            color: $black;
+        }
+    }
 }

@@ -12,10 +12,48 @@
 <div id="container" class="container prototypes">
     <!-- Header -->
     <header id="header" data-include-path="/views/layout/header.html"></header>
+<!--    <header id="header">
+        <div class="header_inner">
+            <div class="logo">
+                <a href="../../index.html">happycodehouse</a>
+            </div>
+            <ul id="gnb" class="gnb">
+                <li data-spot="1">
+                    <a href="/views/about.html">About</a>
+                </li>
+                <li data-spot="2">
+                    <a href="/views/projects/projects.html">Projects</a>
+                </li>
+                <li data-spot="3">
+                    <a href="/views/maintenance/maintenance.html">Maintenance</a>
+                </li>
+                <li data-spot="4">
+                    <a href="/views/prototypes/prototypes.html">Prototypes</a>
+                </li>
+            </ul>
+        </div>
+    </header>-->
     <!-- //Header -->
-
     <!-- Content -->
-    <div id="content" class="content"></div>
+    <div id="content" class="content">
+        <div class="sec sec_category"></div>
+        <div class="sec">
+            <div class="inner">
+                <div class="item_list_wrap">
+                    <ul class="item_list">
+                        <li>
+                            <div class="preview_img">
+                                <img src="" alt="">
+                            </div>
+                            <div class="txt">
+                                <span></span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- //Content -->
 
     <!-- Footer -->
@@ -23,5 +61,15 @@
     <!-- //Footer -->
 </div>
 <script src="/resources/js/include.js"></script>
+<script src="/resources/js/libraries/gsap.js"></script>
+<script src="/resources/js/libraries/jquery-3.4.1.min.js"></script>
+<script src="/resources/js/libraries/lenis.min.js"></script>
+<script src="/resources/js/libraries/ScrollToPlugin.js"></script>
+<script src="/resources/js/libraries/ScrollTrigger.js"></script>
+<script src="/resources/js/libraries/swiper4.5.1.js"></script>
+<script src="/resources/js/common.js"></script>
+<script>
+    door.utils.gnbSpot(1);
+</script>
 </body>
 </html>

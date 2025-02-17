@@ -3,14 +3,66 @@
     height: 200vh;
 
     .inner {
-      border: 3px solid red;
       position: relative;
-      height: 100vh;
+      height: 100%;
+
+      .txt_wrap {
+        position: absolute;
+        top: to_vw(120);
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1;
+        width: 100%;
+        text-align: center;
+
+        span {
+          display: block;
+          @include fontSize(18);
+          font-weight: 700;
+          margin-bottom: to_vw(10);
+        }
+
+        p {
+          @include fontSize(12, 18);
+          font-weight: 300;
+        }
+      }
+
+      .bg_wrap {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        --clip: 44% 13% 0 13%;
+        clip-path: inset(var(--clip));
+
+        .bg {
+          width: 100%;
+          height: 100%;
+          @include background("cloud.jpg", 100% 100%, no-repeat, cover);
+          transform: translateY(50%);
+        }
+
+        .dim {
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          height: 100%;
+          opacity: 0;
+          background-color: rgba(0, 0, 0, 0.2);
+        }
+      }
 
       .source_info {
         position: absolute;
         bottom: to_vw(20);
         left: to_vw(20);
+
+        span {
+          @include fontSize(12);
+        }
       }
     }
   }

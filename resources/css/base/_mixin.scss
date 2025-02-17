@@ -64,7 +64,7 @@ $breakpoints: (
 // Font Size
 @mixin fontSize($font-size: null, $line-height: null, $letter-spacing: null) {
     /// ❓ 선택값
-    /// $font-size, $letter-spacing, $line-height : photoshop value
+    /// $font-size, $letter-spacing, $line-height : figma value
     /// $margin-bottom : marginBlock * value
     //font-size: $font-size * 1px;
     @if $font-size == null {
@@ -80,7 +80,7 @@ $breakpoints: (
     }
 
     @if $letter-spacing == null {
-        letter-spacing: #{calc(-0.02)}em; // -2%;
+        letter-spacing: #{calc(0.02)}em; // 2%;
     } @else {
         letter-spacing: #{calc($letter-spacing / 1000)}em;
     }

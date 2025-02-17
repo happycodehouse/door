@@ -4,7 +4,8 @@
   left: 0;
   z-index: 999;
   width: 100%;
-  height: to_vw(100);
+  padding: to_vw(24);
+  height: auto;
 
   .header_inner {
     display: flex;
@@ -42,6 +43,12 @@
       @include fontSize(14);
       font-weight: 300;
       color: $black;
+    }
+
+    &.active {
+      a {
+        @include fontSize(24);
+      }
     }
   }
 }
