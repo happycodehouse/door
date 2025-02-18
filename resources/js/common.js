@@ -1,7 +1,6 @@
 gsap.registerPlugin(ScrollTrigger);
 
-let door = {},
-    mediaQuery = window.matchMedia("(min-width: 1025px)"),
+let mediaQuery = window.matchMedia("(min-width: 1025px)"),
     lenis;
 
 let $window = $(window),
@@ -53,12 +52,38 @@ door.utils = {
             }
         }
     },
+    gridGuide: function () {
+        const $gridGuide = $("#gridGuide");
+
+        document.addEventListener("keyup", function (e) {
+            // F9
+            if (e.key === "F9") {
+                console.log("F9");
+
+                if (!$gridGuide.hasClass("on")) {
+                    $gridGuide.addClass("on");
+                } else {
+                    $gridGuide.removeClass("on");
+                }
+            }
+        });
+    },
+
     init: function () {
         door.utils.smoothScroll();
+        door.utils.gridGuide();
     }
 };
 
 door.utils.init();
+
+loadHeader().then(() => {
+    // 헤더가 성공적으로 로드된 후 common.js 초기화 호출
+    console.log('헤더가 성공적으로 로드되었습니다.');
+    door.utils.init();
+}).catch((error) => {
+    console.error('헤더 로드 중 오류 발생:', error);
+});
 
 
 

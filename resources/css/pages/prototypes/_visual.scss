@@ -1,6 +1,6 @@
 .sec_visual {
   &.ver01 {
-    height: 200vh;
+    height: 100vh;
 
     .inner {
       position: relative;
@@ -65,5 +65,9 @@
         }
       }
     }
+  }
+
+  &.ver02 {
+    
   }
 }
