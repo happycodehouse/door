@@ -10,6 +10,7 @@ door.utils = {
     gnbSpot: function (spot) {
         const $gnb = $("#gnb");
         const $spot = $gnb.find("li");
+
         if ($spot.length === 0) {
             console.error("GNB 요소가 존재하지 않습니다.");
             return;
