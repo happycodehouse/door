@@ -178,7 +178,7 @@ select {
 }
 
 body {
-  font-family: "SUIT", Helvetica, Arial, sans-serif;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
   color: #666;
   font-weight: 400;
   line-height: 1;
@@ -466,6 +466,15 @@ input::-webkit-search-results-decoration {
   font-weight: 100 900;
   font-display: swap;
   src: url(https://fonts.gstatic.com/s/lexendgiga/v25/PlI5Fl67Mah5Y8yMHE7lkWxDvcE.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 100 900;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v47/KFO7CnqEu92Fr1ME7kSn66aGLdTylUAMa3yUBA.woff2) format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 /* layout */
@@ -758,4 +767,108 @@ html {
   font-size: max(calc(12px * var(--base-ratio)), calc(calc(12 / var(--base-size)) * var(--base-percent)));
   line-height: 1;
   letter-spacing: 0.02em;
+}
+.prototypes.visual.ver02 .sec_visual {
+  height: 500vh;
+}
+.prototypes.visual.ver02 .sec_visual .box_wrap {
+  display: flex;
+  height: 100%;
+}
+.prototypes.visual.ver02 .sec_visual .box_wrap > div {
+  position: relative;
+  width: 50%;
+  height: 100vh;
+}
+.prototypes.visual.ver02 .sec_visual .box_wrap .desc_box {
+  position: relative;
+  height: 100vh;
+}
+.prototypes.visual.ver02 .sec_visual .box_wrap .desc_box .desc {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-50%) translateY(-50%);
+  transition: opacity 1s;
+}
+.prototypes.visual.ver02 .sec_visual .box_wrap .desc_box .desc .inner {
+  transform: translateY(30%);
+  transition: transform 1s;
+}
+.prototypes.visual.ver02 .sec_visual .box_wrap .desc_box .desc.on {
+  opacity: 1;
+  visibility: visible;
+  z-index: 1;
+}
+.prototypes.visual.ver02 .sec_visual .box_wrap .desc_box .desc.on .inner {
+  transform: translateY(0);
+}
+.prototypes.visual.ver02 .sec_visual .box_wrap .desc_box .desc h4 {
+  font-size: max(calc(24px * var(--base-ratio)), calc(calc(24 / var(--base-size)) * var(--base-percent)));
+  line-height: 1;
+  letter-spacing: 0.02em;
+  font-weight: 700;
+  color: #0A0A0A;
+}
+.prototypes.visual.ver02 .sec_visual .box_wrap .desc_box .desc h4 + p {
+  margin-top: max(calc(24px * var(--base-ratio)), calc(calc(24 / var(--base-size)) * var(--base-percent)));
+}
+.prototypes.visual.ver02 .sec_visual .box_wrap .desc_box .desc p {
+  font-size: max(calc(12px * var(--base-ratio)), calc(calc(12 / var(--base-size)) * var(--base-percent)));
+  line-height: 1.3333333333;
+  letter-spacing: 0.02em;
+}
+.prototypes.visual.ver02 .sec_visual .box_wrap .bg_box {
+  width: 60%;
+}
+.prototypes.visual.ver02 .sec_visual .box_wrap .bg_box .bg_cover {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  transform: translateY(100%);
+  transition: 1s;
+}
+.prototypes.visual.ver02 .sec_visual .box_wrap .bg_box .bg_cover.prev {
+  z-index: 1;
+  transform: translateY(0);
+}
+.prototypes.visual.ver02 .sec_visual .box_wrap .bg_box .bg_cover.prev .bg {
+  transform: translateY(0);
+}
+.prototypes.visual.ver02 .sec_visual .box_wrap .bg_box .bg_cover.on {
+  z-index: 2;
+  transform: translateY(0);
+}
+.prototypes.visual.ver02 .sec_visual .box_wrap .bg_box .bg_cover.on .bg {
+  transform: translateY(0);
+}
+.prototypes.visual.ver02 .sec_visual .box_wrap .bg_box .bg_cover .bg {
+  width: 100%;
+  height: 100%;
+  background-attachment: fixed !important;
+  transform: translateY(-100%);
+  transition: 1s;
+}
+.prototypes.visual.ver02 .sec_visual .box_wrap .bg_box .bg_cover01 .bg {
+  background: url("/door/resources/images/p1-01.jpg") 100% 100% no-repeat;
+  background-size: cover;
+}
+.prototypes.visual.ver02 .sec_visual .box_wrap .bg_box .bg_cover02 .bg {
+  background: url("/door/resources/images/p1-02.jpg") 100% 100% no-repeat;
+  background-size: cover;
+}
+.prototypes.visual.ver02 .sec_visual .box_wrap .bg_box .bg_cover03 .bg {
+  background: url("/door/resources/images/p1-03.jpg") 100% 100% no-repeat;
+  background-size: cover;
+}
+.prototypes.visual.ver02 .sec_visual .box_wrap .bg_box .bg_cover04 .bg {
+  background: url("/door/resources/images/p1-04.jpg") 100% 100% no-repeat;
+  background-size: cover;
+  background-position: center;
 }

@@ -21,53 +21,73 @@
         </div>
     </div>
     <div class="sec_visual ver02">
+        <div class="trigger"></div>
         <div class="sticky">
             <div class="box_wrap">
-                <div class="desc_box">
-                    <div class="row_wrap">
-                        <div class="row">
-                            <div class="col-12">
-                                <h4>The ultimate vehicle for exploring a city.</h4>
-                                <p>P1 is a radical new personal electric vehicle, pairing a cutting edge industrial design with breakthrough performance and utility. Batch II is now open for 2025 deliveries in the United States.</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <h4>The fastest in its class.</h4>
-                                <p>With 12kW of peak power output, a 55mph top speed, and a 60 mile range, P1 is the fastest vehicle in its class. But numbers don't do it justice–riding P1 is a mindblowing experience.</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <h4>Thoughtful design, inside and out.</h4>
-                                <ul>
-                                    <li>
-                                        <span>Long Lasting Materials</span>
-                                        <p>An anodized aluminum and steel construction provides durability and elegance.</p>
-                                    </li>
-                                    <li>
-                                        <span>Practical Storage</span>
-                                        <p>Underseat storage and a front glovebox provide ample storage throughout.</p>
-                                    </li>
-                                    <li>
-                                        <span>High Performance Light</span>
-                                        <p>An iconic daytime running light provides visibility and announces P1’s presence.</p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <h4>Next-gen technology for unparalleled safety, theft prevention, and apps on two wheels.</h4>
+                <div class="row_wrap">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="desc_box">
+                                <div class="desc">
+                                    <div class="inner">
+                                        <h4>The ultimate vehicle for exploring a city.</h4>
+                                        <p>
+                                            P1 is a radical new personal electric vehicle, <br>
+                                            pairing a cutting edge industrial design with breakthrough performance and utility.
+                                            <br>
+                                            Batch II is now open for 2025 deliveries in the United States.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="desc">
+                                    <div class="inner">
+                                        <h4>The fastest in its class.</h4>
+                                        <p>
+                                            With 12kW of peak power output, a 55mph top speed, and a 60 mile range, <br>
+                                            P1 is the fastest vehicle in its class. <br>
+                                            But numbers don't do it justice–riding P1 is a mindblowing experience.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="desc">
+                                    <div class="inner">
+                                        <h4>Thoughtful design, inside and out.</h4>
+                                        <ul>
+                                            <li>
+                                                <span>Long Lasting Materials</span>
+                                                <p>An anodized aluminum and steel construction provides durability and elegance.</p>
+                                            </li>
+                                            <li>
+                                                <span>Practical Storage</span>
+                                                <p>Underseat storage and a front glovebox provide ample storage throughout.</p>
+                                            </li>
+                                            <li>
+                                                <span>High Performance Light</span>
+                                                <p>An iconic daytime running light provides visibility and announces P1’s presence.</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="desc">
+                                    <h4>Next-gen technology for unparalleled safety, theft prevention, and apps on two wheels.</h4>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="bg_box">
-                    <div class="bg"></div>
-                    <div class="bg"></div>
-                    <div class="bg"></div>
-                    <div class="bg"></div>
+                    <div class="bg_cover bg_cover01">
+                        <div class="bg"></div>
+                    </div>
+                    <div class="bg_cover bg_cover02">
+                        <div class="bg"></div>
+                    </div>
+                    <div class="bg_cover bg_cover03">
+                        <div class="bg"></div>
+                    </div>
+                    <div class="bg_cover bg_cover04">
+                        <div class="bg"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -90,7 +110,76 @@
 <script src="/resources/js/libraries/swiper4.5.1.js"></script>
 <script src="/resources/js/common.js"></script>
 <script>
+    let secVisualTl;
+    const $secVisual = $(".sec_visual");
+    const $trigger = $secVisual.find(".trigger");
+    const $secVisualDesc = $secVisual.find(".desc");
+    const $secVisualBgCover = $secVisual.find(".bg_cover");
 
+    $secVisualDesc.eq(0).addClass("on");
+    $secVisualBgCover.eq(0).addClass("on");
+
+    function secVisualMotion(idx) {
+        let prevIdx = null;
+
+        return {
+            onStart: () => {
+                if (prevIdx !== null) {
+                    console.log('Previous Index:', prevIdx);
+                }
+
+                console.log('Current Index:', idx);
+
+                $secVisualDesc.removeClass("on");
+                $secVisualBgCover.removeClass("on prev");
+
+                $secVisualDesc.eq(idx).addClass("on");
+                $secVisualBgCover.eq(idx).addClass("on");
+
+
+                prevIdx = idx - 1;
+                if (prevIdx !== null) {
+                    $secVisualBgCover.eq(prevIdx).addClass("prev");
+                }
+            },
+            onReverseComplete: () => {
+                if (prevIdx !== null) {
+                    console.log('Previous Index:', prevIdx);
+                }
+
+                console.log('Current Index:', idx);
+
+                $secVisualDesc.removeClass("on");
+                $secVisualBgCover.removeClass("on prev");
+
+                $secVisualDesc.eq(idx).addClass("on");
+                $secVisualBgCover.eq(idx).addClass("on");
+
+                prevIdx = idx + 1;
+                if (prevIdx !== null) {
+                    $secVisualBgCover.eq(prevIdx).addClass("prev");
+                }
+            },
+            duration: 1,
+            ease: "none"
+        }
+    }
+
+    secVisualTl = gsap.timeline({
+        scrollTrigger: {
+            trigger: $secVisual,
+            start: "top top",
+            end: "bottom bottom",
+            markers: true,
+            scrub: 1,
+            invalidateOnRefresh: true
+        }
+    })
+        .to($trigger, {y: 100, duration: 0.5})
+        .to($secVisualDesc.eq(0), secVisualMotion(0))
+        .to($secVisualDesc.eq(1), secVisualMotion(1))
+        .to($secVisualDesc.eq(2), secVisualMotion(2))
+        .to($secVisualDesc.eq(3), secVisualMotion(3));
 </script>
 </body>
 </html>
