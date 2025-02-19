@@ -791,7 +791,7 @@ html {
 }
 .prototypes.visual.ver02 .sec01 .product_wrap {
   position: relative;
-  height: calc(100vh - max(calc(200px * var(--base-ratio)), calc(calc(200 / var(--base-size)) * var(--base-percent))));
+  height: calc(100vh - max(calc(160px * var(--base-ratio)), calc(calc(160 / var(--base-size)) * var(--base-percent))));
 }
 .prototypes.visual.ver02 .sec01 .product_wrap .swiper {
   position: relative;

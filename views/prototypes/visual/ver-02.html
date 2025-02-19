@@ -35,14 +35,14 @@
                                     </div>
                                 </div>
                                 <div class="swiper-navigation">
-                                    <a href="javascript:void(0);">
+                                    <a href="javascript:void(0);" class="swiper-btn-prev">
                                         <div>
                                             <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M16 21L7 12L16 3" stroke="currentColor"></path>
                                             </svg>
                                         </div>
                                     </a>
-                                    <a href="javascript:void(0);">
+                                    <a href="javascript:void(0);" class="swiper-btn-next">
                                         <div>
                                             <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M7 3L16 12L7 21" stroke="currentColor"></path>
@@ -52,10 +52,10 @@
                                 </div>
                             </div>
                             <div class="product_tab">
-                                <a href="javascript:void(0);" class="black active" data-product-color="black">
+                                <a href="javascript:void(0);" class="black active" data-product-tab="black">
                                     <span class="blind">model color: black</span>
                                 </a>
-                                <a href="javascript:void(0);" class="silver" data-product-color="silver">
+                                <a href="javascript:void(0);" class="silver" data-product-tab="silver">
                                     <span class="blind">model color: silver</span>
                                 </a>
                             </div>
@@ -114,7 +114,11 @@
                                     </div>
                                 </div>
                                 <div class="desc">
-                                    <h4>Next-gen technology for unparalleled safety, theft prevention, and apps on two wheels.</h4>
+                                    <h4>
+                                        Next-gen technology for <br>
+                                        unparalleled safety, <br>
+                                        theft prevention, <br>
+                                        and apps on two wheels.</h4>
                                 </div>
                             </div>
                         </div>
@@ -152,42 +156,31 @@
 <script src="/resources/js/libraries/swiper4.5.1.js"></script>
 <script src="/resources/js/common.js"></script>
 <script>
-    const $sec01 = $(".sec01")
-    const $productTabBtn = $(".product_tab").find("a");
-    const $productSlides = $sec01.find(".swiper-slide img");
-    const $activeTab = $productTabBtn.filter('.active'); // active 클래스가 있는 탭 찾기
-    const initialColor = $activeTab.data("product-color");
+    const $sec01 = $(".sec01");
+    const $productTabBtn = $sec01.find(".product_tab a");
+    let initColor = $productTabBtn.filter(".active").data("product-tab");
+    let productColor = initColor;
+    console.log(productColor);
 
-    $productSlides.each(function () {
-        const $img = $(this);
-        if ($img.data("product-color") === initialColor) {
-            $img.css("opacity", "1"); // 선택한 색상 보이기
-        } else {
-            $img.css("opacity", "0"); // 나머지 색상 숨기기
-        }
+    const sec01Swiper = new Swiper($sec01.find(".swiper"), {
+        navigation: {
+            prevEl: '.swiper-btn-prev',
+            nextEl: '.swiper-btn-next'
+        },
+        loop: true
     });
 
-    $productTabBtn.on("click", function () {
+    let $productSlides = $(sec01Swiper.slides);
+
+    console.log($productSlides);
+
+    function selectColor () {
         let _$this = $(this);
 
-        _$this.addClass("active");
-        _$this.siblings().removeClass("active");
+        productColor = _$this.data("product-tab");
+    }
 
-        const selectedColor = _$this.data("product-color");
-        console.log(selectedColor);
-
-        // 이미지 opacity 조정
-        $productSlides.each(function () {
-            const $img = $(this);
-            if ($img.data("product-color") === selectedColor) {
-                $img.css("opacity", "1"); // 선택한 색상 보이기
-            } else {
-                $img.css("opacity", "0"); // 나머지 색상 숨기기
-            }
-        });
-    });
-
-
+    $productTabBtn.on("click", selectColor);
 
     let secVisualTl;
     const $secVisual = $(".sec_visual");
