@@ -82,10 +82,34 @@
 
           .product_title {
             padding: to_vw(12) 0;
+            height: to_vw(100);
 
             img {
               &:first-child {
                 margin-bottom: to_vw(4);
+              }
+            }
+          }
+
+          .product_wrap {
+            border: 1px solid red;
+            height: calc(100vh - to_vw(100));
+            position: relative;
+
+            .product {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              border: 2px solid black;
+
+              img {
+                width: auto;
+                height: 100%;
               }
             }
           }
@@ -131,8 +155,6 @@
               }
             }
           }
-
-          .product_wrap {}
         }
       }
 
