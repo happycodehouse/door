@@ -768,8 +768,50 @@ html {
   line-height: 1;
   letter-spacing: 0.02em;
 }
+.prototypes.visual.ver02 .sec01 .inner {
+  position: relative;
+  height: 100vh;
+}
+.prototypes.visual.ver02 .sec01 .product_title {
+  padding: max(calc(12px * var(--base-ratio)), calc(calc(12 / var(--base-size)) * var(--base-percent))) 0;
+}
+.prototypes.visual.ver02 .sec01 .product_title img:first-child {
+  margin-bottom: max(calc(4px * var(--base-ratio)), calc(calc(4 / var(--base-size)) * var(--base-percent)));
+}
+.prototypes.visual.ver02 .sec01 .product_tab {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: max(calc(8px * var(--base-ratio)), calc(calc(8 / var(--base-size)) * var(--base-percent)));
+}
+.prototypes.visual.ver02 .sec01 .product_tab a {
+  position: relative;
+  width: max(calc(24px * var(--base-ratio)), calc(calc(24 / var(--base-size)) * var(--base-percent)));
+  height: max(calc(24px * var(--base-ratio)), calc(calc(24 / var(--base-size)) * var(--base-percent)));
+  border-radius: max(calc(99px * var(--base-ratio)), calc(calc(99 / var(--base-size)) * var(--base-percent)));
+  background-color: #FAFAFA;
+}
+.prototypes.visual.ver02 .sec01 .product_tab a.active {
+  border: max(calc(1px * var(--base-ratio)), calc(calc(1 / var(--base-size)) * var(--base-percent))) solid #0A0A0A;
+}
+.prototypes.visual.ver02 .sec01 .product_tab a::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  border-radius: inherit;
+}
+.prototypes.visual.ver02 .sec01 .product_tab a.black::after {
+  background-color: #0A0A0A;
+}
+.prototypes.visual.ver02 .sec01 .product_tab a.white::after {
+  background-color: #D9D9D9;
+}
 .prototypes.visual.ver02 .sec_visual {
-  height: 500vh;
+  height: 600vh;
 }
 .prototypes.visual.ver02 .sec_visual .box_wrap {
   display: flex;
