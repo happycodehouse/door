@@ -868,6 +868,10 @@ html {
 .prototypes.visual.ver02 .sec_intro .product_tab a.silver::after {
   background-color: #D9D9D9;
 }
+.prototypes.visual.ver02 .sec_charge {
+  position: relative;
+  overflow: hidden;
+}
 .prototypes.visual.ver02 .sec_charge .parallax_zone {
   position: relative;
   height: 100vh;
@@ -877,10 +881,13 @@ html {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: -1;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background: url("/door/resources/images/p1/p1-battery-bg.jpg") 50% 100% no-repeat;
   background-size: cover;
+  background-attachment: fixed;
+  will-change: transform;
 }
 .prototypes.visual.ver02 .sec_charge .txt_wrap {
   display: flex;
@@ -928,7 +935,7 @@ html {
   letter-spacing: 0.02em;
 }
 .prototypes.visual.ver02 .sec_visual {
-  height: 500vh;
+  height: 400vh;
 }
 .prototypes.visual.ver02 .sec_visual .box_wrap {
   display: flex;
@@ -1026,14 +1033,12 @@ html {
   transition: 1s;
 }
 .prototypes.visual.ver02 .sec_visual .box_wrap .bg_box .bg_cover.prev {
-  z-index: 1;
   transform: translateY(0);
 }
 .prototypes.visual.ver02 .sec_visual .box_wrap .bg_box .bg_cover.prev .bg {
   transform: translateY(0);
 }
 .prototypes.visual.ver02 .sec_visual .box_wrap .bg_box .bg_cover.on {
-  z-index: 2;
   transform: translateY(0);
 }
 .prototypes.visual.ver02 .sec_visual .box_wrap .bg_box .bg_cover.on .bg {

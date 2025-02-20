@@ -140,7 +140,9 @@
     </div>
     <div class="sec sec_charge">
         <div class=" parallax_zone">
-            <div class="bg_wrap"></div>
+            <div class="bg_wrap">
+                <div class="bg"></div>
+            </div>
             <div class="row_wrap">
                 <div class="row">
                     <div class="col-10">
@@ -158,6 +160,7 @@
             </div>
         </div>
     </div>
+    <div style="height: 600vh;"></div>
 
     <!-- Footer -->
     <footer data-include-path="/views/layout/footer.html"></footer>
@@ -228,44 +231,34 @@
         $secVisualBgCover.eq(0).addClass("on");
 
         function secVisualMotion(idx) {
-            let prevIdx = null;
+            let prevIdx = 0;
 
             return {
                 onStart: () => {
-                    if (prevIdx !== null) {
-                        console.log('Previous Index:', prevIdx);
-                    }
-
                     console.log('Current Index:', idx);
 
                     $secVisualDesc.removeClass("on");
-                    $secVisualBgCover.removeClass("on prev");
+                    $secVisualBgCover.removeClass("on");
 
                     $secVisualDesc.eq(idx).addClass("on");
-                    $secVisualBgCover.eq(idx).addClass("on");
-
-
-                    prevIdx = idx - 1;
-                    if (prevIdx !== null) {
-                        $secVisualBgCover.eq(prevIdx).addClass("prev");
+                    $secVisualBgCover.eq(idx).addClass("on prev");
+                    if (idx === 0) {
+                        prevIdx = 0;
+                    } else {
+                        prevIdx = idx - 1;
                     }
+                    console.log('Previous Index:', prevIdx);
                 },
                 onReverseComplete: () => {
-                    if (prevIdx !== null) {
-                        console.log('Previous Index:', prevIdx);
-                    }
-
-                    console.log('Current Index:', idx);
-
+                    console.log("역재생 current ", idx);
+                    console.log("역재생 prevIdx ", prevIdx);
                     $secVisualDesc.removeClass("on");
-                    $secVisualBgCover.removeClass("on prev");
-
                     $secVisualDesc.eq(idx).addClass("on");
-                    $secVisualBgCover.eq(idx).addClass("on");
-
-                    prevIdx = idx + 1;
-                    if (prevIdx !== null) {
-                        $secVisualBgCover.eq(prevIdx).addClass("prev");
+                    $secVisualBgCover.eq(prevIdx).addClass("on");
+                    $secVisualBgCover.eq(prevIdx).removeClass("prev");
+                    $secVisualBgCover.eq(idx).removeClass("prev on");
+                    if (prevIdx === 0) {
+                        $secVisualBgCover.eq(0).addClass("on");
                     }
                 },
                 duration: 1,
@@ -283,7 +276,7 @@
                 invalidateOnRefresh: true
             }
         })
-            .to($trigger, {y: 100, duration: 1})
+            .to($trigger, {y: 100, duration: 0.5})
             .to($secVisualDesc.eq(0), secVisualMotion(0))
             .to($secVisualDesc.eq(1), secVisualMotion(1))
             .to($secVisualDesc.eq(2), secVisualMotion(2))
@@ -292,12 +285,15 @@
 
     (function chargeSection () {
         let chargeSecTl;
+        const $secCharge = $(".sec_charge");
+        const $secChargeBg = $secCharge.find(".bg_wrap");
 
         chargeSecTl = gsap.timeline({
             scrollTrigger: {
                 trigger: $(".sec_charge"),
                 start: "top-=50% top",
                 end: "bottom bottom",
+                scrub: true,
                 markers: true,
                 onEnter: () => {
                     $(".product_title").addClass("hide");
@@ -306,7 +302,11 @@
                     $(".product_title").removeClass("hide");
                 }
             }
-        })
+        }).to($secChargeBg, {
+            y: "-50%",
+            duration: 1,
+            ease: "none"
+        });
     })();
 </script>
 </body>
