@@ -13,11 +13,17 @@
         <div class="row_wrap">
             <div class="row">
                 <div class="col-12">
-                    <div class="inner">
-                        <div class="product_title">
+                    <div class="product_title">
+                        <div class="img_wrap">
                             <img src="/resources/images/p1/p1-title.png" alt="">
                             <img src="/resources/images/p1/p1-title.svg" alt="">
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-8">
+                    <div class="inner">
                         <div class="product_wrap">
                             <div class="swiper product">
                                 <div class="swiper-wrapper">
@@ -65,7 +71,7 @@
             </div>
         </div>
     </div>
-    <div class="sec_visual ver02">
+    <div class="sec sec_visual ver02">
         <div class="trigger"></div>
         <div class="sticky">
             <div class="box_wrap">
@@ -160,7 +166,25 @@
             </div>
         </div>
     </div>
-    <div style="height: 600vh;"></div>
+    <div class="sec sec_fit">
+        <div class="sticky">
+            <div class="bg_wrap">
+                <div class="bg"></div>
+            </div>
+            <div class="txt_wrap">
+                <p>It fits right in.</p>
+            </div>
+        </div>
+    </div>
+    <div class="sec_modular">
+        <div class="row_wrap">
+            <div class="row">
+                <div class="col-12">
+
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer data-include-path="/views/layout/footer.html"></footer>
@@ -176,13 +200,13 @@
 <script src="/resources/js/common.js"></script>
 <script>
     (function introSection (){
-        const $sec01 = $(".sec01");
-        const $productTabBtn = $sec01.find(".product_tab a");
+        const $secIntro = $(".sec_intro");
+        const $productTabBtn = $secIntro.find(".product_tab a");
         let initColor = $productTabBtn.filter(".active").data("product-tab");
         let productColor = initColor;
         console.log(productColor);
 
-        const sec01Swiper = new Swiper($sec01.find(".swiper"), {
+        const secIntroSwiper = new Swiper($secIntro.find(".swiper"), {
             slidesPerView: "auto",
             navigation: {
                 prevEl: '.swiper-btn-prev',
@@ -191,7 +215,7 @@
             loop: true
         });
 
-        let $productSlides = $(sec01Swiper.slides);
+        let $productSlides = $(secIntroSwiper.slides);
         let $productSlidesImg = $productSlides.find("img");
         console.log($productSlidesImg);
 
@@ -253,7 +277,7 @@
                     console.log("역재생 current ", idx);
                     console.log("역재생 prevIdx ", prevIdx);
                     $secVisualDesc.removeClass("on");
-                    $secVisualDesc.eq(idx).addClass("on");
+                    $secVisualDesc.eq(prevIdx).addClass("on");
                     $secVisualBgCover.eq(prevIdx).addClass("on");
                     $secVisualBgCover.eq(prevIdx).removeClass("prev");
                     $secVisualBgCover.eq(idx).removeClass("prev on");
@@ -288,24 +312,45 @@
         const $secCharge = $(".sec_charge");
         const $secChargeBg = $secCharge.find(".bg_wrap");
 
+        function toggleProductTitle(action) {
+            if (action === "hide") {
+                $(".product_title").addClass("hide");
+            } else {
+                $(".product_title").removeClass("hide");
+            }
+        }
+
         chargeSecTl = gsap.timeline({
             scrollTrigger: {
-                trigger: $(".sec_charge"),
+                trigger: $secCharge,
                 start: "top-=50% top",
-                end: "bottom bottom",
+                end: "bottom+=100% bottom",
                 scrub: true,
-                markers: true,
-                onEnter: () => {
-                    $(".product_title").addClass("hide");
-                },
-                onLeaveBack: () => {
-                    $(".product_title").removeClass("hide");
-                }
+                markers: false,
+                onEnter: () => toggleProductTitle("hide"),
+                onLeaveBack: () => toggleProductTitle("show"),
+                onEnterBack: () => toggleProductTitle("hide"),
+                onLeave: () => toggleProductTitle("hide")
             }
         }).to($secChargeBg, {
-            y: "-50%",
+            y: -150,
             duration: 1,
             ease: "none"
+        })
+    })();
+
+    (function fitSection (){
+        let secFitTl;
+        const $secFit = $(".sec_fit");
+
+        secFitTl = gsap.timeline({
+            scrollTrigger: {
+                trigger: $secFit,
+                start: "top top",
+                end: "bottom bottom",
+                scrub: 1,
+                invalidateOnRefresh: true
+            }
         });
     })();
 </script>

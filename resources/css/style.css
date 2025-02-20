@@ -777,21 +777,24 @@ html {
   position: fixed;
   top: 0;
   z-index: 99;
+  width: 83.3333%;
   padding: max(calc(24px * var(--base-ratio)), calc(calc(24 / var(--base-size)) * var(--base-percent))) 0;
-  width: max(calc(160px * var(--base-ratio)), calc(calc(160 / var(--base-size)) * var(--base-percent)));
   opacity: 1;
   visibility: visible;
-  transition: 0.5s;
+  transition: 0.25s;
 }
 .prototypes.visual.ver02 .sec_intro .product_title.hide {
   opacity: 0;
   visibility: hidden;
 }
-.prototypes.visual.ver02 .sec_intro .product_title img {
+.prototypes.visual.ver02 .sec_intro .product_title .img_wrap {
+  width: max(calc(160px * var(--base-ratio)), calc(calc(160 / var(--base-size)) * var(--base-percent)));
+}
+.prototypes.visual.ver02 .sec_intro .product_title .img_wrap img {
   width: 100%;
   height: auto;
 }
-.prototypes.visual.ver02 .sec_intro .product_title img:first-child {
+.prototypes.visual.ver02 .sec_intro .product_title .img_wrap img:first-child {
   margin-bottom: max(calc(4px * var(--base-ratio)), calc(calc(4 / var(--base-size)) * var(--base-percent)));
 }
 .prototypes.visual.ver02 .sec_intro .product_wrap {
@@ -870,6 +873,7 @@ html {
 }
 .prototypes.visual.ver02 .sec_charge {
   position: relative;
+  height: 100vh;
   overflow: hidden;
 }
 .prototypes.visual.ver02 .sec_charge .parallax_zone {
@@ -877,6 +881,7 @@ html {
   height: 100vh;
 }
 .prototypes.visual.ver02 .sec_charge .bg_wrap {
+  overflow: hidden;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -902,7 +907,7 @@ html {
   font-size: max(calc(48px * var(--base-ratio)), calc(calc(48 / var(--base-size)) * var(--base-percent)));
   line-height: 1;
   letter-spacing: 0.02em;
-  font-weight: 500;
+  font-weight: 300;
   color: #0A0A0A;
 }
 .prototypes.visual.ver02 .sec_charge .txt_wrap .charge_label {
@@ -917,6 +922,7 @@ html {
   font-size: max(calc(20px * var(--base-ratio)), calc(calc(20 / var(--base-size)) * var(--base-percent)));
   line-height: 1;
   letter-spacing: 0.02em;
+  font-weight: 500;
   color: #0A0A0A;
 }
 .prototypes.visual.ver02 .sec_charge .txt_wrap .charge_label span::after {
@@ -933,6 +939,20 @@ html {
   font-size: max(calc(16px * var(--base-ratio)), calc(calc(16 / var(--base-size)) * var(--base-percent)));
   line-height: 1.25;
   letter-spacing: 0.02em;
+}
+.prototypes.visual.ver02 .sec_fit {
+  height: 200vh;
+}
+.prototypes.visual.ver02 .sec_fit .bg_wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+}
+.prototypes.visual.ver02 .sec_fit .bg_wrap .bg {
+  width: 100%;
+  height: 100%;
 }
 .prototypes.visual.ver02 .sec_visual {
   height: 400vh;
@@ -952,12 +972,11 @@ html {
 }
 .prototypes.visual.ver02 .sec_visual .box_wrap .desc_box .desc {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  bottom: max(calc(80px * var(--base-ratio)), calc(calc(80 / var(--base-size)) * var(--base-percent)));
+  left: 0;
   width: 100%;
   opacity: 0;
   visibility: hidden;
-  transform: translateX(-50%) translateY(-50%);
   transition: opacity 1s;
 }
 .prototypes.visual.ver02 .sec_visual .box_wrap .desc_box .desc .inner {
