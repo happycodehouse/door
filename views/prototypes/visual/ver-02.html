@@ -9,29 +9,29 @@
 </head>
 <body>
 <div class="container prototypes visual ver02">
-    <div class="sec sec01">
+    <div class="sec sec_intro">
         <div class="row_wrap">
             <div class="row">
                 <div class="col-12">
                     <div class="inner">
                         <div class="product_title">
-                            <img src="/resources/images/p1-title.png" alt="">
-                            <img src="/resources/images/p1-title.svg" alt="">
+                            <img src="/resources/images/p1/p1-title.png" alt="">
+                            <img src="/resources/images/p1/p1-title.svg" alt="">
                         </div>
                         <div class="product_wrap">
                             <div class="swiper product">
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide">
-                                        <img src="/resources/images/p1-product-black-01.png" alt="" data-product-color="black">
-                                        <img src="/resources/images/p1-product-silver-01.png" alt="" data-product-color="silver">
+                                        <img src="/resources/images/p1/p1-product-black-01.png" alt="" data-product-color="black">
+                                        <img src="/resources/images/p1/p1-product-silver-01.png" alt="" data-product-color="silver">
                                     </div>
                                     <div class="swiper-slide">
-                                        <img src="/resources/images/p1-product-black-02.png" alt="" data-product-color="black">
-                                        <img src="/resources/images/p1-product-silver-02.png" alt="" data-product-color="silver">
+                                        <img src="/resources/images/p1/p1-product-black-02.png" alt="" data-product-color="black">
+                                        <img src="/resources/images/p1/p1-product-silver-02.png" alt="" data-product-color="silver">
                                     </div>
                                     <div class="swiper-slide">
-                                        <img src="/resources/images/p1-product-black-03.png" alt="" data-product-color="black">
-                                        <img src="/resources/images/p1-product-silver-03.png" alt="" data-product-color="silver">
+                                        <img src="/resources/images/p1/p1-product-black-03.png" alt="" data-product-color="black">
+                                        <img src="/resources/images/p1/p1-product-silver-03.png" alt="" data-product-color="silver">
                                     </div>
                                 </div>
                                 <div class="swiper-navigation">
@@ -138,7 +138,26 @@
             </div>
         </div>
     </div>
-    <div class="sec sec02"></div>
+    <div class="sec sec_charge">
+        <div class=" parallax_zone">
+            <div class="bg_wrap"></div>
+            <div class="row_wrap">
+                <div class="row">
+                    <div class="col-10">
+                        <div class="txt_wrap">
+                            <div class="charge_head">
+                                <p>Charge at home using a regular outlet, <br> and ride for up to 60 miles.</p>
+                            </div>
+                            <div class="charge_label">
+                                <span>Removable 72-Volt 45aH Battery</span>
+                                <p>A 3.2 kWh removable battery provides up to 60 miles with real world city riding.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer data-include-path="/views/layout/footer.html"></footer>
@@ -153,7 +172,7 @@
 <script src="/resources/js/libraries/swiper4.5.1.js"></script>
 <script src="/resources/js/common.js"></script>
 <script>
-    (function section01 (){
+    (function introSection (){
         const $sec01 = $(".sec01");
         const $productTabBtn = $sec01.find(".product_tab a");
         let initColor = $productTabBtn.filter(".active").data("product-tab");
@@ -198,76 +217,97 @@
         $productTabBtn.on("click", selectColor);
     })();
 
-    let secVisualTl;
-    const $secVisual = $(".sec_visual");
-    const $trigger = $secVisual.find(".trigger");
-    const $secVisualDesc = $secVisual.find(".desc");
-    const $secVisualBgCover = $secVisual.find(".bg_cover");
+    (function visualSection(){
+        let secVisualTl;
+        const $secVisual = $(".sec_visual");
+        const $trigger = $secVisual.find(".trigger");
+        const $secVisualDesc = $secVisual.find(".desc");
+        const $secVisualBgCover = $secVisual.find(".bg_cover");
 
-    $secVisualDesc.eq(0).addClass("on");
-    $secVisualBgCover.eq(0).addClass("on");
+        $secVisualDesc.eq(0).addClass("on");
+        $secVisualBgCover.eq(0).addClass("on");
 
-    function secVisualMotion(idx) {
-        let prevIdx = null;
+        function secVisualMotion(idx) {
+            let prevIdx = null;
 
-        return {
-            onStart: () => {
-                if (prevIdx !== null) {
-                    console.log('Previous Index:', prevIdx);
-                }
+            return {
+                onStart: () => {
+                    if (prevIdx !== null) {
+                        console.log('Previous Index:', prevIdx);
+                    }
 
-                console.log('Current Index:', idx);
+                    console.log('Current Index:', idx);
 
-                $secVisualDesc.removeClass("on");
-                $secVisualBgCover.removeClass("on prev");
+                    $secVisualDesc.removeClass("on");
+                    $secVisualBgCover.removeClass("on prev");
 
-                $secVisualDesc.eq(idx).addClass("on");
-                $secVisualBgCover.eq(idx).addClass("on");
+                    $secVisualDesc.eq(idx).addClass("on");
+                    $secVisualBgCover.eq(idx).addClass("on");
 
 
-                prevIdx = idx - 1;
-                if (prevIdx !== null) {
-                    $secVisualBgCover.eq(prevIdx).addClass("prev");
-                }
-            },
-            onReverseComplete: () => {
-                if (prevIdx !== null) {
-                    console.log('Previous Index:', prevIdx);
-                }
+                    prevIdx = idx - 1;
+                    if (prevIdx !== null) {
+                        $secVisualBgCover.eq(prevIdx).addClass("prev");
+                    }
+                },
+                onReverseComplete: () => {
+                    if (prevIdx !== null) {
+                        console.log('Previous Index:', prevIdx);
+                    }
 
-                console.log('Current Index:', idx);
+                    console.log('Current Index:', idx);
 
-                $secVisualDesc.removeClass("on");
-                $secVisualBgCover.removeClass("on prev");
+                    $secVisualDesc.removeClass("on");
+                    $secVisualBgCover.removeClass("on prev");
 
-                $secVisualDesc.eq(idx).addClass("on");
-                $secVisualBgCover.eq(idx).addClass("on");
+                    $secVisualDesc.eq(idx).addClass("on");
+                    $secVisualBgCover.eq(idx).addClass("on");
 
-                prevIdx = idx + 1;
-                if (prevIdx !== null) {
-                    $secVisualBgCover.eq(prevIdx).addClass("prev");
-                }
-            },
-            duration: 1,
-            ease: "none"
+                    prevIdx = idx + 1;
+                    if (prevIdx !== null) {
+                        $secVisualBgCover.eq(prevIdx).addClass("prev");
+                    }
+                },
+                duration: 1,
+                ease: "none"
+            }
         }
-    }
 
-    secVisualTl = gsap.timeline({
-        scrollTrigger: {
-            trigger: $secVisual,
-            start: "top top",
-            end: "bottom bottom",
-            markers: false,
-            scrub: 1,
-            invalidateOnRefresh: true
-        }
-    })
-        .to($trigger, {y: 100, duration: 1})
-        .to($secVisualDesc.eq(0), secVisualMotion(0))
-        .to($secVisualDesc.eq(1), secVisualMotion(1))
-        .to($secVisualDesc.eq(2), secVisualMotion(2))
-        .to($secVisualDesc.eq(3), secVisualMotion(3));
+        secVisualTl = gsap.timeline({
+            scrollTrigger: {
+                trigger: $secVisual,
+                start: "top top",
+                end: "bottom bottom",
+                markers: false,
+                scrub: 1,
+                invalidateOnRefresh: true
+            }
+        })
+            .to($trigger, {y: 100, duration: 1})
+            .to($secVisualDesc.eq(0), secVisualMotion(0))
+            .to($secVisualDesc.eq(1), secVisualMotion(1))
+            .to($secVisualDesc.eq(2), secVisualMotion(2))
+            .to($secVisualDesc.eq(3), secVisualMotion(3));
+    })();
+
+    (function chargeSection () {
+        let chargeSecTl;
+
+        chargeSecTl = gsap.timeline({
+            scrollTrigger: {
+                trigger: $(".sec_charge"),
+                start: "top-=50% top",
+                end: "bottom bottom",
+                markers: true,
+                onEnter: () => {
+                    $(".product_title").addClass("hide");
+                },
+                onLeaveBack: () => {
+                    $(".product_title").removeClass("hide");
+                }
+            }
+        })
+    })();
 </script>
 </body>
 </html>

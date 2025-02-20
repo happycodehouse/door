@@ -395,11 +395,6 @@ input::-webkit-search-results-decoration {
   display: none;
 }
 
-.hide {
-  display: none !important;
-  visibility: hidden !important;
-}
-
 .swiper-scrollbar-drag {
   cursor: pointer;
 }
@@ -768,40 +763,52 @@ html {
   line-height: 1;
   letter-spacing: 0.02em;
 }
-.prototypes.visual.ver02 .sec01 {
+.prototypes.visual.ver02 .sec_intro {
   overflow: hidden;
 }
-.prototypes.visual.ver02 .sec01 .row {
+.prototypes.visual.ver02 .sec_intro .row {
   justify-content: center;
 }
-.prototypes.visual.ver02 .sec01 .inner {
+.prototypes.visual.ver02 .sec_intro .inner {
   position: relative;
   height: 100vh;
 }
-.prototypes.visual.ver02 .sec01 .product_title {
+.prototypes.visual.ver02 .sec_intro .product_title {
+  position: fixed;
+  top: 0;
+  z-index: 99;
   padding: max(calc(24px * var(--base-ratio)), calc(calc(24 / var(--base-size)) * var(--base-percent))) 0;
   width: max(calc(160px * var(--base-ratio)), calc(calc(160 / var(--base-size)) * var(--base-percent)));
+  opacity: 1;
+  visibility: visible;
+  transition: 0.5s;
 }
-.prototypes.visual.ver02 .sec01 .product_title img {
+.prototypes.visual.ver02 .sec_intro .product_title.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+.prototypes.visual.ver02 .sec_intro .product_title img {
   width: 100%;
   height: auto;
 }
-.prototypes.visual.ver02 .sec01 .product_title img:first-child {
+.prototypes.visual.ver02 .sec_intro .product_title img:first-child {
   margin-bottom: max(calc(4px * var(--base-ratio)), calc(calc(4 / var(--base-size)) * var(--base-percent)));
 }
-.prototypes.visual.ver02 .sec01 .product_wrap {
+.prototypes.visual.ver02 .sec_intro .product_wrap {
   position: relative;
-  height: calc(100vh - max(calc(160px * var(--base-ratio)), calc(calc(160 / var(--base-size)) * var(--base-percent))));
+  height: 100%;
+  padding-top: max(calc(160px * var(--base-ratio)), calc(calc(160 / var(--base-size)) * var(--base-percent)));
 }
-.prototypes.visual.ver02 .sec01 .product_wrap .swiper {
+.prototypes.visual.ver02 .sec_intro .product_wrap .swiper {
   position: relative;
   width: 100%;
   height: 80%;
+  margin: 0 auto;
 }
-.prototypes.visual.ver02 .sec01 .product_wrap .swiper .swiper-slide {
+.prototypes.visual.ver02 .sec_intro .product_wrap .swiper .swiper-slide {
   position: relative;
 }
-.prototypes.visual.ver02 .sec01 .product_wrap .swiper .swiper-slide img {
+.prototypes.visual.ver02 .sec_intro .product_wrap .swiper .swiper-slide img {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -810,10 +817,10 @@ html {
   object-fit: cover;
   transition: opacity 0.5s;
 }
-.prototypes.visual.ver02 .sec01 .product_wrap .swiper .swiper-slide img:nth-child(2) {
+.prototypes.visual.ver02 .sec_intro .product_wrap .swiper .swiper-slide img:nth-child(2) {
   opacity: 0;
 }
-.prototypes.visual.ver02 .sec01 .product_wrap .swiper-navigation {
+.prototypes.visual.ver02 .sec_intro .product_wrap .swiper-navigation {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -824,33 +831,28 @@ html {
   z-index: 9;
   width: 100%;
 }
-.prototypes.visual.ver02 .sec01 .product_wrap .swiper-navigation a {
+.prototypes.visual.ver02 .sec_intro .product_wrap .swiper-navigation a {
   width: max(calc(40px * var(--base-ratio)), calc(calc(40 / var(--base-size)) * var(--base-percent)));
   height: max(calc(40px * var(--base-ratio)), calc(calc(40 / var(--base-size)) * var(--base-percent)));
 }
-.prototypes.visual.ver02 .sec01 .product_tab {
+.prototypes.visual.ver02 .sec_intro .product_tab {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: max(calc(8px * var(--base-ratio)), calc(calc(8 / var(--base-size)) * var(--base-percent)));
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  z-index: 9;
-  width: 100%;
   height: 20%;
 }
-.prototypes.visual.ver02 .sec01 .product_tab a {
+.prototypes.visual.ver02 .sec_intro .product_tab a {
   position: relative;
   width: max(calc(24px * var(--base-ratio)), calc(calc(24 / var(--base-size)) * var(--base-percent)));
   height: max(calc(24px * var(--base-ratio)), calc(calc(24 / var(--base-size)) * var(--base-percent)));
   border-radius: max(calc(99px * var(--base-ratio)), calc(calc(99 / var(--base-size)) * var(--base-percent)));
   background-color: #FAFAFA;
 }
-.prototypes.visual.ver02 .sec01 .product_tab a.active {
+.prototypes.visual.ver02 .sec_intro .product_tab a.active {
   border: max(calc(1px * var(--base-ratio)), calc(calc(1 / var(--base-size)) * var(--base-percent))) solid #0A0A0A;
 }
-.prototypes.visual.ver02 .sec01 .product_tab a::after {
+.prototypes.visual.ver02 .sec_intro .product_tab a::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -860,11 +862,70 @@ html {
   height: 80%;
   border-radius: inherit;
 }
-.prototypes.visual.ver02 .sec01 .product_tab a.black::after {
+.prototypes.visual.ver02 .sec_intro .product_tab a.black::after {
   background-color: #0A0A0A;
 }
-.prototypes.visual.ver02 .sec01 .product_tab a.silver::after {
+.prototypes.visual.ver02 .sec_intro .product_tab a.silver::after {
   background-color: #D9D9D9;
+}
+.prototypes.visual.ver02 .sec_charge .parallax_zone {
+  position: relative;
+  height: 100vh;
+}
+.prototypes.visual.ver02 .sec_charge .bg_wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background: url("/door/resources/images/p1/p1-battery-bg.jpg") 50% 100% no-repeat;
+  background-size: cover;
+}
+.prototypes.visual.ver02 .sec_charge .txt_wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+.prototypes.visual.ver02 .sec_charge .txt_wrap .charge_head {
+  padding: max(calc(90px * var(--base-ratio)), calc(calc(90 / var(--base-size)) * var(--base-percent))) 0;
+}
+.prototypes.visual.ver02 .sec_charge .txt_wrap .charge_head p {
+  font-size: max(calc(48px * var(--base-ratio)), calc(calc(48 / var(--base-size)) * var(--base-percent)));
+  line-height: 1;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+  color: #0A0A0A;
+}
+.prototypes.visual.ver02 .sec_charge .txt_wrap .charge_label {
+  margin-left: auto;
+  margin-bottom: max(calc(240px * var(--base-ratio)), calc(calc(240 / var(--base-size)) * var(--base-percent)));
+  width: 20%;
+}
+.prototypes.visual.ver02 .sec_charge .txt_wrap .charge_label span {
+  display: block;
+  position: relative;
+  margin-bottom: max(calc(12px * var(--base-ratio)), calc(calc(12 / var(--base-size)) * var(--base-percent)));
+  font-size: max(calc(20px * var(--base-ratio)), calc(calc(20 / var(--base-size)) * var(--base-percent)));
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: #0A0A0A;
+}
+.prototypes.visual.ver02 .sec_charge .txt_wrap .charge_label span::after {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: max(calc(30px * var(--base-ratio)), calc(calc(30 / var(--base-size)) * var(--base-percent)));
+  height: max(calc(30px * var(--base-ratio)), calc(calc(30 / var(--base-size)) * var(--base-percent)));
+  border-radius: max(calc(99px * var(--base-ratio)), calc(calc(99 / var(--base-size)) * var(--base-percent)));
+  background-color: lawngreen;
+}
+.prototypes.visual.ver02 .sec_charge .txt_wrap .charge_label p {
+  font-size: max(calc(16px * var(--base-ratio)), calc(calc(16 / var(--base-size)) * var(--base-percent)));
+  line-height: 1.25;
+  letter-spacing: 0.02em;
 }
 .prototypes.visual.ver02 .sec_visual {
   height: 500vh;
@@ -912,12 +973,44 @@ html {
   color: #0A0A0A;
 }
 .prototypes.visual.ver02 .sec_visual .box_wrap .desc_box .desc h4 + p {
+  margin-top: max(calc(8px * var(--base-ratio)), calc(calc(8 / var(--base-size)) * var(--base-percent)));
+}
+.prototypes.visual.ver02 .sec_visual .box_wrap .desc_box .desc h4 + ul {
   margin-top: max(calc(24px * var(--base-ratio)), calc(calc(24 / var(--base-size)) * var(--base-percent)));
 }
 .prototypes.visual.ver02 .sec_visual .box_wrap .desc_box .desc p {
   font-size: max(calc(12px * var(--base-ratio)), calc(calc(12 / var(--base-size)) * var(--base-percent)));
   line-height: 1.3333333333;
   letter-spacing: 0.02em;
+}
+.prototypes.visual.ver02 .sec_visual .box_wrap .desc_box .desc ul li {
+  margin-bottom: max(calc(12px * var(--base-ratio)), calc(calc(12 / var(--base-size)) * var(--base-percent)));
+}
+.prototypes.visual.ver02 .sec_visual .box_wrap .desc_box .desc ul li:nth-child(1) span::before {
+  content: "01";
+}
+.prototypes.visual.ver02 .sec_visual .box_wrap .desc_box .desc ul li:nth-child(2) span::before {
+  content: "02";
+}
+.prototypes.visual.ver02 .sec_visual .box_wrap .desc_box .desc ul li:nth-child(3) span::before {
+  content: "03";
+}
+.prototypes.visual.ver02 .sec_visual .box_wrap .desc_box .desc ul li span {
+  display: block;
+  position: relative;
+  margin-bottom: max(calc(4px * var(--base-ratio)), calc(calc(4 / var(--base-size)) * var(--base-percent)));
+  font-size: max(calc(12px * var(--base-ratio)), calc(calc(12 / var(--base-size)) * var(--base-percent)));
+  line-height: 1;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+  color: #0A0A0A;
+}
+.prototypes.visual.ver02 .sec_visual .box_wrap .desc_box .desc ul li span::before {
+  font-size: max(calc(10px * var(--base-ratio)), calc(calc(10 / var(--base-size)) * var(--base-percent)));
+  line-height: 1;
+  letter-spacing: 0.02em;
+  vertical-align: top;
+  padding-right: max(calc(4px * var(--base-ratio)), calc(calc(4 / var(--base-size)) * var(--base-percent)));
 }
 .prototypes.visual.ver02 .sec_visual .box_wrap .bg_box {
   width: 60%;
@@ -954,19 +1047,19 @@ html {
   transition: 1s;
 }
 .prototypes.visual.ver02 .sec_visual .box_wrap .bg_box .bg_cover01 .bg {
-  background: url("/door/resources/images/p1-01.jpg") 100% 100% no-repeat;
+  background: url("/door/resources/images/p1/p1-01.jpg") 100% 100% no-repeat;
   background-size: cover;
 }
 .prototypes.visual.ver02 .sec_visual .box_wrap .bg_box .bg_cover02 .bg {
-  background: url("/door/resources/images/p1-02.jpg") 100% 100% no-repeat;
+  background: url("/door/resources/images/p1/p1-02.jpg") 100% 100% no-repeat;
   background-size: cover;
 }
 .prototypes.visual.ver02 .sec_visual .box_wrap .bg_box .bg_cover03 .bg {
-  background: url("/door/resources/images/p1-03.jpg") 100% 100% no-repeat;
+  background: url("/door/resources/images/p1/p1-03.jpg") 100% 100% no-repeat;
   background-size: cover;
 }
 .prototypes.visual.ver02 .sec_visual .box_wrap .bg_box .bg_cover04 .bg {
-  background: url("/door/resources/images/p1-04.jpg") 100% 100% no-repeat;
+  background: url("/door/resources/images/p1/p1-04.jpg") 100% 100% no-repeat;
   background-size: cover;
   background-position: center;
 }

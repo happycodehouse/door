@@ -74,7 +74,7 @@
     // prototypes/visual/ver-02.html
     &.ver02 {
       .sec {
-        &01 {
+        &_intro {
           overflow: hidden;
 
           .row {
@@ -87,8 +87,19 @@
           }
 
           .product_title {
+            position: fixed;
+            top: 0;
+            z-index: 99;
             padding: to_vw(24) 0;
             width: to_vw(160);
+            opacity: 1;
+            visibility: visible;
+            transition: 0.5s;
+
+            &.hide {
+              opacity: 0;
+              visibility: hidden;
+            }
 
             img {
               width: 100%;
@@ -102,12 +113,14 @@
 
           .product_wrap {
             position: relative;
-            height: calc(100vh - to_vw(160));
+            height: 100%;
+            padding-top: to_vw(160);
 
             .swiper {
               position: relative;
               width: 100%;
               height: 80%;
+              margin: 0 auto;
 
 
               .swiper-slide {
@@ -152,11 +165,6 @@
             justify-content: center;
             align-items: center;
             gap: to_vw(8);
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            z-index: 9;
-            width: 100%;
             height: 20%;
 
             a {
@@ -191,6 +199,69 @@
                 &::after {
                   background-color: #D9D9D9;
                 }
+              }
+            }
+          }
+        }
+
+        &_charge {
+          .parallax_zone {
+            position: relative;
+            height: 100vh;
+          }
+
+          .bg_wrap {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            @include background("p1/p1-battery-bg.jpg", 50% 100%, no-repeat, cover);
+          }
+
+          .txt_wrap {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100vh;
+
+            .charge_head {
+              padding: to_vw(90) 0;
+
+              p {
+                @include fontSize(48);
+                font-weight: 500;
+                color: $black;
+              }
+            }
+
+            .charge_label {
+              margin-left: auto;
+              margin-bottom: to_vw(240);
+              width: 20%;
+
+              span {
+                display: block;
+                position: relative;
+                margin-bottom: to_vw(12);
+                @include fontSize(20);
+                color: $black;
+
+                &::after {
+                  content: '';
+                  position: absolute;
+                  top: -100%;
+                  left: 0;
+                  width: to_vw(30);
+                  height: to_vw(30);
+                  border-radius: to_vw(99);
+                  background-color: lawngreen;
+                }
+              }
+
+              p {
+                @include fontSize(16, 20);
               }
             }
           }
@@ -247,6 +318,10 @@
                 color: $black;
 
                 & + p {
+                  margin-top: to_vw(8);
+                }
+
+                & + ul {
                   margin-top: to_vw(24);
                 }
               }
@@ -257,7 +332,44 @@
 
               ul {
                 li {
+                  margin-bottom: to_vw(12);
+                  &:nth-child(1) {
+                    span {
+                      &::before {
+                        content: '01';
+                      }
+                    }
+                  }
+
+                  &:nth-child(2) {
+                    span {
+                      &::before {
+                        content: '02';
+                      }
+                    }
+                  }
+
+                  &:nth-child(3) {
+                    span {
+                      &::before {
+                        content: '03';
+                      }
+                    }
+                  }
+
                   span {
+                    display: block;
+                    position: relative;
+                    margin-bottom: to_vw(4);
+                    @include fontSize(12);
+                    font-weight: 500;
+                    color: $black;
+
+                    &::before {
+                      @include fontSize(10);
+                      vertical-align: top;
+                      padding-right: to_vw(4);
+                    }
                   }
                 }
               }
@@ -305,25 +417,25 @@
 
               &01 {
                 .bg {
-                  @include background("p1-01.jpg", 100% 100%, no-repeat, cover);
+                  @include background("p1/p1-01.jpg", 100% 100%, no-repeat, cover);
                 }
               }
 
               &02 {
                 .bg {
-                  @include background("p1-02.jpg", 100% 100%, no-repeat, cover);
+                  @include background("p1/p1-02.jpg", 100% 100%, no-repeat, cover);
                 }
               }
 
               &03 {
                 .bg {
-                  @include background("p1-03.jpg", 100% 100%, no-repeat, cover);
+                  @include background("p1/p1-03.jpg", 100% 100%, no-repeat, cover);
                 }
               }
 
               &04 {
                 .bg {
-                  @include background("p1-04.jpg", 100% 100%, no-repeat, cover);
+                  @include background("p1/p1-04.jpg", 100% 100%, no-repeat, cover);
                   background-position: center;
                 }
               }
