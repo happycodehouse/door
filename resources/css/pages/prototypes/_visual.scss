@@ -121,6 +121,10 @@
                   height: 100%;
                   object-fit: cover;
                   transition: opacity 0.5s;
+
+                  &:nth-child(2) {
+                    opacity: 0;
+                  }
                 }
               }
             }
@@ -134,7 +138,7 @@
               left: 50%;
               transform: translate(-50%, -50%);
               z-index: 9;
-              width: 80%;
+              width: 100%;
 
               a {
                 width: to_vw(40);
@@ -238,11 +242,11 @@
 
               h4 {
                 //font-family: $Suit;
-                @include fontSize(24);
+                @include fontSize(20, 23);
                 font-weight: 700;
                 color: $black;
 
-                &+p {
+                & + p {
                   margin-top: to_vw(24);
                 }
               }
@@ -253,7 +257,8 @@
 
               ul {
                 li {
-                  span {}
+                  span {
+                  }
                 }
               }
             }
@@ -281,7 +286,7 @@
                 }
               }
 
-              &.on,  {
+              &.on {
                 z-index: 2;
                 transform: translateY(0);
 

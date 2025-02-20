@@ -12,7 +12,7 @@
     <div class="sec sec01">
         <div class="row_wrap">
             <div class="row">
-                <div class="col-8">
+                <div class="col-12">
                     <div class="inner">
                         <div class="product_title">
                             <img src="/resources/images/p1-title.png" alt="">
@@ -77,7 +77,7 @@
                                     <div class="inner">
                                         <h4>The ultimate vehicle for exploring a city.</h4>
                                         <p>
-                                            P1 is a radical new personal electric vehicle, <br>
+                                            P1 is a radical new personal electric vehicle,
                                             pairing a cutting edge industrial design with breakthrough performance and utility.
                                             <br>
                                             Batch II is now open for 2025 deliveries in the United States.
@@ -115,10 +115,7 @@
                                 </div>
                                 <div class="desc">
                                     <h4>
-                                        Next-gen technology for <br>
-                                        unparalleled safety, <br>
-                                        theft prevention, <br>
-                                        and apps on two wheels.</h4>
+                                        Next-gen technology for unparalleled safety, theft prevention, and apps on two wheels.</h4>
                                 </div>
                             </div>
                         </div>
@@ -156,34 +153,50 @@
 <script src="/resources/js/libraries/swiper4.5.1.js"></script>
 <script src="/resources/js/common.js"></script>
 <script>
-    const $sec01 = $(".sec01");
-    const $productTabBtn = $sec01.find(".product_tab a");
-    let initColor = $productTabBtn.filter(".active").data("product-tab");
-    let productColor = initColor;
-    console.log(productColor);
+    (function section01 (){
+        const $sec01 = $(".sec01");
+        const $productTabBtn = $sec01.find(".product_tab a");
+        let initColor = $productTabBtn.filter(".active").data("product-tab");
+        let productColor = initColor;
+        console.log(productColor);
 
-    const sec01Swiper = new Swiper($sec01.find(".swiper"), {
-        navigation: {
-            prevEl: '.swiper-btn-prev',
-            nextEl: '.swiper-btn-next'
-        },
-        loop: true
-    });
+        const sec01Swiper = new Swiper($sec01.find(".swiper"), {
+            slidesPerView: "auto",
+            navigation: {
+                prevEl: '.swiper-btn-prev',
+                nextEl: '.swiper-btn-next'
+            },
+            loop: true
+        });
 
-    let $productSlides = $(sec01Swiper.slides);
-    let $productSlidesImg = $productSlides.find("img");
-    console.log($productSlidesImg);
+        let $productSlides = $(sec01Swiper.slides);
+        let $productSlidesImg = $productSlides.find("img");
+        console.log($productSlidesImg);
 
-    function init () {
-    }
+        function setProductColor (color) {
+            $productSlidesImg.each(function () {
+                let $img = $(this);
+                if ($img.data("product-color") === color) {
+                    $img.css("opacity", "1");
+                } else {
+                    $img.css("opacity", "0");
+                }
+            });
+        }
 
-    function selectColor () {
-        let _$this = $(this);
+        setProductColor(initColor);
 
-        productColor = _$this.data("product-tab");
-    }
+        function selectColor () {
+            let _$this = $(this);
+            _$this.addClass("active");
+            _$this.siblings("a").removeClass("active");
 
-    $productTabBtn.on("click", selectColor);
+            productColor = _$this.data("product-tab");
+            setProductColor(productColor);
+        }
+
+        $productTabBtn.on("click", selectColor);
+    })();
 
     let secVisualTl;
     const $secVisual = $(".sec_visual");
