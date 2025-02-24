@@ -328,10 +328,77 @@
             }
           }
         }
+
+        &_horizontal_scroll {
+          height: 400vh;
+
+          .txt_wrap {
+            padding: to_vw(60) 0 0 0;
+
+            p {
+              @include fontSize(36, 42);
+              font-weight: 500;
+              color: $black;
+            }
+          }
+
+          .scroll_wrap {
+            position: relative;
+            width: 100%;
+            margin-top: to_vw(48);
+
+            .scroll {
+              position: absolute;
+              top: 0;
+              left: 33%;
+            }
+          }
+
+          .items {
+            display: flex;
+            gap: to_vw(48);
+            width: fit-content;
+
+            li {
+              width: 25vw;
+
+              .img_area {
+                width: 100%;
+                margin-bottom: to_vw(24);
+
+                img {
+                  width: 100%;
+                  height: auto;
+                }
+              }
+
+              .desc_area {
+                em {
+                  display: block;
+                  margin-bottom: to_vw(4);
+                  @include fontSize(10);
+                  color: $black;
+                }
+
+                span {
+                  display: block;
+                  margin-bottom: to_vw(12);
+                  @include fontSize(20);
+                  font-weight: 500;
+                  color: $black;
+                }
+
+                p {
+                  @include fontSize(12, 16);
+                }
+              }
+            }
+          }
+        }
       }
 
       .sec_visual {
-        height: 400vh;
+        height: 500vh;
 
         .box_wrap {
           display: flex;

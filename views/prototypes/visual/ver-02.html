@@ -182,18 +182,77 @@
             </div>
         </div>
     </div>
-    <div class="sec_modular">
-        <div class="row_wrap">
-            <div class="row">
-                <div class="col-12">
-
+    <div class="sec_horizontal_scroll">
+        <div class="sticky">
+            <div class="row_wrap">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="txt_wrap">
+                            <p>
+                                A modular platform for ever-changing needs. <br>
+                                The P1 can adapt seamlessly.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll_wrap">
+                <div class="scroll">
+                    <ul class="items">
+                        <li>
+                            <div class="img_area">
+                                <img src="/resources/images/p1/p1-05.jpg" alt="">
+                            </div>
+                            <div class="desc_area">
+                                <em>01</em>
+                                <span>Trailer</span>
+                                <p>Towing larger loads is easy with a rear trailer system for extra hauling needs.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="img_area">
+                                <img src="/resources/images/p1/p1-06.jpg" alt="">
+                            </div>
+                            <div class="desc_area">
+                                <em>02</em>
+                                <span>Speaker</span>
+                                <p>
+                                    Throw a party anywhere with an attachable, <br>
+                                    battery-powered speaker system.
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="img_area">
+                                <img src="/resources/images/p1/p1-07.jpg" alt="">
+                            </div>
+                            <div class="desc_area">
+                                <em>03</em>
+                                <span>Cargo</span>
+                                <p>
+                                    Carry groceries, tools, <br>
+                                    or any cargo with side-mounted protected cases.
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="img_area">
+                                <img src="/resources/images/p1/p1-08.jpg" alt="">
+                            </div>
+                            <div class="desc_area">
+                                <em>04</em>
+                                <span>Battery</span>
+                                <p>Bring a spare battery (or two) for extended range and long trips.</p>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Footer -->
-    <footer data-include-path="/views/layout/footer.html"></footer>
+<!--    <footer data-include-path="/views/layout/footer.html"></footer>-->
     <!-- //Footer -->
 </div>
 <script src="/resources/js/include.js"></script>
@@ -205,6 +264,14 @@
 <script src="/resources/js/libraries/swiper4.5.1.js"></script>
 <script src="/resources/js/common.js"></script>
 <script>
+    function toggleProductTitle(action) {
+        if (action === "hide") {
+            $(".product_title").addClass("hide");
+        } else {
+            $(".product_title").removeClass("hide");
+        }
+    }
+
     (function introSection (){
         const $secIntro = $(".sec_intro");
         const $productTabBtn = $secIntro.find(".product_tab a");
@@ -280,8 +347,8 @@
                     console.log('Previous Index:', prevIdx);
                 },
                 onReverseComplete: () => {
-                    console.log("역재생 current ", idx);
-                    console.log("역재생 prevIdx ", prevIdx);
+                    console.log("reverse current ", idx);
+                    console.log("reverse prevIdx ", prevIdx);
                     $secVisualDesc.removeClass("on");
                     $secVisualDesc.eq(prevIdx).addClass("on");
                     $secVisualBgCover.eq(prevIdx).addClass("on");
@@ -317,14 +384,6 @@
         let chargeSecTl;
         const $secCharge = $(".sec_charge");
         const $secChargeBg = $secCharge.find(".bg");
-
-        function toggleProductTitle(action) {
-            if (action === "hide") {
-                $(".product_title").addClass("hide");
-            } else {
-                $(".product_title").removeClass("hide");
-            }
-        }
 
         chargeSecTl = gsap.timeline({
             scrollTrigger: {
@@ -369,6 +428,27 @@
             duration: 1,
             ease: "none"
         });
+    })();
+
+    (function horizonScrollSection (){
+        let secHorizontalScrollTl;
+
+        const $secHorizontalScroll = $(".sec_horizontal_scroll");
+        const $scroll = $secHorizontalScroll.find(".scroll");
+
+        secHorizontalScrollTl = gsap.timeline({
+            scrollTrigger: {
+                trigger: $secHorizontalScroll,
+                start: "top top",
+                end: "bottom bottom",
+                scrub: 1,
+                invalidateOnRefresh: true
+            }
+        }).to($scroll, {
+            left: "-33%",
+            duration: 1,
+            ease: "none"
+        })
     })();
 </script>
 </body>

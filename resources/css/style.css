@@ -985,8 +985,69 @@ html {
   font-weight: 500;
   color: #0A0A0A;
 }
-.prototypes.visual.ver02 .sec_visual {
+.prototypes.visual.ver02 .sec_horizontal_scroll {
   height: 400vh;
+}
+.prototypes.visual.ver02 .sec_horizontal_scroll .txt_wrap {
+  padding: max(calc(60px * var(--base-ratio)), calc(calc(60 / var(--base-size)) * var(--base-percent))) 0 0 0;
+}
+.prototypes.visual.ver02 .sec_horizontal_scroll .txt_wrap p {
+  font-size: max(calc(36px * var(--base-ratio)), calc(calc(36 / var(--base-size)) * var(--base-percent)));
+  line-height: 1.1666666667;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+  color: #0A0A0A;
+}
+.prototypes.visual.ver02 .sec_horizontal_scroll .scroll_wrap {
+  position: relative;
+  width: 100%;
+  margin-top: max(calc(48px * var(--base-ratio)), calc(calc(48 / var(--base-size)) * var(--base-percent)));
+}
+.prototypes.visual.ver02 .sec_horizontal_scroll .scroll_wrap .scroll {
+  position: absolute;
+  top: 0;
+  left: 33%;
+}
+.prototypes.visual.ver02 .sec_horizontal_scroll .items {
+  display: flex;
+  gap: max(calc(48px * var(--base-ratio)), calc(calc(48 / var(--base-size)) * var(--base-percent)));
+  width: fit-content;
+}
+.prototypes.visual.ver02 .sec_horizontal_scroll .items li {
+  width: 25vw;
+}
+.prototypes.visual.ver02 .sec_horizontal_scroll .items li .img_area {
+  width: 100%;
+  margin-bottom: max(calc(24px * var(--base-ratio)), calc(calc(24 / var(--base-size)) * var(--base-percent)));
+}
+.prototypes.visual.ver02 .sec_horizontal_scroll .items li .img_area img {
+  width: 100%;
+  height: auto;
+}
+.prototypes.visual.ver02 .sec_horizontal_scroll .items li .desc_area em {
+  display: block;
+  margin-bottom: max(calc(4px * var(--base-ratio)), calc(calc(4 / var(--base-size)) * var(--base-percent)));
+  font-size: max(calc(10px * var(--base-ratio)), calc(calc(10 / var(--base-size)) * var(--base-percent)));
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: #0A0A0A;
+}
+.prototypes.visual.ver02 .sec_horizontal_scroll .items li .desc_area span {
+  display: block;
+  margin-bottom: max(calc(12px * var(--base-ratio)), calc(calc(12 / var(--base-size)) * var(--base-percent)));
+  font-size: max(calc(20px * var(--base-ratio)), calc(calc(20 / var(--base-size)) * var(--base-percent)));
+  line-height: 1;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+  color: #0A0A0A;
+}
+.prototypes.visual.ver02 .sec_horizontal_scroll .items li .desc_area p {
+  font-size: max(calc(12px * var(--base-ratio)), calc(calc(12 / var(--base-size)) * var(--base-percent)));
+  line-height: 1.3333333333;
+  letter-spacing: 0.02em;
+}
+.prototypes.visual.ver02 .sec_visual {
+  height: 500vh;
 }
 .prototypes.visual.ver02 .sec_visual .box_wrap {
   display: flex;
