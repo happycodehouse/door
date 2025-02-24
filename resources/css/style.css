@@ -1214,6 +1214,43 @@ html {
   border-radius: max(calc(99px * var(--base-ratio)), calc(calc(99 / var(--base-size)) * var(--base-percent)));
   background-color: lawngreen;
 }
+.prototypes.visual.ver02 .sec_order .order_wrap .btn_wrap a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: max(calc(8px * var(--base-ratio)), calc(calc(8 / var(--base-size)) * var(--base-percent)));
+  padding: max(calc(18px * var(--base-ratio)), calc(calc(18 / var(--base-size)) * var(--base-percent))) max(calc(36px * var(--base-ratio)), calc(calc(36 / var(--base-size)) * var(--base-percent)));
+  border: max(calc(1px * var(--base-ratio)), calc(calc(1 / var(--base-size)) * var(--base-percent))) solid #0A0A0A;
+  transition: background-color 0.5s;
+}
+.prototypes.visual.ver02 .sec_order .order_wrap .btn_wrap a span {
+  font-size: max(calc(24px * var(--base-ratio)), calc(calc(24 / var(--base-size)) * var(--base-percent)));
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: #0A0A0A;
+  transition: color 0.5s;
+}
+.prototypes.visual.ver02 .sec_order .order_wrap .btn_wrap a .arrow_to_right {
+  width: max(calc(20px * var(--base-ratio)), calc(calc(20 / var(--base-size)) * var(--base-percent)));
+  height: max(calc(20px * var(--base-ratio)), calc(calc(20 / var(--base-size)) * var(--base-percent)));
+  transition: transform 0.25s;
+}
+.prototypes.visual.ver02 .sec_order .order_wrap .btn_wrap a .arrow_to_right svg path {
+  stroke: #0A0A0A;
+  transition: stroke 0.5s;
+}
+.prototypes.visual.ver02 .sec_order .order_wrap .btn_wrap a:hover {
+  background-color: #0A0A0A;
+}
+.prototypes.visual.ver02 .sec_order .order_wrap .btn_wrap a:hover span {
+  color: #FFFFFF;
+}
+.prototypes.visual.ver02 .sec_order .order_wrap .btn_wrap a:hover .arrow_to_right {
+  transform: translateX(16%);
+}
+.prototypes.visual.ver02 .sec_order .order_wrap .btn_wrap a:hover .arrow_to_right svg path {
+  stroke: #FFFFFF;
+}
 .prototypes.visual.ver02 .sec_visual {
   height: 500vh;
 }

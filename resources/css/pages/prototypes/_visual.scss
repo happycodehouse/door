@@ -1,3 +1,5 @@
+$p1Gray: #D9D9D9;
+
 .prototypes {
   &.visual {
     // prototypes/visual/ver-01.html
@@ -201,7 +203,7 @@
 
               &.silver {
                 &::after {
-                  background-color: #D9D9D9;
+                  background-color: $p1Gray;
                 }
               }
             }
@@ -334,7 +336,7 @@
           .items {
             display: flex;
             height: to_vw(280);
-            border-bottom: to_vw(1) solid #D9D9D9;
+            border-bottom: to_vw(1) solid $p1Gray;
 
             li {
               display: flex;
@@ -343,7 +345,7 @@
               width: 25%;
               height: 100%;
               padding: to_vw(48) to_vw(36);
-              border-right: to_vw(1) solid #D9D9D9;
+              border-right: to_vw(1) solid $p1Gray;
 
               strong {
                 @include fontSize(24, 28);
@@ -440,7 +442,7 @@
             margin-bottom: to_vw(160);
 
             > li {
-              border-bottom: to_vw(1) solid #D9D9D9;
+              border-bottom: to_vw(1) solid $p1Gray;
 
               &:last-child {
                 border-bottom: 0;
@@ -483,7 +485,7 @@
                 position: absolute;
                 top: 50%;
                 transform: translateY(-50%);
-                background-color: #D9D9D9;
+                background-color: $p1Gray;
                 transition: 0.75s;
               }
 
@@ -547,8 +549,8 @@
 
         &_order {
           padding: to_vw(20) 0;
-          border-top: to_vw(1) solid #D9D9D9;
-          border-bottom: to_vw(1) solid #D9D9D9;
+          border-top: to_vw(1) solid $p1Gray;
+          border-bottom: to_vw(1) solid $p1Gray;
 
           .order_wrap {
             display: flex;
@@ -585,6 +587,52 @@
             }
 
             .btn_wrap {
+              a {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: to_vw(8);
+                padding: to_vw(18) to_vw(36);
+                border: to_vw(1) solid $black;
+                transition: background-color 0.5s;
+
+                span {
+                  @include fontSize(24);
+                  color: $black;
+                  transition: color 0.5s;
+                }
+
+                .arrow_to_right {
+                  width: to_vw(20);
+                  height: to_vw(20);
+                  transition: transform 0.25s;
+
+                  svg {
+                    path {
+                      stroke: $black;
+                      transition: stroke 0.5s;
+                    }
+                  }
+                }
+
+                &:hover {
+                  background-color: $black;
+
+                  span {
+                    color: $white;
+                  }
+
+                  .arrow_to_right {
+                    transform: translateX(16%);
+
+                    svg {
+                      path {
+                        stroke: $white;
+                      }
+                    }
+                  }
+                }
+              }
             }
           }
         }
