@@ -78,14 +78,6 @@ door.utils = {
 
 door.utils.init();
 
-loadHeader().then(() => {
-    // 헤더가 성공적으로 로드된 후 common.js 초기화 호출
-    console.log('헤더가 성공적으로 로드되었습니다.');
-    door.utils.init();
-}).catch((error) => {
-    console.error('헤더 로드 중 오류 발생:', error);
-});
-
 
 
 
