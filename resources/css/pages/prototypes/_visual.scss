@@ -298,13 +298,33 @@
             position: absolute;
             top: 0;
             left: 0;
+            z-index: -1;
             width: 100%;
             height: 100vh;
+            --clip: 0% 34%;
+            clip-path: inset(var(--clip));
 
             .bg {
               width: 100%;
               height: 100%;
+              @include background("p1/p1-fit-bg.jpg", 50% 100%, no-repeat, cover);
+            }
+          }
 
+          .row_wrap {
+            position: relative;
+            z-index: 1;
+          }
+
+          .txt_wrap {
+            padding: to_vw(40) 0;
+            opacity: 0;
+            visibility: hidden;
+
+            p {
+              @include fontSize(48);
+              font-weight: 500;
+              color: $black;
             }
           }
         }

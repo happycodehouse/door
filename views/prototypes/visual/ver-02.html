@@ -171,8 +171,14 @@
             <div class="bg_wrap">
                 <div class="bg"></div>
             </div>
-            <div class="txt_wrap">
-                <p>It fits right in.</p>
+            <div class="row_wrap">
+                <div class="row">
+                    <div class="col-10">
+                        <div class="txt_wrap">
+                            <p>It fits right in.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -342,15 +348,26 @@
     (function fitSection (){
         let secFitTl;
         const $secFit = $(".sec_fit");
+        const $bgWrap = $secFit.find(".bg_wrap");
+        const $txtWrap = $secFit.find(".txt_wrap");
 
         secFitTl = gsap.timeline({
             scrollTrigger: {
                 trigger: $secFit,
-                start: "top top",
-                end: "bottom bottom",
+                start: "top-=25% top",
+                end: "bottom-=25% bottom",
                 scrub: 1,
                 invalidateOnRefresh: true
             }
+        }).to($bgWrap, {
+            clipPath: "inset(0% 0%)",
+            duration: 1,
+            ease: "none"
+        }).to($txtWrap, {
+            alpha: 1,
+            visibility: "visible",
+            duration: 1,
+            ease: "none"
         });
     })();
 </script>
