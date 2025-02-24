@@ -18,7 +18,7 @@
         <!-- //Content -->
 
         <!-- Footer -->
-        <footer data-include-path=/views/layout/footer.html"></footer>
+<!--        <footer data-include-path=/views/layout/footer.html"></footer>-->
         <!-- //Footer -->
     </div>
     <script src="/resources/js/include.js"></script>
@@ -31,7 +31,15 @@
     <script src="/resources/js/common.js"></script>
 
     <script>
-        door.utils.gnbSpot(1);
+        loadHeader().then(() => {
+            // 헤더가 성공적으로 로드된 후 common.js 초기화 호출
+            console.log('헤더가 성공적으로 로드되었습니다. 2');
+            door.utils.gnbSpot(1);
+
+        }).catch((error) => {
+            console.error('헤더 로드 중 오류 발생:', error);
+        });
+
     </script>
 </body>
 </html>
