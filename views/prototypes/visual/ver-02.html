@@ -9,7 +9,7 @@
 </head>
 <body>
 <div class="container prototypes visual ver02">
-    <div class="sec sec_intro">
+    <section class="sec_intro">
         <div class="row_wrap">
             <div class="row">
                 <div class="col-12">
@@ -70,8 +70,8 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="sec sec_visual ver02">
+    </section>
+    <section class="sec_visual ver02">
         <div class="trigger"></div>
         <div class="sticky">
             <div class="box_wrap">
@@ -143,8 +143,8 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="sec sec_charge">
+    </section>
+    <section class="sec_charge">
         <div class=" parallax_zone">
             <div class="bg_wrap">
                 <div class="bg"></div>
@@ -165,8 +165,8 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="sec sec_fit">
+    </section>
+    <section class="sec_fit">
         <div class="sticky">
             <div class="bg_wrap">
                 <div class="bg"></div>
@@ -181,8 +181,40 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="sec_horizontal_scroll">
+    </section>
+    <section class="sec_fit_desc">
+        <ul class="items">
+            <li>
+                <strong>
+                    Park <br>
+                    Anywhere
+                </strong>
+                <p>Never worry about finding a spot—P1 can be parked between two cars on a standard city street.</p>
+            </li>
+            <li>
+                <strong>
+                    Faster than the <br>
+                    Subway
+                </strong>
+                <p>There is no faster way to get from one point to another in a city. Cut through traffic to get anywhere, immediately.</p>
+            </li>
+            <li>
+                <strong>
+                    Bring a <br>
+                    Passenger
+                </strong>
+                <p>P1 is designed to comfortably fit two passengers for a shared ride experience.</p>
+            </li>
+            <li>
+                <strong>
+                    No Motorcycle <br>
+                    License Needed
+                </strong>
+                <p>No motorcycle license is needed for speeds up to 30 mph. With a motorcycle license, a software unlock enables speeds up to 55 mph.</p>
+            </li>
+        </ul>
+    </section>
+    <section class="sec_horizontal_scroll">
         <div class="sticky">
             <div class="row_wrap">
                 <div class="row">
@@ -249,10 +281,68 @@
                 </div>
             </div>
         </div>
-    </div>
-
+    </section>
+    <section class="sec_safety">
+        <div class="row_wrap">
+            <div class="row">
+                <div class="col-12">
+                    <h4>Safety & Security Matters</h4>
+                    <ul class="accordion_list">
+                        <li class="on">
+                            <a href="javascript:void(0);" class="item_title">
+                                <strong>Safety</strong>
+                                <span>P1 prioritizes your safety with thoughtful design & safeguards into every aspect.</span>
+                            </a>
+                            <ul class="item_list">
+                                <li><span>ABS for improved braking safety</span></li>
+                                <li>
+                                    <span>Front and rear cameras for collision detection, road threats, and insurance claims.</span>
+                                </li>
+                                <li><span>Fire-resistant battery with UL 2271 rating</span></li>
+                                <li><span>US and EU homologation for compliance.</span></li>
+                                <li><span>Future enhancements through over-the-air updates</span></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="item_title">
+                                <strong>Security</strong>
+                                <span>Best-in-class theft prevention with advanced hardware and software security features.</span>
+                            </a>
+                            <ul class="item_list">
+                                <li><span>24/7 GPS vehicle tracking.</span></li>
+                                <li>
+                                    <span>Alarm system with notifications: triggers a siren, immobilizes the vehicle, and displays a message to the thief.</span>
+                                </li>
+                                <li><span>Immobilizes if moved from the last seen location</span></li>
+                                <li><span>Front electronic wheel lock and rear motor lock.</span></li>
+                                <li><span>Secure underseat storage.</span></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="stay_update_wrap"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="sec_order">
+        <div class="row_wrap">
+            <div class="row">
+                <div class="col-12">
+                    <div class="order_wrap">
+                        <div class="txt_wrap">
+                            <img src="/resources/images/p1/p1-product-silver-03.png" alt="">
+                            <strong>P1 Batch II — Now Available to Order</strong>
+                        </div>
+                        <div class="btn_wrap">
+                            <a href="javascript:void(0);">Configure Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- Footer -->
-<!--    <footer data-include-path="/views/layout/footer.html"></footer>-->
+    <footer data-include-path="/views/layout/footer.html"></footer>
     <!-- //Footer -->
 </div>
 <script src="/resources/js/include.js"></script>
@@ -272,7 +362,20 @@
         }
     }
 
-    (function introSection (){
+    function toggleAccordion() {
+        let _$this = $(this);
+        let _$list = _$this.find(".item_list");
+
+        if (_$this.hasClass("on")) {
+            _$this.removeClass("on");
+            _$list.stop().slideUp();
+        } else {
+            _$this.addClass("on");
+            _$list.stop().slideDown();
+        }
+    }
+
+    (function introSection() {
         const $secIntro = $(".sec_intro");
         const $productTabBtn = $secIntro.find(".product_tab a");
         let initColor = $productTabBtn.filter(".active").data("product-tab");
@@ -292,7 +395,7 @@
         let $productSlidesImg = $productSlides.find("img");
         console.log($productSlidesImg);
 
-        function setProductColor (color) {
+        function setProductColor(color) {
             $productSlidesImg.each(function () {
                 let $img = $(this);
                 if ($img.data("product-color") === color) {
@@ -305,7 +408,7 @@
 
         setProductColor(initColor);
 
-        function selectColor () {
+        function selectColor() {
             let _$this = $(this);
             _$this.addClass("active");
             _$this.siblings("a").removeClass("active");
@@ -317,7 +420,7 @@
         $productTabBtn.on("click", selectColor);
     })();
 
-    (function visualSection(){
+    (function visualSection() {
         let secVisualTl;
         const $secVisual = $(".sec_visual");
         const $trigger = $secVisual.find(".trigger");
@@ -380,7 +483,7 @@
             .to($secVisualDesc.eq(3), secVisualMotion(3));
     })();
 
-    (function chargeSection () {
+    (function chargeSection() {
         let chargeSecTl;
         const $secCharge = $(".sec_charge");
         const $secChargeBg = $secCharge.find(".bg");
@@ -404,7 +507,7 @@
         })
     })();
 
-    (function fitSection (){
+    (function fitSection() {
         let secFitTl;
         const $secFit = $(".sec_fit");
         const $bgWrap = $secFit.find(".bg_wrap");
@@ -414,7 +517,7 @@
             scrollTrigger: {
                 trigger: $secFit,
                 start: "top-=25% top",
-                end: "bottom-=25% bottom",
+                end: "bottom bottom",
                 scrub: 1,
                 invalidateOnRefresh: true
             }
@@ -430,7 +533,7 @@
         });
     })();
 
-    (function horizonScrollSection (){
+    (function horizonScrollSection() {
         let secHorizontalScrollTl;
 
         const $secHorizontalScroll = $(".sec_horizontal_scroll");
@@ -448,7 +551,19 @@
             left: "-33%",
             duration: 1,
             ease: "none"
-        })
+        });
+    })();
+
+    (function safetySection() {
+        const $secSafety = $(".sec_safety");
+        const $accordion = $secSafety.find(".accordion_list");
+        const $accordionItem = $accordion.children("li");
+
+        if ($accordionItem.hasClass("on")) {
+            $accordionItem.filter(".on").find(".item_list").slideDown();
+        }
+
+        $accordionItem.on("click", toggleAccordion);
     })();
 </script>
 </body>

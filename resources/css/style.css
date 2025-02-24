@@ -951,6 +951,7 @@ html {
   letter-spacing: 0.02em;
 }
 .prototypes.visual.ver02 .sec_fit {
+  position: relative;
   height: 200vh;
 }
 .prototypes.visual.ver02 .sec_fit .bg_wrap {
@@ -985,8 +986,35 @@ html {
   font-weight: 500;
   color: #0A0A0A;
 }
+.prototypes.visual.ver02 .sec_fit_desc .items {
+  display: flex;
+  height: max(calc(280px * var(--base-ratio)), calc(calc(280 / var(--base-size)) * var(--base-percent)));
+  border-bottom: max(calc(1px * var(--base-ratio)), calc(calc(1 / var(--base-size)) * var(--base-percent))) solid #D9D9D9;
+}
+.prototypes.visual.ver02 .sec_fit_desc .items li {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25%;
+  height: 100%;
+  padding: max(calc(48px * var(--base-ratio)), calc(calc(48 / var(--base-size)) * var(--base-percent))) max(calc(36px * var(--base-ratio)), calc(calc(36 / var(--base-size)) * var(--base-percent)));
+  border-right: max(calc(1px * var(--base-ratio)), calc(calc(1 / var(--base-size)) * var(--base-percent))) solid #D9D9D9;
+}
+.prototypes.visual.ver02 .sec_fit_desc .items li strong {
+  font-size: max(calc(24px * var(--base-ratio)), calc(calc(24 / var(--base-size)) * var(--base-percent)));
+  line-height: 1.1666666667;
+  letter-spacing: 0.02em;
+  color: #0A0A0A;
+}
+.prototypes.visual.ver02 .sec_fit_desc .items li p {
+  font-size: max(calc(14px * var(--base-ratio)), calc(calc(14 / var(--base-size)) * var(--base-percent)));
+  line-height: 1.2857142857;
+  letter-spacing: 0.02em;
+  min-height: max(calc(60px * var(--base-ratio)), calc(calc(60 / var(--base-size)) * var(--base-percent)));
+}
 .prototypes.visual.ver02 .sec_horizontal_scroll {
-  height: 400vh;
+  height: 200vh;
+  background-color: #F8F8F8;
 }
 .prototypes.visual.ver02 .sec_horizontal_scroll .txt_wrap {
   padding: max(calc(60px * var(--base-ratio)), calc(calc(60 / var(--base-size)) * var(--base-percent))) 0 0 0;
@@ -1045,6 +1073,146 @@ html {
   font-size: max(calc(12px * var(--base-ratio)), calc(calc(12 / var(--base-size)) * var(--base-percent)));
   line-height: 1.3333333333;
   letter-spacing: 0.02em;
+}
+.prototypes.visual.ver02 .sec_safety {
+  padding: max(calc(120px * var(--base-ratio)), calc(calc(120 / var(--base-size)) * var(--base-percent))) 0 0;
+}
+.prototypes.visual.ver02 .sec_safety h4 {
+  margin-bottom: max(calc(40px * var(--base-ratio)), calc(calc(40 / var(--base-size)) * var(--base-percent)));
+  font-size: max(calc(48px * var(--base-ratio)), calc(calc(48 / var(--base-size)) * var(--base-percent)));
+  line-height: 1;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+  color: #0A0A0A;
+}
+.prototypes.visual.ver02 .sec_safety .accordion_list {
+  margin-bottom: max(calc(160px * var(--base-ratio)), calc(calc(160 / var(--base-size)) * var(--base-percent)));
+}
+.prototypes.visual.ver02 .sec_safety .accordion_list > li {
+  border-bottom: max(calc(1px * var(--base-ratio)), calc(calc(1 / var(--base-size)) * var(--base-percent))) solid #D9D9D9;
+}
+.prototypes.visual.ver02 .sec_safety .accordion_list > li:last-child {
+  border-bottom: 0;
+}
+.prototypes.visual.ver02 .sec_safety .accordion_list > li.on {
+  border-bottom: max(calc(1px * var(--base-ratio)), calc(calc(1 / var(--base-size)) * var(--base-percent))) solid #0A0A0A;
+}
+.prototypes.visual.ver02 .sec_safety .accordion_list > li.on .item_title span,
+.prototypes.visual.ver02 .sec_safety .accordion_list > li.on .item_title strong {
+  color: #0A0A0A;
+}
+.prototypes.visual.ver02 .sec_safety .accordion_list > li.on .item_title::before, .prototypes.visual.ver02 .sec_safety .accordion_list > li.on .item_title::after {
+  background-color: #0A0A0A;
+}
+.prototypes.visual.ver02 .sec_safety .accordion_list > li.on .item_title::before {
+  width: 0;
+}
+.prototypes.visual.ver02 .sec_safety .accordion_list > li.on .item_title::after {
+  height: 0;
+}
+.prototypes.visual.ver02 .sec_safety .accordion_list .item_title {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: max(calc(120px * var(--base-ratio)), calc(calc(120 / var(--base-size)) * var(--base-percent)));
+}
+.prototypes.visual.ver02 .sec_safety .accordion_list .item_title::before, .prototypes.visual.ver02 .sec_safety .accordion_list .item_title::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #D9D9D9;
+  transition: 0.75s;
+}
+.prototypes.visual.ver02 .sec_safety .accordion_list .item_title::before {
+  right: max(calc(40px * var(--base-ratio)), calc(calc(40 / var(--base-size)) * var(--base-percent)));
+  width: max(calc(40px * var(--base-ratio)), calc(calc(40 / var(--base-size)) * var(--base-percent)));
+  height: max(calc(1px * var(--base-ratio)), calc(calc(1 / var(--base-size)) * var(--base-percent)));
+}
+.prototypes.visual.ver02 .sec_safety .accordion_list .item_title::after {
+  right: max(calc(60px * var(--base-ratio)), calc(calc(60 / var(--base-size)) * var(--base-percent)));
+  width: max(calc(1px * var(--base-ratio)), calc(calc(1 / var(--base-size)) * var(--base-percent)));
+  height: max(calc(40px * var(--base-ratio)), calc(calc(40 / var(--base-size)) * var(--base-percent)));
+}
+.prototypes.visual.ver02 .sec_safety .accordion_list .item_title strong {
+  font-size: max(calc(32px * var(--base-ratio)), calc(calc(32 / var(--base-size)) * var(--base-percent)));
+  line-height: 1;
+  letter-spacing: 0.02em;
+  width: 30%;
+  color: #AAAAAA;
+  transition: color 0.75s;
+}
+.prototypes.visual.ver02 .sec_safety .accordion_list .item_title span {
+  font-size: max(calc(18px * var(--base-ratio)), calc(calc(18 / var(--base-size)) * var(--base-percent)));
+  line-height: 1;
+  letter-spacing: 0.02em;
+  width: 70%;
+  color: #AAAAAA;
+  transition: color 0.75s;
+}
+.prototypes.visual.ver02 .sec_safety .accordion_list .item_list {
+  display: none;
+  position: relative;
+  padding: max(calc(28px * var(--base-ratio)), calc(calc(28 / var(--base-size)) * var(--base-percent))) 0 max(calc(90px * var(--base-ratio)), calc(calc(90 / var(--base-size)) * var(--base-percent)));
+  border-top: max(calc(1px * var(--base-ratio)), calc(calc(1 / var(--base-size)) * var(--base-percent))) solid #0A0A0A;
+}
+.prototypes.visual.ver02 .sec_safety .accordion_list .item_list li {
+  margin-left: auto;
+  width: 70%;
+  position: relative;
+  padding: max(calc(8px * var(--base-ratio)), calc(calc(8 / var(--base-size)) * var(--base-percent))) 0 max(calc(8px * var(--base-ratio)), calc(calc(8 / var(--base-size)) * var(--base-percent))) max(calc(28px * var(--base-ratio)), calc(calc(28 / var(--base-size)) * var(--base-percent)));
+}
+.prototypes.visual.ver02 .sec_safety .accordion_list .item_list li::before {
+  content: "";
+  position: absolute;
+  top: max(calc(14px * var(--base-ratio)), calc(calc(14 / var(--base-size)) * var(--base-percent)));
+  left: 0;
+  width: max(calc(6px * var(--base-ratio)), calc(calc(6 / var(--base-size)) * var(--base-percent)));
+  height: max(calc(6px * var(--base-ratio)), calc(calc(6 / var(--base-size)) * var(--base-percent)));
+  border-radius: max(calc(99px * var(--base-ratio)), calc(calc(99 / var(--base-size)) * var(--base-percent)));
+  background-color: #666;
+}
+.prototypes.visual.ver02 .sec_safety .accordion_list .item_list li span {
+  font-size: max(calc(14px * var(--base-ratio)), calc(calc(14 / var(--base-size)) * var(--base-percent)));
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+.prototypes.visual.ver02 .sec_order {
+  padding: max(calc(20px * var(--base-ratio)), calc(calc(20 / var(--base-size)) * var(--base-percent))) 0;
+  border-top: max(calc(1px * var(--base-ratio)), calc(calc(1 / var(--base-size)) * var(--base-percent))) solid #D9D9D9;
+  border-bottom: max(calc(1px * var(--base-ratio)), calc(calc(1 / var(--base-size)) * var(--base-percent))) solid #D9D9D9;
+}
+.prototypes.visual.ver02 .sec_order .order_wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.prototypes.visual.ver02 .sec_order .order_wrap .txt_wrap {
+  display: flex;
+  align-items: center;
+}
+.prototypes.visual.ver02 .sec_order .order_wrap .txt_wrap img {
+  width: max(calc(400px * var(--base-ratio)), calc(calc(400 / var(--base-size)) * var(--base-percent)));
+  height: auto;
+}
+.prototypes.visual.ver02 .sec_order .order_wrap .txt_wrap strong {
+  position: relative;
+  font-size: max(calc(28px * var(--base-ratio)), calc(calc(28 / var(--base-size)) * var(--base-percent)));
+  line-height: 1;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+  color: #0A0A0A;
+}
+.prototypes.visual.ver02 .sec_order .order_wrap .txt_wrap strong::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: calc(100% + max(calc(20px * var(--base-ratio)), calc(calc(20 / var(--base-size)) * var(--base-percent))));
+  transform: translateY(-50%);
+  width: max(calc(40px * var(--base-ratio)), calc(calc(40 / var(--base-size)) * var(--base-percent)));
+  height: max(calc(40px * var(--base-ratio)), calc(calc(40 / var(--base-size)) * var(--base-percent)));
+  border-radius: max(calc(99px * var(--base-ratio)), calc(calc(99 / var(--base-size)) * var(--base-percent)));
+  background-color: lawngreen;
 }
 .prototypes.visual.ver02 .sec_visual {
   height: 500vh;
