@@ -39,7 +39,7 @@
 
   li {
     a {
-      font-family: $LexendGiga;
+      //font-family: $LexendGiga;
       @include fontSize(14);
       font-weight: 300;
       color: $black;
@@ -47,7 +47,7 @@
 
     &.active {
       a {
-        @include fontSize(24);
+        font-weight: 700;
       }
     }
   }

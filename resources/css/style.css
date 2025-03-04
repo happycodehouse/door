@@ -645,7 +645,6 @@ html {
   gap: max(calc(6px * var(--base-ratio)), calc(calc(6 / var(--base-size)) * var(--base-percent)));
 }
 #gnb li a {
-  font-family: "Lexend Giga", sans-serif;
   font-size: max(calc(14px * var(--base-ratio)), calc(calc(14 / var(--base-size)) * var(--base-percent)));
   line-height: 1;
   letter-spacing: 0.02em;
@@ -653,9 +652,7 @@ html {
   color: #0A0A0A;
 }
 #gnb li.active a {
-  font-size: max(calc(24px * var(--base-ratio)), calc(calc(24 / var(--base-size)) * var(--base-percent)));
-  line-height: 1;
-  letter-spacing: 0.02em;
+  font-weight: 700;
 }
 
 /* pages */
@@ -683,7 +680,7 @@ html {
 .main .main_intro .bg_wrap .bg {
   width: 100%;
   height: 80vh;
-  background: url("../images/main/bear-motocycle.svg") 100% 100% no-repeat;
+  background: url("/door/resources/images/main/bear-motocycle.svg") 100% 100% no-repeat;
   background-size: cover;
 }
 
@@ -740,7 +737,7 @@ html {
 .prototypes.visual.ver01 .sec_visual .inner .bg_wrap .bg {
   width: 100%;
   height: 100%;
-  background: url("../images/cloud.jpg") 100% 100% no-repeat;
+  background: url("/door/resources/images/cloud.jpg") 100% 100% no-repeat;
   background-size: cover;
   transform: translateY(50%);
 }
@@ -897,7 +894,7 @@ html {
   z-index: -1;
   width: 100%;
   height: 120vh;
-  background: url("../images/p1/p1-battery-bg.jpg") 50% 100% no-repeat;
+  background: url("/door/resources/images/p1/p1-battery-bg.jpg") 50% 100% no-repeat;
   background-size: cover;
   background-attachment: fixed;
   will-change: transform;
@@ -967,7 +964,7 @@ html {
 .prototypes.visual.ver02 .sec_fit .bg_wrap .bg {
   width: 100%;
   height: 100%;
-  background: url("../images/p1/p1-fit-bg.jpg") 50% 100% no-repeat;
+  background: url("/door/resources/images/p1/p1-fit-bg.jpg") 50% 100% no-repeat;
   background-size: cover;
 }
 .prototypes.visual.ver02 .sec_fit .row_wrap {
@@ -1368,19 +1365,19 @@ html {
   transition: 1s;
 }
 .prototypes.visual.ver02 .sec_visual .box_wrap .bg_box .bg_cover01 .bg {
-  background: url("../images/p1/p1-01.jpg") 100% 100% no-repeat;
+  background: url("/door/resources/images/p1/p1-01.jpg") 100% 100% no-repeat;
   background-size: cover;
 }
 .prototypes.visual.ver02 .sec_visual .box_wrap .bg_box .bg_cover02 .bg {
-  background: url("../images/p1/p1-02.jpg") 100% 100% no-repeat;
+  background: url("/door/resources/images/p1/p1-02.jpg") 100% 100% no-repeat;
   background-size: cover;
 }
 .prototypes.visual.ver02 .sec_visual .box_wrap .bg_box .bg_cover03 .bg {
-  background: url("../images/p1/p1-03.jpg") 100% 100% no-repeat;
+  background: url("/door/resources/images/p1/p1-03.jpg") 100% 100% no-repeat;
   background-size: cover;
 }
 .prototypes.visual.ver02 .sec_visual .box_wrap .bg_box .bg_cover04 .bg {
-  background: url("../images/p1/p1-04.jpg") 100% 100% no-repeat;
+  background: url("/door/resources/images/p1/p1-04.jpg") 100% 100% no-repeat;
   background-size: cover;
   background-position: center;
 }
