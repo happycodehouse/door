@@ -1,5 +1,8 @@
 @charset "UTF-8";
 
+@import "../base/variable";
+@import "../base/mixin";
+
 /* reset */
 html,
 body,
@@ -181,7 +184,6 @@ iframe {
     border: 0;
     text-indent: 100%;
     white-space: nowrap;
-    overflow: hidden;
 }
 
 /* HTML5 display-role reset for older browsers */

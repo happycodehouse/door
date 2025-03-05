@@ -1,5 +1,8 @@
 @charset "UTF-8";
 
+@import "../../base/variable";
+@import "../../base/mixin";
+
 .prototypes {
     .sec_category {
         padding-top: to_vw(100);

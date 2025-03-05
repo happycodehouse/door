@@ -3,8 +3,6 @@
 /* base */
 @import "base/variable";
 @import "base/mixin";
-@import "base/reset";
-@import "base/fonts";
 
 /* layout */
 @import "layout/container";
@@ -12,9 +10,9 @@
 @import "layout/footer";
 
 /* pages */
-@import "main";
-@import "pages/about";
-@import "pages/maintenance";
-@import "pages/projects";
-@import "pages/prototypes/prototypes";
-@import "pages/prototypes/visual";
+@import "Desktop/door/resources/css/pages/main/style";
+@import "Desktop/door/resources/css/pages/about/style";
+@import "Desktop/door/resources/css/pages/maintenance/style";
+@import "Desktop/door/resources/css/pages/projects/style";
+@import "Desktop/door/resources/css/pages/prototypes/style";
+@import "Desktop/door/resources/css/pages/prototypes/visual/visual";
