@@ -179,7 +179,7 @@ select {
 
 body {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
-  color: #666;
+  color: #0A0A0A;
   font-weight: 400;
   line-height: 1;
   -webkit-text-size-adjust: 100%;
@@ -296,6 +296,14 @@ button::-moz-focus-inner {
 
 textarea {
   resize: none;
+}
+
+iframe {
+  overflow: hidden;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  vertical-align: top;
 }
 
 * {
@@ -525,6 +533,103 @@ html {
   }
 }
 
+.content {
+  padding-top: max(calc(100px * var(--base-ratio)), calc(calc(100 / var(--base-size)) * var(--base-percent)));
+}
+
+.common_layout_title {
+  display: flex;
+  gap: max(calc(8px * var(--base-ratio)), calc(calc(8 / var(--base-size)) * var(--base-percent)));
+}
+.common_layout_title span {
+  font-size: max(calc(10px * var(--base-ratio)), calc(calc(10 / var(--base-size)) * var(--base-percent)));
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+.common_layout_title h6 {
+  font-size: max(calc(12px * var(--base-ratio)), calc(calc(12 / var(--base-size)) * var(--base-percent)));
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
+
+.common_layout_detail .img_wrap {
+  width: max(calc(240px * var(--base-ratio)), calc(calc(240 / var(--base-size)) * var(--base-percent)));
+  border: max(calc(1px * var(--base-ratio)), calc(calc(1 / var(--base-size)) * var(--base-percent))) solid #DDDDDD;
+}
+.common_layout_detail .img_wrap img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* mockup */
+.mockup_wrap {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mockup {
+  position: relative;
+  width: max(calc(360px * var(--base-ratio)), calc(calc(360 / var(--base-size)) * var(--base-percent)));
+  height: max(calc(735px * var(--base-ratio)), calc(calc(735 / var(--base-size)) * var(--base-percent)));
+  padding: max(calc(14px * var(--base-ratio)), calc(calc(14 / var(--base-size)) * var(--base-percent))) max(calc(17px * var(--base-ratio)), calc(calc(17 / var(--base-size)) * var(--base-percent))) max(calc(15px * var(--base-ratio)), calc(calc(15 / var(--base-size)) * var(--base-percent)));
+}
+.mockup::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background: url("/door/resources/images/mockup.png") 50% 100% no-repeat;
+  background-size: cover;
+}
+.mockup_inner {
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+  padding: max(calc(16px * var(--base-ratio)), calc(calc(16 / var(--base-size)) * var(--base-percent))) max(calc(18px * var(--base-ratio)), calc(calc(18 / var(--base-size)) * var(--base-percent)));
+  width: 100%;
+  height: 100%;
+  border-radius: max(calc(41px * var(--base-ratio)), calc(calc(41 / var(--base-size)) * var(--base-percent)));
+}
+
+.status_bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: max(calc(20px * var(--base-ratio)), calc(calc(20 / var(--base-size)) * var(--base-percent)));
+  margin-bottom: max(calc(16px * var(--base-ratio)), calc(calc(16 / var(--base-size)) * var(--base-percent)));
+}
+.status_bar .clock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.status_bar .clock span {
+  font-size: max(calc(12px * var(--base-ratio)), calc(calc(12 / var(--base-size)) * var(--base-percent)));
+  line-height: 1;
+  letter-spacing: 0.02em;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+.status_bar img {
+  display: block;
+  flex: 0 0 max(calc(72px * var(--base-ratio)), calc(calc(72 / var(--base-size)) * var(--base-percent)));
+  width: max(calc(72px * var(--base-ratio)), calc(calc(72 / var(--base-size)) * var(--base-percent)));
+}
+
+.mockup_content {
+  height: calc(100% - max(calc(123px * var(--base-ratio)), calc(calc(123 / var(--base-size)) * var(--base-percent))));
+  padding: 0 max(calc(25px * var(--base-ratio)), calc(calc(25 / var(--base-size)) * var(--base-percent)));
+  margin: 0 max(calc(calc(calc(25 / var(--base-size)) * var(--base-percent)) * -1));
+  overflow-y: auto;
+}
+
 /* grid */
 .grid_guide {
   position: fixed;
@@ -612,8 +717,7 @@ html {
   left: 0;
   z-index: 999;
   width: 100%;
-  padding: max(calc(24px * var(--base-ratio)), calc(calc(24 / var(--base-size)) * var(--base-percent)));
-  height: auto;
+  height: max(calc(100px * var(--base-ratio)), calc(calc(100 / var(--base-size)) * var(--base-percent)));
 }
 #header .header_inner {
   display: flex;
