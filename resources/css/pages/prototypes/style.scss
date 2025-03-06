@@ -3,13 +3,29 @@
 @import "../../base/mixin";
 
 .prototypes {
-    .sec_category {
-        padding-top: to_vw(100);
+    .common_layout_title {
+        display: flex;
+        gap: to_vw(8);
 
-        h3 {
-            @include fontSize(36);
-            font-weight: 700;
-            color: $black;
+        span {
+            @include fontSize(10);
+        }
+
+        h6 {
+            @include fontSize(12);
+        }
+    }
+
+    .common_layout_detail {
+        .img_wrap {
+            width: to_vw(240);
+            border: to_vw(1) solid $gray-100;
+
+            img {
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+            }
         }
     }
 }

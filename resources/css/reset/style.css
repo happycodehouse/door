@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @media (min-width: 1025px) {
   .col-1 {
     flex: 0 0 auto;
@@ -146,155 +145,50 @@
   }
 }
 /* reset */
-html,
-body,
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-ul,
-ol,
-li,
-dl,
-dt,
-dd,
-p,
-table,
-th,
-td,
-form,
-fieldset,
-legend,
-input,
-textarea,
-button,
-select {
+* {
+  margin: 0;
   padding: 0;
-  margin: 0;
+  font: inherit;
+  color: inherit;
 }
 
-body {
-  font-family: "Roboto", Helvetica, Arial, sans-serif;
-  color: #0A0A0A;
-  font-weight: 400;
-  line-height: 1;
+*, :after, :before {
+  box-sizing: border-box;
+}
+
+:root {
+  -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  cursor: default;
+  line-height: 1.5;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  tab-size: 4;
 }
 
-html,
-body {
-  font-size: max(calc(16px * var(--base-ratio)), calc(calc(16 / var(--base-size)) * var(--base-percent)));
+html, body {
+  height: 100%;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-strong {
-  margin: 0;
-  font-size: 100%;
-  font-weight: normal;
-  line-height: 1;
-  margin-block-end: 0;
-  margin-block-start: 0;
-}
-
-select,
-button,
-input,
-textarea,
-pre {
-  font-family: "SUIT", Helvetica, Arial, sans-serif;
-  font-size: max(calc(16px * var(--base-ratio)), calc(calc(16 / var(--base-size)) * var(--base-percent)));
-  color: #666;
-}
-
-pre {
-  white-space: pre-wrap;
-}
-
-fieldset,
-img,
-button {
-  border: 0;
-}
-
-img,
-input,
-button {
-  vertical-align: top;
-}
-
-img {
+img, picture, video, canvas, svg {
   display: block;
   max-width: 100%;
 }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-  border-spacing: 0;
-  word-break: break-all;
-  word-wrap: break-word;
-}
-
-address,
-em {
-  font-style: normal;
-}
-
-ol,
-ul,
-li {
-  list-style: none;
-}
-
-hr {
-  display: none;
+button {
+  background: none;
+  border: 0;
+  cursor: pointer;
 }
 
 a {
   text-decoration: none;
-  color: inherit;
 }
 
-a:hover,
-a:active {
-  text-decoration: none;
-}
-
-legend {
-  position: absolute;
-  left: -9999px;
-  top: 0;
-}
-
-caption {
-  overflow: hidden;
-  width: 0;
-  height: 0;
-  font-size: 0;
-  line-height: 0;
-}
-
-button {
-  background: none;
-  cursor: pointer;
-  -webkit-apperance: none;
-}
-
-button::-moz-focus-inner {
-  padding: 0;
-  border: 0;
-}
-
-textarea {
-  resize: none;
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 iframe {
@@ -303,11 +197,6 @@ iframe {
   border: 0;
   padding: 0;
   vertical-align: top;
-}
-
-* {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
 }
 
 .blind {
@@ -324,88 +213,6 @@ iframe {
   white-space: nowrap;
 }
 
-/* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
-}
-
-/* select arrow none */
-input[type=text],
-input[type=password],
-input[type=number],
-input[type=tel],
-input[type=email],
-input[type=button],
-input[type=submit] {
-  border-radius: 0;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-}
-
-textarea {
-  border-radius: 0;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-}
-
-input::-webkit-input-placeholder,
-textarea::-webkit-input-placeholder {
-  color: #999;
-}
-
-input::-moz-placeholder,
-textarea::-moz-placeholder {
-  color: #999;
-}
-
-input:-ms-input-placeholder,
-textarea:-ms-input-placeholder {
-  color: #999;
-}
-
-input::-ms-input-placeholder,
-textarea::-ms-input-placeholder {
-  color: #999;
-}
-
-input::placeholder,
-textarea::placeholder {
-  color: #999;
-}
-
-input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 1000px white inset;
-}
-
-/* input:[type=search] clear btn css 초기화 IE의 경우 */
-input::-ms-clear,
-input::-ms-reveal {
-  display: none;
-}
-
-/* input:[type=search] clear btn css 초기화 크롬의 경우 */
-input::-webkit-search-decoration,
-input::-webkit-search-cancel-button,
-input::-webkit-search-results-button,
-input::-webkit-search-results-decoration {
-  display: none;
-}
-
-.swiper-scrollbar-drag {
-  cursor: pointer;
-}
-
-/* touch기능으로 mobile/tablet 판별하여 css에 root var 추가 <-- coarse 터치기기 : fine 웹 */
 @media (min-width: 1025px) and (pointer: fine) {
   :root {
     --pointer: fine;
@@ -416,10 +223,3 @@ input::-webkit-search-results-decoration {
     --pointer: coarse;
   }
 }
-/*body {
-    -ms-overflow-style: none;
-}
-
-::-webkit-scrollbar {
-    display: none;
-}*/
