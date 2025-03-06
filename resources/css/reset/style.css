@@ -416,10 +416,10 @@ input::-webkit-search-results-decoration {
     --pointer: coarse;
   }
 }
-/*body{
-  -ms-overflow-style: none;
+/*body {
+    -ms-overflow-style: none;
 }
 
 ::-webkit-scrollbar {
-  display: none;
+    display: none;
 }*/
