@@ -12,7 +12,7 @@
     align-items: center;
     gap: to_vw(20);
     height: 100%;
-    padding: 0 to_vw(8);
+    padding: 0 to_vw(80);
   }
 
   .logo {
@@ -32,13 +32,11 @@
 
 #gnb {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: to_vw(6);
+  gap: to_vw(12);
 
   li {
     a {
-      //font-family: $LexendGiga;
+      font-family: $LexendGiga;
       @include fontSize(14);
       font-weight: 300;
       color: $black;
