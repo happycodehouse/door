@@ -6,9 +6,37 @@
   width: 100%;
   height: to_vw(100);
 
+  .hamburger {
+    position: relative;
+    width: to_vw(50);
+    height: to_vw(25);
+
+    span {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: to_vw(3);
+      background-color: $black;
+
+      &:nth-child(1) {
+        top: 0;
+      }
+
+      &:nth-child(2) {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      &:nth-child(3) {
+        bottom: 0;
+      }
+    }
+  }
+
   .header_inner {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: to_vw(20);
     height: 100%;
     padding: 0 to_vw(80);
