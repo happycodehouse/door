@@ -154,7 +154,6 @@
 }
 #header .header_inner {
   display: flex;
-  justify-content: flex-end;
   align-items: center;
   gap: max(calc(20px * var(--base-ratio)), calc(calc(20 / var(--base-size)) * var(--base-percent)));
   height: 100%;
@@ -177,14 +176,14 @@
 
 #gnb {
   display: flex;
-  gap: max(calc(12px * var(--base-ratio)), calc(calc(12 / var(--base-size)) * var(--base-percent)));
+  gap: max(calc(48px * var(--base-ratio)), calc(calc(48 / var(--base-size)) * var(--base-percent)));
 }
 #gnb li a {
   font-family: "Lexend Giga", sans-serif;
   font-size: max(calc(14px * var(--base-ratio)), calc(calc(14 / var(--base-size)) * var(--base-percent)));
   line-height: 1;
   letter-spacing: 0.02em;
-  font-weight: 300;
+  font-weight: 500;
   color: #0A0A0A;
 }
 #gnb li.active a {
