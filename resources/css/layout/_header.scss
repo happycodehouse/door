@@ -8,28 +8,12 @@
 
   .hamburger {
     position: relative;
-    width: to_vw(50);
-    height: to_vw(25);
+    width: to_vw(100);
+    height: to_vw(46);
+    @include background("icon/ic_hamburger.svg", center, no-repeat, cover);
 
-    span {
-      position: absolute;
-      left: 0;
-      width: 100%;
-      height: to_vw(3);
-      background-color: $black;
-
-      &:nth-child(1) {
-        top: 0;
-      }
-
-      &:nth-child(2) {
-        top: 50%;
-        transform: translateY(-50%);
-      }
-
-      &:nth-child(3) {
-        bottom: 0;
-      }
+    &.on {
+      @include background("icon/ic_hamburger_close.svg", center, no-repeat, cover);
     }
   }
 

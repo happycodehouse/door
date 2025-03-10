@@ -154,25 +154,14 @@
 }
 #header .hamburger {
   position: relative;
-  width: max(calc(50px * var(--base-ratio)), calc(calc(50 / var(--base-size)) * var(--base-percent)));
-  height: max(calc(25px * var(--base-ratio)), calc(calc(25 / var(--base-size)) * var(--base-percent)));
+  width: max(calc(100px * var(--base-ratio)), calc(calc(100 / var(--base-size)) * var(--base-percent)));
+  height: max(calc(46px * var(--base-ratio)), calc(calc(46 / var(--base-size)) * var(--base-percent)));
+  background: url("/resources/images/icon/ic_hamburger.svg") center no-repeat;
+  background-size: cover;
 }
-#header .hamburger span {
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: max(calc(3px * var(--base-ratio)), calc(calc(3 / var(--base-size)) * var(--base-percent)));
-  background-color: #0A0A0A;
-}
-#header .hamburger span:nth-child(1) {
-  top: 0;
-}
-#header .hamburger span:nth-child(2) {
-  top: 50%;
-  transform: translateY(-50%);
-}
-#header .hamburger span:nth-child(3) {
-  bottom: 0;
+#header .hamburger.on {
+  background: url("/resources/images/icon/ic_hamburger_close.svg") center no-repeat;
+  background-size: cover;
 }
 #header .header_inner {
   display: flex;
