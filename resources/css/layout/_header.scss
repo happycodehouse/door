@@ -8,11 +8,12 @@
 
   .hamburger {
     position: relative;
-    width: to_vw(100);
-    height: to_vw(46);
+    width: to_vw(50);
+    height: to_vw(23);
     @include background("icon/ic_hamburger.svg", center, no-repeat, cover);
 
     &.on {
+      height: to_vw(16);
       @include background("icon/ic_hamburger_close.svg", center, no-repeat, cover);
     }
   }

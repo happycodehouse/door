@@ -154,12 +154,13 @@
 }
 #header .hamburger {
   position: relative;
-  width: max(calc(100px * var(--base-ratio)), calc(calc(100 / var(--base-size)) * var(--base-percent)));
-  height: max(calc(46px * var(--base-ratio)), calc(calc(46 / var(--base-size)) * var(--base-percent)));
+  width: max(calc(50px * var(--base-ratio)), calc(calc(50 / var(--base-size)) * var(--base-percent)));
+  height: max(calc(23px * var(--base-ratio)), calc(calc(23 / var(--base-size)) * var(--base-percent)));
   background: url("/resources/images/icon/ic_hamburger.svg") center no-repeat;
   background-size: cover;
 }
 #header .hamburger.on {
+  height: max(calc(16px * var(--base-ratio)), calc(calc(16 / var(--base-size)) * var(--base-percent)));
   background: url("/resources/images/icon/ic_hamburger_close.svg") center no-repeat;
   background-size: cover;
 }
