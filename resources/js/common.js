@@ -3,11 +3,41 @@ gsap.registerPlugin(ScrollTrigger);
 let mediaQuery = window.matchMedia("(min-width: 1025px)"),
     lenis;
 
-let $window = $(window),
-    $body = $("body");
+const $window = $(window),
+    $body = $("body"),
+    $header = $("#header"),
+    $hamburger = $("#hamburger"),
+    $gnb = $("#gnb"),
+    $gnbClone = $gnb.clone(),
+    $sitemap = $("#sitemap"),
+    $sitemapCloseBtn = $("#sitemapCloseBtn"),
+    $dim = $("#dim");
 
 door.utils = {
-    gnbSpot: function (spot) {
+    header: () => {
+        $gnbClone.removeAttr("id");
+        $sitemap.find(".gnb_wrap").append($gnbClone);
+
+        $(document).on("click", "#hamburger", function () {
+            $sitemap.addClass("on");
+            $dim.addClass("on");
+        });
+
+        $(document).on("click", "#sitemapCloseBtn", function () {
+            $sitemap.removeClass("on");
+            $dim.removeClass("on");
+        });
+
+        $(document).on("click", "#dim", function () {
+            let _$this = $(this);
+            _$this.removeClass("on");
+
+            if ($sitemap.hasClass("on")) {
+                $sitemap.removeClass("on");
+            }
+        });
+    },
+    gnbSpot: (spot) => {
         const $gnb = $("#gnb");
         const $spot = $gnb.find("li");
 
@@ -23,7 +53,7 @@ door.utils = {
             }
         });
     },
-    smoothScroll: function () {
+    smoothScroll: () => {
         function breakPoint(mediaQuery) {
             if (mediaQuery.matches) {
                 if (!lenis) {
@@ -44,7 +74,7 @@ door.utils = {
         breakPoint(mediaQuery);
         mediaQuery.addEventListener("change", breakPoint);
     },
-    isSmoothStop: function (boolean) {
+    isSmoothStop: (boolean) => {
         if (lenis) {
             if (boolean) {
                 lenis.stop();
@@ -53,7 +83,7 @@ door.utils = {
             }
         }
     },
-    gridGuide: function () {
+    gridGuide: () => {
         const $gridGuide = $("#gridGuide");
 
         document.addEventListener("keyup", function (e) {
@@ -70,7 +100,8 @@ door.utils = {
         });
     },
 
-    init: function () {
+    init: () => {
+        door.utils.header();
         door.utils.smoothScroll();
         door.utils.gridGuide();
     }

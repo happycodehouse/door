@@ -1,7 +1,5 @@
 let door = {};
 
-console.log("include.js")
-
 function loadHeader() {
     return new Promise((resolve, reject) => {
         let allHtmlElements = document.querySelectorAll('[data-include-path]');
