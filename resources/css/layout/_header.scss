@@ -78,6 +78,18 @@
     visibility: visible;
   }
 
+  .btn_wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: to_vw(100);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 to_vw(80);
+  }
+
   .sitemap_inner {
     display: flex;
     flex-direction: column;
@@ -96,21 +108,29 @@
     color: $txtColor-100;
   }
 
+  .gnb_title {
+    @include fontSize(14);
+    font-weight: 700;
+  }
+
   .gnb_wrap {
     margin-bottom: auto;
 
     .gnb {
       display: flex;
-      gap: to_vw(24);
-
-      > li {
-        a {}
-      }
+      gap: to_vw(96);
     }
 
     .gnb_sub {
+      margin-top: to_vw(24);
+
       li {
-        a {}
+        margin-bottom: to_vw(8);
+
+        a {
+          @include fontSize(12);
+          font-weight: 500;
+        }
       }
     }
   }
@@ -158,9 +178,6 @@
 }
 
 #sitemapCloseBtn {
-  position: absolute;
-  top: to_vw(24);
-  right: to_vw(24);
   width: to_vw(40);
   height: to_vw(13);
   @include background("icon/ic_hamburger_close.svg", center, no-repeat, cover);

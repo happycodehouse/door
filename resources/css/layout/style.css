@@ -218,6 +218,17 @@
   opacity: 1;
   visibility: visible;
 }
+#sitemap .btn_wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: max(calc(100px * var(--base-ratio)), calc(calc(100 / var(--base-size)) * var(--base-percent)));
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 max(calc(80px * var(--base-ratio)), calc(calc(80 / var(--base-size)) * var(--base-percent)));
+}
 #sitemap .sitemap_inner {
   display: flex;
   flex-direction: column;
@@ -236,12 +247,30 @@
   font-weight: 700;
   color: #0A0A0A;
 }
+#sitemap .gnb_title {
+  font-size: max(calc(14px * var(--base-ratio)), calc(calc(14 / var(--base-size)) * var(--base-percent)));
+  line-height: 1;
+  letter-spacing: 0.02em;
+  font-weight: 700;
+}
 #sitemap .gnb_wrap {
   margin-bottom: auto;
 }
 #sitemap .gnb_wrap .gnb {
   display: flex;
-  gap: max(calc(24px * var(--base-ratio)), calc(calc(24 / var(--base-size)) * var(--base-percent)));
+  gap: max(calc(96px * var(--base-ratio)), calc(calc(96 / var(--base-size)) * var(--base-percent)));
+}
+#sitemap .gnb_wrap .gnb_sub {
+  margin-top: max(calc(24px * var(--base-ratio)), calc(calc(24 / var(--base-size)) * var(--base-percent)));
+}
+#sitemap .gnb_wrap .gnb_sub li {
+  margin-bottom: max(calc(8px * var(--base-ratio)), calc(calc(8 / var(--base-size)) * var(--base-percent)));
+}
+#sitemap .gnb_wrap .gnb_sub li a {
+  font-size: max(calc(12px * var(--base-ratio)), calc(calc(12 / var(--base-size)) * var(--base-percent)));
+  line-height: 1;
+  letter-spacing: 0.02em;
+  font-weight: 500;
 }
 #sitemap .art_board_wrap .art_board {
   display: flex;
@@ -276,9 +305,6 @@
 }
 
 #sitemapCloseBtn {
-  position: absolute;
-  top: max(calc(24px * var(--base-ratio)), calc(calc(24 / var(--base-size)) * var(--base-percent)));
-  right: max(calc(24px * var(--base-ratio)), calc(calc(24 / var(--base-size)) * var(--base-percent)));
   width: max(calc(40px * var(--base-ratio)), calc(calc(40 / var(--base-size)) * var(--base-percent)));
   height: max(calc(13px * var(--base-ratio)), calc(calc(13 / var(--base-size)) * var(--base-percent)));
   background: url("/resources/images/icon/ic_hamburger_close.svg") center no-repeat;
