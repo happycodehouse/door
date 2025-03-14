@@ -10,7 +10,6 @@ const $window = $(window),
     $gnb = $("#gnb"),
     $gnbClone = $gnb.clone(),
     $sitemap = $("#sitemap"),
-    $sitemapCloseBtn = $("#sitemapCloseBtn"),
     $dim = $("#dim");
 
 door.utils = {
@@ -32,18 +31,16 @@ door.utils = {
 
         });
 
-        $(document).on("click", "#sitemapCloseBtn", function () {
-            $hamburger.removeClass("on");
-            $sitemap.removeClass("on");
-            $dim.removeClass("on");
-        });
-
         $(document).on("click", "#dim", function () {
             let _$this = $(this);
             _$this.removeClass("on");
 
             if ($sitemap.hasClass("on")) {
                 $sitemap.removeClass("on");
+            }
+
+            if ($hamburger.hasClass("on")) {
+                $hamburger.removeClass("on");
             }
         });
     },

@@ -55,6 +55,7 @@ html {
     .laptop_on {
         display: block;
     }
+
     .laptop_none {
         display: none;
     }
@@ -64,24 +65,31 @@ html {
     .laptop_none {
         display: block;
     }
+
     .pc_on {
         display: none;
     }
+
     .tablet_m_on {
         display: block;
     }
+
     .tablet_on {
         display: block;
     }
+
     .m_on {
         display: none;
     }
+
     .pc_none {
         display: block;
     }
+
     .tablet_none {
         display: none;
     }
+
     .m_none {
         display: block;
     }
@@ -91,21 +99,27 @@ html {
     .laptop_none {
         display: block;
     }
+
     .pc_on {
         display: none;
     }
+
     .tablet_on {
         display: none;
     }
+
     .m_on {
         display: block;
     }
+
     .pc_none {
         display: block;
     }
+
     .tablet_none {
         display: block;
     }
+
     .m_none {
         display: none;
     }
@@ -154,11 +168,11 @@ html {
 
 /* mockup */
 .mockup_wrap {
-    width: 100%;
-    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    height: 100vh;
 }
 
 .mockup {
