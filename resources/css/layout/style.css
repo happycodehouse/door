@@ -176,6 +176,7 @@
 
 #hamburger {
   position: relative;
+  z-index: 99999;
   width: max(calc(40px * var(--base-ratio)), calc(calc(40 / var(--base-size)) * var(--base-percent)));
   height: max(calc(18px * var(--base-ratio)), calc(calc(18 / var(--base-size)) * var(--base-percent)));
 }
@@ -226,7 +227,8 @@
 #gnb li.active a {
   font-weight: 700;
 }
-#gnb .gnb_sub {
+#gnb .gnb_sub,
+#gnb .sitemap_only {
   display: none;
 }
 
@@ -244,17 +246,6 @@
 #sitemap.on {
   opacity: 1;
   visibility: visible;
-}
-#sitemap .btn_wrap {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: max(calc(100px * var(--base-ratio)), calc(calc(100 / var(--base-size)) * var(--base-percent)));
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding: 0 max(calc(80px * var(--base-ratio)), calc(calc(80 / var(--base-size)) * var(--base-percent)));
 }
 #sitemap .sitemap_inner {
   display: flex;
@@ -279,6 +270,9 @@
   line-height: 1;
   letter-spacing: 0.02em;
   font-weight: 700;
+}
+#sitemap .gnb_title.sitemap_only {
+  display: block;
 }
 #sitemap .gnb_wrap {
   margin-bottom: auto;
@@ -329,13 +323,6 @@
 }
 #sitemap .contact_wrap .contact a:last-child {
   margin-right: 0;
-}
-
-#sitemapCloseBtn {
-  width: max(calc(40px * var(--base-ratio)), calc(calc(40 / var(--base-size)) * var(--base-percent)));
-  height: max(calc(13px * var(--base-ratio)), calc(calc(13 / var(--base-size)) * var(--base-percent)));
-  background: url("/resources/images/icon/ic_hamburger_close.svg") center no-repeat;
-  background-size: cover;
 }
 
 #dim {

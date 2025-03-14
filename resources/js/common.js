@@ -19,9 +19,17 @@ door.utils = {
         $sitemap.find(".gnb_wrap").append($gnbClone);
 
         $(document).on("click", "#hamburger", function () {
-            $(this).addClass("on");
-            // $sitemap.addClass("on");
-            $dim.addClass("on");
+            let _$this = $(this);
+            if (!_$this.hasClass("on")) {
+                $(this).addClass("on");
+                $sitemap.addClass("on");
+                $dim.addClass("on");
+            } else {
+                $(this).removeClass("on");
+                $sitemap.removeClass("on");
+                $dim.removeClass("on");
+            }
+
         });
 
         $(document).on("click", "#sitemapCloseBtn", function () {

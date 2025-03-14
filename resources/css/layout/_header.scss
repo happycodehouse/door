@@ -31,9 +31,9 @@
 
 #hamburger {
   position: relative;
+  z-index: 99999;
   width: to_vw(40);
   height: to_vw(18);
-  //@include background("icon/ic_hamburger.svg", center, no-repeat, cover);
 
   span {
     position: absolute;
@@ -97,7 +97,8 @@
     }
   }
 
-  .gnb_sub {
+  .gnb_sub,
+  .sitemap_only {
     display: none;
   }
 }
@@ -116,18 +117,6 @@
   &.on {
     opacity: 1;
     visibility: visible;
-  }
-
-  .btn_wrap {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: to_vw(100);
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding: 0 to_vw(80);
   }
 
   .sitemap_inner {
@@ -151,6 +140,10 @@
   .gnb_title {
     @include fontSize(14);
     font-weight: 700;
+
+    &.sitemap_only {
+      display: block;
+    }
   }
 
   .gnb_wrap {
@@ -215,12 +208,6 @@
       }
     }
   }
-}
-
-#sitemapCloseBtn {
-  width: to_vw(40);
-  height: to_vw(13);
-  @include background("icon/ic_hamburger_close.svg", center, no-repeat, cover);
 }
 
 #dim {
