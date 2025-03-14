@@ -156,10 +156,6 @@ html {
     }
 }
 
-.content {
-    padding-top: to_vw(100);
-}
-
 .common_sec_category {
     .title {
         @include fontSize(24);

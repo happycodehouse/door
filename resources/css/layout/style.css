@@ -489,10 +489,6 @@ html {
   }
 }
 
-.content {
-  padding-top: max(calc(100px * var(--base-ratio)), calc(calc(100 / var(--base-size)) * var(--base-percent)));
-}
-
 .common_sec_category .title {
   font-size: max(calc(24px * var(--base-ratio)), calc(calc(24 / var(--base-size)) * var(--base-percent)));
   line-height: 1;
