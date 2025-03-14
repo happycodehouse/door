@@ -178,8 +178,37 @@
   position: relative;
   width: max(calc(40px * var(--base-ratio)), calc(calc(40 / var(--base-size)) * var(--base-percent)));
   height: max(calc(18px * var(--base-ratio)), calc(calc(18 / var(--base-size)) * var(--base-percent)));
-  background: url("/resources/images/icon/ic_hamburger.svg") center no-repeat;
-  background-size: cover;
+}
+#hamburger span {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+  box-shadow: 0 0 0 2px #000 inset;
+  transition: 0.25s;
+}
+#hamburger span:nth-child(1) {
+  top: 0;
+}
+#hamburger span:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+#hamburger span:nth-child(3) {
+  bottom: 0;
+}
+#hamburger.on span:nth-child(1) {
+  top: 50%;
+  transform: translateY(-50%) rotate(-15deg);
+}
+#hamburger.on span:nth-child(2) {
+  opacity: 0;
+  visibility: hidden;
+}
+#hamburger.on span:nth-child(3) {
+  bottom: unset;
+  top: 50%;
+  transform: translateY(-50%) rotate(15deg);
 }
 
 #gnb {
@@ -204,17 +233,15 @@
 #sitemap {
   position: fixed;
   top: 0;
-  right: -100%;
+  right: 0;
   z-index: 999;
   width: 50%;
   height: 100vh;
   background-color: #FFFFFF;
-  transition: right 0.7s;
   opacity: 0;
   visibility: hidden;
 }
 #sitemap.on {
-  right: 0;
   opacity: 1;
   visibility: visible;
 }

@@ -19,11 +19,13 @@ door.utils = {
         $sitemap.find(".gnb_wrap").append($gnbClone);
 
         $(document).on("click", "#hamburger", function () {
-            $sitemap.addClass("on");
+            $(this).addClass("on");
+            // $sitemap.addClass("on");
             $dim.addClass("on");
         });
 
         $(document).on("click", "#sitemapCloseBtn", function () {
+            $hamburger.removeClass("on");
             $sitemap.removeClass("on");
             $dim.removeClass("on");
         });
