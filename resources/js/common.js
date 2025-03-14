@@ -17,31 +17,18 @@ door.utils = {
         $gnbClone.removeAttr("id");
         $sitemap.find(".gnb_wrap").append($gnbClone);
 
-        $(document).on("click", "#hamburger", function () {
-            let _$this = $(this);
-            if (!_$this.hasClass("on")) {
-                $(this).addClass("on");
-                $sitemap.addClass("on");
-                $dim.addClass("on");
-            } else {
-                $(this).removeClass("on");
-                $sitemap.removeClass("on");
-                $dim.removeClass("on");
-            }
+        const toggleElements = (state) => {
+            $hamburger.toggleClass("on", state);
+            $sitemap.toggleClass("on", state);
+            $dim.toggleClass("on", state);
+        };
 
+        $(document).on("click", "#hamburger", function () {
+            toggleElements(!$hamburger.hasClass("on"));
         });
 
         $(document).on("click", "#dim", function () {
-            let _$this = $(this);
-            _$this.removeClass("on");
-
-            if ($sitemap.hasClass("on")) {
-                $sitemap.removeClass("on");
-            }
-
-            if ($hamburger.hasClass("on")) {
-                $hamburger.removeClass("on");
-            }
+            toggleElements(false);
         });
     },
     gnbSpot: (spot) => {
