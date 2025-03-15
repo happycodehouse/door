@@ -22,39 +22,39 @@
     <div id="content" class="content">
         <div class="main_intro">
             <div class="inner">
-                <div class="bg_wrap">
-                    <div class="mass_wrap">
-                        <div class="mass mass01">
-                            <img src="/resources/images/main/mass-01.svg" alt="">
-                        </div>
-                        <div class="mass mass02">
-                            <img src="/resources/images/main/mass-02.svg" alt="">
-                        </div>
-                        <div class="mass mass03">
-                            <img src="/resources/images/main/mass-03.svg" alt="">
-                        </div>
-                        <div class="mass mass04">
-                            <img src="/resources/images/main/mass-04.svg" alt="">
-                        </div>
-                        <div class="mass mass05">
-                            <img src="/resources/images/main/mass-05.svg" alt="">
-                        </div>
-                        <div class="mass mass06">
-                            <img src="/resources/images/main/mass-06.svg" alt="">
-                        </div>
-                        <div class="mass mass07">
-                            <img src="/resources/images/main/mass-07.svg" alt="">
-                        </div>
-                        <div class="mass mass08">
-                            <img src="/resources/images/main/mass-08.svg" alt="">
-                        </div>
-                        <div class="mass mass09">
-                            <img src="/resources/images/main/mass-09.svg" alt="">
-                        </div>
-                        <div class="mass mass10">
-                            <img src="/resources/images/main/mass-10.svg" alt="">
-                        </div>
+                <div class="mass_wrap">
+                    <div class="mass mass01">
+                        <img src="/resources/images/main/mass-01.svg" alt="">
                     </div>
+                    <div class="mass mass02 motion">
+                        <img src="/resources/images/main/mass-02.svg" alt="">
+                    </div>
+                    <div class="mass mass03">
+                        <img src="/resources/images/main/mass-03.svg" alt="">
+                    </div>
+                    <div class="mass mass04 motion">
+                        <img src="/resources/images/main/mass-04.svg" alt="">
+                    </div>
+                    <div class="mass mass05 motion">
+                        <img src="/resources/images/main/mass-05.svg" alt="">
+                    </div>
+                    <div class="mass mass06">
+                        <img src="/resources/images/main/mass-06.svg" alt="">
+                    </div>
+                    <div class="mass mass07">
+                        <img src="/resources/images/main/mass-07.svg" alt="">
+                    </div>
+                    <div class="mass mass08">
+                        <img src="/resources/images/main/mass-08.svg" alt="">
+                    </div>
+                    <div class="mass mass09">
+                        <img src="/resources/images/main/mass-09.svg" alt="">
+                    </div>
+                    <div class="mass mass10">
+                        <img src="/resources/images/main/mass-10.svg" alt="">
+                    </div>
+                </div>
+                <div class="bg_wrap">
                     <div class="bg"></div>
                 </div>
             </div>
@@ -75,5 +75,43 @@
 <script src="/resources/js/libraries/uikit.min.js"></script>
 <script src="/resources/js/common.js"></script>
 <script src="/resources/js/include.js"></script>
+<script>
+    const masses = document.querySelectorAll('.mass.motion'); // 모든 .mass 요소 선택
+
+    const animateMasses = () => {
+        masses.forEach((mass) => {
+            const screenWidth = window.innerWidth; // 화면 너비
+            const screenHeight = window.innerHeight; // 화면 높이
+
+            const animation = () => {
+                // 현재 위치 가져오기
+                const computedStyle = getComputedStyle(mass);
+                const startX = parseFloat(computedStyle.left); // 현재 X 위치
+                const startY = parseFloat(computedStyle.top); // 현재 Y 위치
+
+                // 시작 Y 위치를 화면 밖 위로 설정
+                const startYPosition = -100; // 화면 위에서 시작
+                const endX = -100; // 왼쪽 화면 밖으로 이동
+                const endY = startY + 400; // 아래로 이동 (대각선 효과)
+
+                gsap.fromTo(mass,
+                    {x: startX, y: startYPosition}, // 화면 밖 위에서 시작
+                    {
+                        x: endX, // 왼쪽 화면 밖으로 이동
+                        y: endY, // 아래로 이동
+                        duration: 10 + Math.random() * 2, // 애니메이션 지속 시간 (변동성 추가)
+                        ease: "power1.inOut", // easing 설정
+                        onComplete: animation // 애니메이션이 끝나면 다시 호출
+                    }
+                );
+            };
+
+            animation(); // 애니메이션 시작
+        });
+    };
+
+    animateMasses(); // 애니메이션 시작
+</script>
+
 </body>
 </html>

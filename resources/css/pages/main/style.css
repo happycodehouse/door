@@ -145,9 +145,76 @@
   }
 }
 .main .main_intro .inner {
+  overflow: hidden;
   position: relative;
   width: 100%;
   height: 100vh;
+}
+.main .main_intro .mass_wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.main .main_intro .mass_wrap .mass {
+  position: absolute;
+}
+.main .main_intro .mass_wrap .mass img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.main .main_intro .mass_wrap .mass01 {
+  top: 10%;
+  right: -2%;
+  width: max(calc(150px * var(--base-ratio)), calc(calc(150 / var(--base-size)) * var(--base-percent)));
+}
+.main .main_intro .mass_wrap .mass02 {
+  top: 40%;
+  left: 25%;
+  width: max(calc(100px * var(--base-ratio)), calc(calc(100 / var(--base-size)) * var(--base-percent)));
+}
+.main .main_intro .mass_wrap .mass03 {
+  top: 55%;
+  left: 20%;
+  width: max(calc(150px * var(--base-ratio)), calc(calc(150 / var(--base-size)) * var(--base-percent)));
+}
+.main .main_intro .mass_wrap .mass04 {
+  top: 40%;
+  left: 45%;
+  z-index: 999;
+  width: max(calc(80px * var(--base-ratio)), calc(calc(80 / var(--base-size)) * var(--base-percent)));
+}
+.main .main_intro .mass_wrap .mass05 {
+  top: 30%;
+  left: 53%;
+  width: max(calc(120px * var(--base-ratio)), calc(calc(120 / var(--base-size)) * var(--base-percent)));
+}
+.main .main_intro .mass_wrap .mass06 {
+  bottom: 10%;
+  right: -5%;
+  width: max(calc(200px * var(--base-ratio)), calc(calc(200 / var(--base-size)) * var(--base-percent)));
+}
+.main .main_intro .mass_wrap .mass07 {
+  bottom: 0;
+  left: 70%;
+  width: max(calc(110px * var(--base-ratio)), calc(calc(110 / var(--base-size)) * var(--base-percent)));
+}
+.main .main_intro .mass_wrap .mass08 {
+  bottom: 12%;
+  left: 74%;
+  width: max(calc(50px * var(--base-ratio)), calc(calc(50 / var(--base-size)) * var(--base-percent)));
+}
+.main .main_intro .mass_wrap .mass09 {
+  top: 40%;
+  left: 70%;
+  width: max(calc(200px * var(--base-ratio)), calc(calc(200 / var(--base-size)) * var(--base-percent)));
+}
+.main .main_intro .mass_wrap .mass10 {
+  bottom: 0;
+  left: 5%;
+  width: max(calc(150px * var(--base-ratio)), calc(calc(150 / var(--base-size)) * var(--base-percent)));
 }
 .main .main_intro .bg_wrap {
   overflow: hidden;
@@ -157,73 +224,9 @@
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 99;
   width: 100%;
   height: 100vh;
-}
-.main .main_intro .bg_wrap .mass_wrap {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-.main .main_intro .bg_wrap .mass_wrap .mass {
-  position: absolute;
-}
-.main .main_intro .bg_wrap .mass_wrap .mass img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-.main .main_intro .bg_wrap .mass_wrap .mass01 {
-  top: 25%;
-  left: 10%;
-  width: max(calc(150px * var(--base-ratio)), calc(calc(150 / var(--base-size)) * var(--base-percent)));
-}
-.main .main_intro .bg_wrap .mass_wrap .mass02 {
-  top: 40%;
-  left: 25%;
-  width: max(calc(100px * var(--base-ratio)), calc(calc(100 / var(--base-size)) * var(--base-percent)));
-}
-.main .main_intro .bg_wrap .mass_wrap .mass03 {
-  top: 55%;
-  left: 20%;
-  width: max(calc(150px * var(--base-ratio)), calc(calc(150 / var(--base-size)) * var(--base-percent)));
-}
-.main .main_intro .bg_wrap .mass_wrap .mass04 {
-  top: 40%;
-  left: 45%;
-  width: max(calc(80px * var(--base-ratio)), calc(calc(80 / var(--base-size)) * var(--base-percent)));
-}
-.main .main_intro .bg_wrap .mass_wrap .mass05 {
-  top: 30%;
-  left: 53%;
-  width: max(calc(120px * var(--base-ratio)), calc(calc(120 / var(--base-size)) * var(--base-percent)));
-}
-.main .main_intro .bg_wrap .mass_wrap .mass06 {
-  bottom: 10%;
-  right: -5%;
-  width: max(calc(200px * var(--base-ratio)), calc(calc(200 / var(--base-size)) * var(--base-percent)));
-}
-.main .main_intro .bg_wrap .mass_wrap .mass07 {
-  bottom: 0;
-  left: 70%;
-  width: max(calc(110px * var(--base-ratio)), calc(calc(110 / var(--base-size)) * var(--base-percent)));
-}
-.main .main_intro .bg_wrap .mass_wrap .mass08 {
-  bottom: 12%;
-  left: 74%;
-  width: max(calc(50px * var(--base-ratio)), calc(calc(50 / var(--base-size)) * var(--base-percent)));
-}
-.main .main_intro .bg_wrap .mass_wrap .mass09 {
-  top: 40%;
-  left: 70%;
-  width: max(calc(200px * var(--base-ratio)), calc(calc(200 / var(--base-size)) * var(--base-percent)));
-}
-.main .main_intro .bg_wrap .mass_wrap .mass10 {
-  bottom: 0;
-  left: 5%;
-  width: max(calc(150px * var(--base-ratio)), calc(calc(150 / var(--base-size)) * var(--base-percent)));
 }
 .main .main_intro .bg_wrap .bg {
   width: 100%;

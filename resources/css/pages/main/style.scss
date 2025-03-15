@@ -5,9 +5,89 @@
 .main {
   .main_intro {
     .inner {
+      overflow: hidden;
       position: relative;
       width: 100%;
       height: 100vh;
+    }
+
+    .mass_wrap {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      .mass {
+        position: absolute;
+
+        img {
+          width: 100%;
+          height: auto;
+          object-fit: cover;
+        }
+
+        &01 {
+          top: 10%;
+          right: -2%;
+          width: to_vw(150);
+        }
+
+        &02 {
+          top: 40%;
+          left: 25%;
+          width: to_vw(100);
+        }
+
+        &03 {
+          top: 55%;
+          left: 20%;
+          width: to_vw(150);
+        }
+
+        &04 {
+          top: 40%;
+          left: 45%;
+          z-index: 999;
+          width: to_vw(80);
+        }
+
+        &05 {
+          top: 30%;
+          left: 53%;
+          width: to_vw(120);
+        }
+
+        &06 {
+          bottom: 10%;
+          right: -5%;
+          width: to_vw(200);
+        }
+
+        &07 {
+          bottom: 0;
+          left: 70%;
+          width: to_vw(110);
+        }
+
+        &08 {
+          bottom: 12%;
+          left: 74%;
+          width: to_vw(50);
+        }
+
+        &09 {
+          top: 40%;
+          left: 70%;
+          width: to_vw(200);
+        }
+
+        &10 {
+          bottom: 0;
+          left: 5%;
+          width: to_vw(150);
+        }
+      }
     }
 
     .bg_wrap {
@@ -18,86 +98,9 @@
       position: absolute;
       top: 0;
       left: 0;
+      z-index: 99;
       width: 100%;
       height: 100vh;
-
-      .mass_wrap {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-
-        .mass {
-          position: absolute;
-
-          img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-          }
-
-          &01 {
-            top: 25%;
-            left: 10%;
-            width: to_vw(150);
-          }
-
-          &02 {
-            top: 40%;
-            left: 25%;
-            width: to_vw(100);
-          }
-
-          &03 {
-            top: 55%;
-            left: 20%;
-            width: to_vw(150);
-          }
-
-          &04 {
-            top: 40%;
-            left: 45%;
-            width: to_vw(80);
-          }
-
-          &05 {
-            top: 30%;
-            left: 53%;
-            width: to_vw(120);
-          }
-
-          &06 {
-            bottom: 10%;
-            right: -5%;
-            width: to_vw(200);
-          }
-
-          &07 {
-            bottom: 0;
-            left: 70%;
-            width: to_vw(110);
-          }
-
-          &08 {
-            bottom: 12%;
-            left: 74%;
-            width: to_vw(50);
-          }
-
-          &09 {
-            top: 40%;
-            left: 70%;
-            width: to_vw(200);
-          }
-
-          &10 {
-            bottom: 0;
-            left: 5%;
-            width: to_vw(150);
-          }
-        }
-      }
 
       .bg {
         width: 100%;
