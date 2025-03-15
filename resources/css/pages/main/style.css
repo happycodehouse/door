@@ -229,5 +229,5 @@
   width: 100%;
   height: 60vh;
   background: url("/resources/images/main/bear-motocycle.svg") center no-repeat;
-  background-size: cover;
+  background-size: contain;
 }

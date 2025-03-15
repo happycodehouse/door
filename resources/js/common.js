@@ -1,52 +1,29 @@
+const door = {};
+const mediaQuery = window.matchMedia("(min-width: 1025px)");
+const body = document.body;
+const header = document.getElementById("header");
+const footer = document.getElementById("footer");
+let lenis;
+
 gsap.registerPlugin(ScrollTrigger);
 
-let mediaQuery = window.matchMedia("(min-width: 1025px)"),
-    lenis;
-
-const $window = $(window),
-    $body = $("body"),
-    $header = $("#header"),
-    $hamburger = $("#hamburger"),
-    $gnb = $("#gnb"),
-    $gnbClone = $gnb.clone(),
-    $sitemap = $("#sitemap"),
-    $dim = $("#dim");
-
 door.utils = {
-    header: () => {
-        $gnbClone.removeAttr("id");
-        $sitemap.find(".gnb_wrap").append($gnbClone);
+    /*    gnbSpot: (spot) => {
+            const $gnb = $("#gnb");
+            const $spot = $gnb.find("li");
 
-        const toggleElements = (state) => {
-            $hamburger.toggleClass("on", state);
-            $sitemap.toggleClass("on", state);
-            $dim.toggleClass("on", state);
-        };
-
-        $(document).on("click", "#hamburger", function () {
-            toggleElements(!$hamburger.hasClass("on"));
-        });
-
-        $(document).on("click", "#dim", function () {
-            toggleElements(false);
-        });
-    },
-    gnbSpot: (spot) => {
-        const $gnb = $("#gnb");
-        const $spot = $gnb.find("li");
-
-        if ($spot.length === 0) {
-            console.error("GNB 요소가 존재하지 않습니다.");
-            return;
-        }
-
-        $spot.each(function (idx, el) {
-            let dataSpot = $(el).attr("data-spot");
-            if (spot == dataSpot) {
-                $(this).addClass("active");
+            if ($spot.length === 0) {
+                console.error("GNB 요소가 존재하지 않습니다.");
+                return;
             }
-        });
-    },
+
+            $spot.each(function (idx, el) {
+                let dataSpot = $(el).attr("data-spot");
+                if (spot == dataSpot) {
+                    $(this).addClass("active");
+                }
+            });
+        },*/
     smoothScroll: () => {
         function breakPoint(mediaQuery) {
             if (mediaQuery.matches) {
@@ -72,32 +49,15 @@ door.utils = {
         if (lenis) {
             if (boolean) {
                 lenis.stop();
+                console.log("lenis stop");
             } else {
                 lenis.start();
+                console.log("lenis start");
             }
         }
     },
-    gridGuide: () => {
-        const $gridGuide = $("#gridGuide");
-
-        document.addEventListener("keyup", function (e) {
-            // F9
-            if (e.key === "F9") {
-                console.log("F9");
-
-                if (!$gridGuide.hasClass("on")) {
-                    $gridGuide.addClass("on");
-                } else {
-                    $gridGuide.removeClass("on");
-                }
-            }
-        });
-    },
-
     init: () => {
-        door.utils.header();
         door.utils.smoothScroll();
-        door.utils.gridGuide();
     }
 };
 

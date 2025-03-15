@@ -1,43 +1,45 @@
-let door = {};
+(async () => {
+    const headerContent = await fetch("/views/layout/header.html");
+    document.querySelector(".include_header").innerHTML = await headerContent.text();
 
-function loadHeader() {
-    return new Promise((resolve, reject) => {
-        let allHtmlElements = document.querySelectorAll('[data-include-path]');
+    const footerContent = await fetch("/views/layout/footer.html");
+    document.querySelector(".include_footer").innerHTML = await footerContent.text();
 
-        // 모든 요소를 비동기로 로드
-        let loadPromises = Array.from(allHtmlElements).map(el => {
-            let includePath = el.dataset.includePath;
+    const hamburger = document.getElementById("hamburger");
+    const gnb = document.getElementById("gnb");
+    const gnbClone = gnb.cloneNode(true);
+    gnbClone.removeAttribute("id");
+    const sitemap = document.getElementById("sitemap");
+    const dim = document.getElementById("dim");
+    const gridGuide = document.getElementById("gridGuide");
 
-            if (includePath) {
-                return new Promise((resolve, reject) => {
-                    let xhttp = new XMLHttpRequest();
+    sitemap.querySelector(".gnb_wrap").appendChild(gnbClone);
 
-                    xhttp.onreadystatechange = function() {
-                        if (this.readyState === 4) {
-                            if (this.status === 200) {
-                                el.innerHTML = this.responseText;
-                                resolve();  // 성공 시 resolve 호출
-                            } else {
-                                console.error('Error loading:', includePath, 'Status:', this.status);
-                                reject(this.status);
-                            }
-                        }
-                    };
+    const toggleElements = (state) => {
+        hamburger.classList.toggle("on", state);
+        sitemap.classList.toggle("on", state);
+        dim.classList.toggle("on", state);
+        door.utils.isSmoothStop(state);
+    };
 
-                    xhttp.onerror = function() {
-                        console.error('Request failed with status:', this.status);
-                        reject(this.status);
-                    };
-
-                    xhttp.open('GET', includePath, true);
-                    xhttp.send();
-                });
-            }
-        });
-
-        // 모든 Promise가 완료될 때까지 대기
-        Promise.all(loadPromises).then(resolve).catch(reject);
+    hamburger.addEventListener("click", () => {
+        toggleElements(!hamburger.classList.contains("on"));
     });
-}
 
-loadHeader();
+    dim.addEventListener("click", () => {
+        toggleElements(false);
+    });
+
+    document.addEventListener("keyup", function (e) {
+        // F9
+        if (e.key === "F9") {
+            console.log("F9");
+
+            if (!gridGuide.classList.contains("on")) {
+                gridGuide.classList.add("on");
+            } else {
+                gridGuide.classList.remove("on");
+            }
+        }
+    });
+})();

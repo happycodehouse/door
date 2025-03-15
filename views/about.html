@@ -12,7 +12,7 @@
 <body>
     <div id="container" class="container about">
         <!-- Header -->
-        <header id="header" data-include-path="/views/layout/header.html"></header>
+        <header id="header" class="include_header"></header>
         <!-- //Header -->
 
         <!-- Content -->
@@ -22,28 +22,17 @@
         <!-- //Content -->
 
         <!-- Footer -->
-<!--        <footer data-include-path=/views/layout/footer.html"></footer>-->
+        <footer id="footer" class="include_footer"></footer>
         <!-- //Footer -->
     </div>
-    <script src="/resources/js/include.js"></script>
-    <script src="/resources/js/libraries/gsap.js"></script>
     <script src="/resources/js/libraries/jquery-3.4.1.min.js"></script>
+    <script src="/resources/js/libraries/gsap.js"></script>
+    <script src="/resources/js/libraries/ScrollTrigger.js"></script>
     <script src="/resources/js/libraries/lenis.min.js"></script>
     <script src="/resources/js/libraries/ScrollToPlugin.js"></script>
-    <script src="/resources/js/libraries/ScrollTrigger.js"></script>
     <script src="/resources/js/libraries/swiper4.5.1.js"></script>
+    <script src="/resources/js/libraries/uikit.min.js"></script>
     <script src="/resources/js/common.js"></script>
-
-    <script>
-        loadHeader().then(() => {
-            // 헤더가 성공적으로 로드된 후 common.js 초기화 호출
-            console.log('헤더가 성공적으로 로드되었습니다. 2');
-            door.utils.gnbSpot(1);
-
-        }).catch((error) => {
-            console.error('헤더 로드 중 오류 발생:', error);
-        });
-
-    </script>
+    <script src="/resources/js/include.js"></script>
 </body>
 </html>
