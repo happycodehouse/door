@@ -1,9 +1,16 @@
 (async () => {
     const headerContent = await fetch("/views/layout/header.html");
-    document.querySelector(".include_header").innerHTML = await headerContent.text();
-
     const footerContent = await fetch("/views/layout/footer.html");
-    document.querySelector(".include_footer").innerHTML = await footerContent.text();
+
+    const headerElement = document.querySelector(".include_header");
+    if (headerElement) {
+        headerElement.innerHTML = await headerContent.text();
+    }
+
+    const footerElement = document.querySelector(".include_footer");
+    if (footerElement) {
+        footerElement.innerHTML = await footerContent.text();
+    }
 
     const hamburger = document.getElementById("hamburger");
     const gnb = document.getElementById("gnb");

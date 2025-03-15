@@ -2,7 +2,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 999;
+    z-index: 9999;
     width: 100%;
 
     .header_inner {
@@ -31,7 +31,7 @@
 
 #hamburger {
     position: relative;
-    z-index: 99999;
+    z-index: 9999999;
     width: to_vw(40);
     height: to_vw(18);
 
@@ -108,7 +108,7 @@
     position: fixed;
     top: 0;
     right: 0;
-    z-index: 999;
+    z-index: 99999;
     width: 50%;
     height: 100vh;
     background-color: $white;

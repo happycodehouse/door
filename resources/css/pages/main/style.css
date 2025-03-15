@@ -167,7 +167,7 @@
 }
 .main .main_intro .mass_wrap .mass01 {
   top: 10%;
-  right: -2%;
+  left: 98%;
   width: max(calc(150px * var(--base-ratio)), calc(calc(150 / var(--base-size)) * var(--base-percent)));
 }
 .main .main_intro .mass_wrap .mass02 {

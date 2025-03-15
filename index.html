@@ -23,7 +23,7 @@
         <div class="main_intro">
             <div class="inner">
                 <div class="mass_wrap">
-                    <div class="mass mass01">
+                    <div class="mass mass01 motion">
                         <img src="/resources/images/main/mass-01.svg" alt="">
                     </div>
                     <div class="mass mass02 motion">
@@ -61,10 +61,6 @@
         </div>
     </div>
     <!-- //Content -->
-
-    <!-- Footer -->
-    <footer id="footer" class="include_footer"></footer>
-    <!-- //Footer -->
 </div>
 <script src="/resources/js/libraries/jquery-3.4.1.min.js"></script>
 <script src="/resources/js/libraries/gsap.js"></script>
@@ -101,7 +97,8 @@
                         y: endY, // 아래로 이동
                         duration: 10 + Math.random() * 2, // 애니메이션 지속 시간 (변동성 추가)
                         ease: "power1.inOut", // easing 설정
-                        onComplete: animation // 애니메이션이 끝나면 다시 호출
+                        repeat: -1,
+                        yoyo: true
                     }
                 );
             };
