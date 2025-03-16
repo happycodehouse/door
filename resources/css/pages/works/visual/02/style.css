@@ -624,13 +624,13 @@
   background-color: #0A0A0A;
 }
 .sec_order .order_wrap .btn_wrap a:hover span {
-  color: #FFFFFF;
+  color: #FAFAFA;
 }
 .sec_order .order_wrap .btn_wrap a:hover .arrow_to_right {
   transform: translateX(16%);
 }
 .sec_order .order_wrap .btn_wrap a:hover .arrow_to_right svg path {
-  stroke: #FFFFFF;
+  stroke: #FAFAFA;
 }
 
 .sec_visual {

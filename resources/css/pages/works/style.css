@@ -144,26 +144,6 @@
     position: relative;
   }
 }
-.prototypes .common_layout_title {
-  display: flex;
-  gap: max(calc(8px * var(--base-ratio)), calc(calc(8 / var(--base-size)) * var(--base-percent)));
-}
-.prototypes .common_layout_title span {
-  font-size: max(calc(10px * var(--base-ratio)), calc(calc(10 / var(--base-size)) * var(--base-percent)));
-  line-height: 1;
-  letter-spacing: 0.02em;
-}
-.prototypes .common_layout_title h6 {
-  font-size: max(calc(12px * var(--base-ratio)), calc(calc(12 / var(--base-size)) * var(--base-percent)));
-  line-height: 1;
-  letter-spacing: 0.02em;
-}
-.prototypes .common_layout_detail .img_wrap {
-  width: max(calc(240px * var(--base-ratio)), calc(calc(240 / var(--base-size)) * var(--base-percent)));
-  border: max(calc(1px * var(--base-ratio)), calc(calc(1 / var(--base-size)) * var(--base-percent))) solid #DDDDDD;
-}
-.prototypes .common_layout_detail .img_wrap img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
+.container.about .content {
+  padding-top: max(calc(100px * var(--base-ratio)), calc(calc(100 / var(--base-size)) * var(--base-percent)));
 }
