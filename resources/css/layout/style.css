@@ -157,8 +157,6 @@
   justify-content: space-between;
   gap: max(calc(20px * var(--base-ratio)), calc(calc(20 / var(--base-size)) * var(--base-percent)));
   height: max(calc(100px * var(--base-ratio)), calc(calc(100 / var(--base-size)) * var(--base-percent)));
-  padding: 0 max(calc(80px * var(--base-ratio)), calc(calc(80 / var(--base-size)) * var(--base-percent)));
-  background-color: #FAFAFA;
 }
 #header .logo {
   position: absolute;

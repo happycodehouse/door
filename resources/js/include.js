@@ -49,4 +49,8 @@
             }
         }
     });
+
+    $(window).on("scroll", function () {
+
+    });
 })();
