@@ -144,8 +144,16 @@
     position: relative;
   }
 }
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+section {
+  background-color: #FFFFFF;
+}
+
 .sec_intro {
-  overflow: hidden;
+  overflow-x: hidden;
 }
 .sec_intro .row {
   justify-content: center;
@@ -765,4 +773,19 @@
   background: url("/resources/images/p1/p1-04.jpg") 100% 100% no-repeat;
   background-size: cover;
   background-position: center;
+}
+
+footer {
+  background-color: #0A0A0A;
+}
+footer .footer_inner {
+  padding: max(calc(100px * var(--base-ratio)), calc(calc(100 / var(--base-size)) * var(--base-percent))) 0;
+  text-align: center;
+}
+footer .footer_inner p {
+  font-size: max(calc(12px * var(--base-ratio)), calc(calc(12 / var(--base-size)) * var(--base-percent)));
+  line-height: 1;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+  color: #FFFFFF;
 }
