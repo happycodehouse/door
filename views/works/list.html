@@ -11,14 +11,14 @@
     <title>Works | HappyCodeHouse</title>
 </head>
 <body>
-<div id="container" class="container about">
+<div id="wrap" class="about">
     <!-- Header -->
     <header id="header" class="include_header"></header>
     <!-- //Header -->
 
     <!-- Content -->
-    <div id="content" class="content">
-        <section class="sec sec_intro">
+    <div id="container" class="container">
+        <section class="sec sec_intro_title">
             <div class="row_wrap">
                 <div class="row">
                     <div class="col-10 offset-1">
@@ -27,32 +27,35 @@
                 </div>
             </div>
         </section>
-        <section class="sec sec_motion_archive">
+        <section class="sec_works_accordion">
             <div class="row_wrap">
                 <div class="row">
                     <div class="col-10 offset-1">
-                        <div class="sub_title">
-                            <span>Personal</span>
-                            <span>Motion Archive</span>
-                        </div>
-                        <ul class="list_wrap">
+                        <ul class="works_accordion">
                             <li>
-                                <div class="thumbnail_box">
-                                    <img src="/resources/images/works/personal/visual-ver-01.png" alt="">
+                                <div class="title_box">
+                                    <a href="javascript:void(0);">
+                                        <span>Commercial</span>
+                                        <i></i>
+                                    </a>
                                 </div>
-                                <div class="info_box">
-                                    <strong>background expanding motion</strong>
-                                    <div class="btn_wrap">
-                                        <a href="" class="btn">
-                                            <span>PC</span>
-                                        </a>
-                                        <a href="" class="btn">
-                                            <span>MO</span>
-                                        </a>
+                                <div class="contents_box">
+
+                                </div>
+                            </li>
+                            <li>
+                                <div class="title_box">
+                                    <a href="javascript:void(0);">
+                                        <span>Personal</span>
+                                        <i></i>
+                                    </a>
+                                </div>
+                                <div class="contents_box">
+                                    <div class="content">
+
                                     </div>
                                 </div>
                             </li>
-                            <li></li>
                         </ul>
                     </div>
                 </div>
@@ -74,5 +77,20 @@
 <script src="/resources/js/libraries/uikit.min.js"></script>
 <script src="/resources/js/common.js"></script>
 <script src="/resources/js/include.js"></script>
+<script>
+    const $worksAccordion = $(".works_accordion");
+    const $titleBox = $worksAccordion.find(".title_box");
+
+    $titleBox.on("click", function () {
+        let _$this = $(this);
+        let _$thisParent = $(this).parent("li");
+
+        if (!_$thisParent.hasClass("active")) {
+            _$thisParent.addClass("active");
+        } else {
+            _$thisParent.removeClass("active");
+        }
+    });
+</script>
 </body>
 </html>

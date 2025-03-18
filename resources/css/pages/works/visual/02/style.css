@@ -632,13 +632,13 @@ section {
   background-color: #0A0A0A;
 }
 .sec_order .order_wrap .btn_wrap a:hover span {
-  color: #FAFAFA;
+  color: #FFFFFF;
 }
 .sec_order .order_wrap .btn_wrap a:hover .arrow_to_right {
   transform: translateX(16%);
 }
 .sec_order .order_wrap .btn_wrap a:hover .arrow_to_right svg path {
-  stroke: #FAFAFA;
+  stroke: #FFFFFF;
 }
 
 .sec_visual {
