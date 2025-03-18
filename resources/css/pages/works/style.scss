@@ -2,14 +2,27 @@
 @import "../../base/variable";
 @import "../../base/mixin";
 
-.about {
+.works {
     .container {
         padding-top: to_vw(100);
     }
 
+    // .prj_list thumbnail img
+    $thumbnailList: (hanatour, samyang);
+
+    @each $thumbnail in $thumbnailList {
+        .#{$thumbnail} {
+            @include background("works/commercial/#{$thumbnail}_thumbnail_pc_img.jpg", bottom, no-repeat, cover);
+
+            @include media(false, tablet) {
+                @include background("works/commercial/#{$thumbnail}_thumbnail_m_img.jpg", bottom, no-repeat, cover);
+            }
+        }
+    }
+
     .sec {
         &_intro_title {
-            text-align: center;
+            text-align: right;
 
             h2 {
                 margin-bottom: to_vw(48);
@@ -55,22 +68,22 @@
                             height: to_vw(20);
 
                             &::before,
-                            &::after{
+                            &::after {
                                 content: '';
                                 position: absolute;
-                                background-color: #000;
-                                box-shadow: 0 0 0 4px #000 inset;
+                                background-color: $black;
+                                box-shadow: 0 0 0 4px $black inset;
                                 transition: 0.5s;
                             }
 
-                            &::before{
+                            &::before {
                                 top: 50%;
                                 transform: translateY(-50%);
                                 width: 100%;
                                 height: 4px;
                             }
 
-                            &::after{
+                            &::after {
                                 left: 50%;
                                 transform: translateX(-50%);
                                 width: 4px;
@@ -80,7 +93,60 @@
                     }
 
                     .contents_box {
+                        padding: to_vw(24) 0;
+                        border-top: to_vw(2) solid $lineColor-100;
+                    }
+                }
+            }
 
+            .prj_list {
+                display: flex;
+                flex-wrap: wrap;
+                gap: to_vw(36);
+
+                li {
+                    width: 100%;
+                }
+
+                .item {
+                    overflow: hidden;
+                    display: flex;
+                    justify-content: flex-end;
+                    position: relative;
+                    width: 100%;
+                    height: to_vw(480);
+                    padding: to_vw(48);
+                    border-radius: to_vw(8);
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        z-index: 1;
+                        width: 100%;
+                        height: 100%;
+                        background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
+                    }
+
+                    .bg_area {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        width: 100%;
+                        height: 100%;
+                    }
+
+                    .desc_area {
+                        position: relative;
+                        z-index: 1;
+
+                        .title {
+                            @include fontSize(20);
+                            font-weight: 900;
+                            color: $white;
+                        }
                     }
                 }
             }

@@ -56,8 +56,25 @@ door.utils = {
             }
         }
     },
+    dataMotion: () => {
+        if ($("[data-motion]").length > 0) {
+            $("[data-motion]").each((idx, item) => {
+                ScrollTrigger.create({
+                    id: "dataMotion" + idx,
+                    trigger: $(item),
+                    scrub: 0.5,
+                    start: "top 70%",
+                    markers: false,
+                    invalidateOnRefresh: true,
+                    onEnter: () => $(item).addClass("active"),
+                    // onLeaveBack: () => $(item).removeClass("active")
+                });
+            });
+        }
+    },
     init: () => {
         door.utils.smoothScroll();
+        door.utils.dataMotion();
     }
 };
 
