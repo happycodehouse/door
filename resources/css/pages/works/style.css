@@ -148,24 +148,27 @@
   padding-top: max(calc(100px * var(--base-ratio)), calc(calc(100 / var(--base-size)) * var(--base-percent)));
 }
 .works .hanatour {
-  background: url("/resources/images/works/commercial/hanatour_thumbnail_pc_img.jpg") bottom no-repeat;
+  background: url("/resources/images/works/commercial/hanatour_thumbnail_pc_img.jpg") center no-repeat;
   background-size: cover;
 }
 @media (max-width: 1024px) {
   .works .hanatour {
-    background: url("/resources/images/works/commercial/hanatour_thumbnail_m_img.jpg") bottom no-repeat;
+    background: url("/resources/images/works/commercial/hanatour_thumbnail_m_img.jpg") center no-repeat;
     background-size: cover;
   }
 }
 .works .samyang {
-  background: url("/resources/images/works/commercial/samyang_thumbnail_pc_img.jpg") bottom no-repeat;
+  background: url("/resources/images/works/commercial/samyang_thumbnail_pc_img.jpg") center no-repeat;
   background-size: cover;
 }
 @media (max-width: 1024px) {
   .works .samyang {
-    background: url("/resources/images/works/commercial/samyang_thumbnail_m_img.jpg") bottom no-repeat;
+    background: url("/resources/images/works/commercial/samyang_thumbnail_m_img.jpg") center no-repeat;
     background-size: cover;
   }
+}
+.works.hanatour {
+  background-position: bottom;
 }
 .works .sec_intro_title {
   text-align: right;

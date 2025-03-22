@@ -12,12 +12,16 @@
 
     @each $thumbnail in $thumbnailList {
         .#{$thumbnail} {
-            @include background("works/commercial/#{$thumbnail}_thumbnail_pc_img.jpg", bottom, no-repeat, cover);
+            @include background("works/commercial/#{$thumbnail}_thumbnail_pc_img.jpg", center, no-repeat, cover);
 
             @include media(false, tablet) {
-                @include background("works/commercial/#{$thumbnail}_thumbnail_m_img.jpg", bottom, no-repeat, cover);
+                @include background("works/commercial/#{$thumbnail}_thumbnail_m_img.jpg", center, no-repeat, cover);
             }
         }
+    }
+
+    &.hanatour {
+        background-position: bottom;
     }
 
     .sec {
