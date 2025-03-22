@@ -8,7 +8,7 @@
     }
 
     // .prj_list thumbnail img
-    $thumbnailList: (hanatour, samyang);
+    $thumbnailList: (hanatour, samyang, gselevator);
 
     @each $thumbnail in $thumbnailList {
         .#{$thumbnail} {

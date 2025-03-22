@@ -167,6 +167,16 @@
     background-size: cover;
   }
 }
+.works .gselevator {
+  background: url("/resources/images/works/commercial/gselevator_thumbnail_pc_img.jpg") center no-repeat;
+  background-size: cover;
+}
+@media (max-width: 1024px) {
+  .works .gselevator {
+    background: url("/resources/images/works/commercial/gselevator_thumbnail_m_img.jpg") center no-repeat;
+    background-size: cover;
+  }
+}
 .works.hanatour {
   background-position: bottom;
 }
