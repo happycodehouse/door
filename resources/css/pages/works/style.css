@@ -177,7 +177,8 @@
     background-size: cover;
   }
 }
-.works .hanatour {
+.works .hanatour,
+.works .gselevator {
   background-position: bottom;
 }
 .works .sec_intro_title {
@@ -266,7 +267,7 @@
   z-index: 1;
   width: 100%;
   height: 100%;
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
 }
 .works .sec_works_accordion .prj_list .item .bg_area {
   position: absolute;
