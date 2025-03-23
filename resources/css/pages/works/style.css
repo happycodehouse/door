@@ -172,14 +172,25 @@
   background-position: bottom;
 }
 .works .sec_intro_title {
+  margin-bottom: max(calc(48px * var(--base-ratio)), calc(calc(48 / var(--base-size)) * var(--base-percent)));
   text-align: right;
 }
 .works .sec_intro_title h2 {
-  margin-bottom: max(calc(48px * var(--base-ratio)), calc(calc(48 / var(--base-size)) * var(--base-percent)));
   font-size: max(calc(20px * var(--base-ratio)), calc(calc(20 / var(--base-size)) * var(--base-percent)));
   line-height: 1;
   letter-spacing: 0.02em;
   font-weight: 900;
+  color: #0A0A0A;
+}
+.works .sec_intro_title h2 + span {
+  display: block;
+  padding-top: max(calc(8px * var(--base-ratio)), calc(calc(8 / var(--base-size)) * var(--base-percent)));
+  margin-top: max(calc(8px * var(--base-ratio)), calc(calc(8 / var(--base-size)) * var(--base-percent)));
+  border-top: max(calc(1px * var(--base-ratio)), calc(calc(1 / var(--base-size)) * var(--base-percent))) solid #DDDDDD;
+  font-size: max(calc(18px * var(--base-ratio)), calc(calc(18 / var(--base-size)) * var(--base-percent)));
+  line-height: 1;
+  letter-spacing: 0.02em;
+  font-weight: 500;
   color: #0A0A0A;
 }
 .works .sec_works_accordion .works_accordion {
@@ -268,6 +279,10 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+}
+.works .sec_works_accordion .prj_list .item .bg_area .bg {
   width: 100%;
   height: 100%;
 }

@@ -4,10 +4,29 @@ const body = document.body;
 const header = document.getElementById("header");
 const footer = document.getElementById("footer");
 let lenis;
+let scrollT, currentT;
 
 gsap.registerPlugin(ScrollTrigger);
 
 door.utils = {
+    header: () => {
+        scrollT = 0;
+        currentT = 0;
+
+        $(window).on("scroll", function (e) {
+            e.preventDefault();
+            scrollT = $(this).scrollTop();
+
+            // console.log(scrollT);
+            if (scrollT > currentT) {
+                body.setAttribute("data-scroll", "down");
+            } else if (scrollT < currentT) {
+                body.setAttribute("data-scroll", "up");
+            }
+
+            currentT = scrollT;
+        });
+    },
     /*    gnbSpot: (spot) => {
             const $gnb = $("#gnb");
             const $spot = $gnb.find("li");
@@ -73,6 +92,7 @@ door.utils = {
         }
     },
     init: () => {
+        door.utils.header();
         door.utils.smoothScroll();
         door.utils.dataMotion();
     }

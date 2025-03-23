@@ -43,7 +43,9 @@
                                     <ul class="prj_list">
                                         <li>
                                             <div class="item">
-                                                <div class="bg_area daesang"></div>
+                                                <div class="bg_area">
+                                                    <div class="bg daesang"></div>
+                                                </div>
                                                 <div class="desc_area">
                                                     <span class="title">DaesangWellife Website Development</span>
                                                     <div class="btn_wrap">
@@ -55,7 +57,9 @@
                                         </li>
                                         <li>
                                             <div class="item">
-                                                <div class="bg_area samyang"></div>
+                                                <div class="bg_area">
+                                                    <div class="bg samyang"></div>
+                                                </div>
                                                 <div class="desc_area">
                                                     <span class="title">Samyang Group Website Revamp</span>
                                                     <div class="btn_wrap">
@@ -67,7 +71,9 @@
                                         </li>
                                         <li>
                                             <div class="item">
-                                                <div class="bg_area hanatour"></div>
+                                                <div class="bg_area">
+                                                    <div class="bg hanatour"></div>
+                                                </div>
                                                 <div class="desc_area">
                                                     <span class="title">Hanatour Corporate PR Site Construction</span>
                                                     <div class="btn_wrap">
@@ -79,7 +85,9 @@
                                         </li>
                                         <li>
                                             <div class="item">
-                                                <div class="bg_area samickthk"></div>
+                                                <div class="bg_area">
+                                                    <div class="bg samickthk"></div>
+                                                </div>
                                                 <div class="desc_area">
                                                     <span class="title">SamikTHK Integrated Site Revamp</span>
                                                     <div class="btn_wrap">
@@ -91,7 +99,9 @@
                                         </li>
                                         <li>
                                             <div class="item">
-                                                <div class="bg_area gselevator"></div>
+                                                <div class="bg_area">
+                                                    <div class="bg gselevator"></div>
+                                                </div>
                                                 <div class="desc_area">
                                                     <span class="title">GS Elevator Site Renewal</span>
                                                 </div>
@@ -148,8 +158,10 @@
 
         if (!_$thisParent.hasClass("active")) {
             _$thisParent.addClass("active");
+            _$thisParent.find(".contents_box").stop().slideUp();
         } else {
             _$thisParent.removeClass("active");
+            _$thisParent.find(".contents_box").stop().slideDown();
         }
     });
 </script>
