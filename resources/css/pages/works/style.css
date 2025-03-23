@@ -163,6 +163,10 @@
   background: url("/resources/images/works/commercial/samickthk_thumbnail_img.jpg") center no-repeat;
   background-size: cover;
 }
+.works .daesang {
+  background: url("/resources/images/works/commercial/daesang_thumbnail_img.jpg") center no-repeat;
+  background-size: cover;
+}
 .works .hanatour,
 .works .gselevator {
   background-position: bottom;
