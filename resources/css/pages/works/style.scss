@@ -4,11 +4,11 @@
 
 .works {
     .container {
-        padding-top: to_vw(100);
+        padding: to_vw(100) 0 to_vw(180);
     }
 
     // .prj_list thumbnail img
-    $thumbnailList: (hanatour, samyang, gselevator);
+    $thumbnailList: (hanatour, samyang, gselevator, samickthk);
 
     @each $thumbnail in $thumbnailList {
         .#{$thumbnail} {
@@ -131,7 +131,7 @@
                         z-index: 1;
                         width: 100%;
                         height: 100%;
-                        background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+                        background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.25) 100%);
                     }
 
                     .bg_area {
