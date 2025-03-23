@@ -12,11 +12,7 @@
 
     @each $thumbnail in $thumbnailList {
         .#{$thumbnail} {
-            @include background("works/commercial/#{$thumbnail}_thumbnail_pc_img.jpg", center, no-repeat, cover);
-
-            @include media(false, tablet) {
-                @include background("works/commercial/#{$thumbnail}_thumbnail_m_img.jpg", center, no-repeat, cover);
-            }
+            @include background("works/commercial/#{$thumbnail}_thumbnail_img.jpg", center, no-repeat, cover);
         }
     }
 
@@ -119,7 +115,6 @@
                     justify-content: flex-end;
                     position: relative;
                     width: 100%;
-                    height: to_vw(480);
                     padding: to_vw(48);
                     border-radius: to_vw(8);
 
@@ -132,6 +127,12 @@
                         width: 100%;
                         height: 100%;
                         background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.25) 100%);
+                    }
+
+                    &::after {
+                        content: '';
+                        display: block;
+                        padding-bottom: 32%;
                     }
 
                     .bg_area {
