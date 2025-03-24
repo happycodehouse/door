@@ -203,6 +203,7 @@
   position: absolute;
   bottom: max(calc(20px * var(--base-ratio)), calc(calc(20 / var(--base-size)) * var(--base-percent)));
   left: max(calc(20px * var(--base-ratio)), calc(calc(20 / var(--base-size)) * var(--base-percent)));
+  opacity: 0;
 }
 .sec_visual .source_info span {
   font-size: max(calc(12px * var(--base-ratio)), calc(calc(12 / var(--base-size)) * var(--base-percent)));
@@ -238,5 +239,8 @@
     background: url("/resources/images/works/personal/cloud_m.jpg") center no-repeat;
     background-size: cover;
     transform: translateY(0);
+  }
+  .sec_visual .bg_wrap .dim {
+    height: calc(100% - max(calc(30px * var(--base-ratio)), calc(calc(30 / var(--base-size)) * var(--base-percent))));
   }
 }

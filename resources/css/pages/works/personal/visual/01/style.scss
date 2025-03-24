@@ -63,6 +63,7 @@
         position: absolute;
         bottom: to_vw(20);
         left: to_vw(20);
+        opacity: 0;
 
         span {
             @include fontSize(12);
@@ -99,6 +100,10 @@
                 padding-top: to_vw(130);
                 @include background("works/personal/cloud_m.jpg", center, no-repeat, cover);
                 transform: translateY(0);
+            }
+
+            .dim {
+                height: calc(100% - to_vw(30));
             }
         }
     }

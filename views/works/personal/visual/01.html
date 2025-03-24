@@ -101,7 +101,7 @@
 
             secVisualTl
                 .to($txtWrap, {top: "50%", y: "-50%", ...commonAnimationProps})
-                .to($sourceInfo, {color: "#FFFFFF", ...commonAnimationProps}, 0)
+                .to($sourceInfo, {color: "#FFFFFF", alpha: 1, ...commonAnimationProps}, 0)
                 .to($txt, {color: "#FFFFFF", ...commonAnimationProps}, 0)
                 .to($bgWrap, {"--clip": "0% 0% 0% 0%", ...commonAnimationProps}, 0)
                 .to($bg, {y: 0, ...commonAnimationProps}, 0)
@@ -149,6 +149,7 @@
 
             secVisualTl
                 .to($txt, {color: "#FFFFFF", ...commonAnimationProps}, 0)
+                .to($sourceInfo, {color: "#FFFFFF", alpha: 1, ...commonAnimationProps}, 0)
                 .to($bgWrap, {"--clip": "0 0px 0 0px", ...commonAnimationProps}, 0)
                 .to($dim, {alpha: 1, ...commonAnimationProps});
         }, 100);
