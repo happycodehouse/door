@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="/resources/images/favicon.ico">
     <link rel="stylesheet" type="text/css" href="/resources/css/reset/style.min.css">
     <link rel="stylesheet" type="text/css" href="/resources/css/font/style.min.css">
     <link rel="stylesheet" type="text/css" href="/resources/css/layout/style.min.css">
@@ -10,9 +11,13 @@
     <title></title>
 </head>
 <body>
+<div id="wrap" class="wrap">
+    <!-- Header -->
+    <header id="header" class="include_header"></header>
+    <!-- //Header -->
 
-<div class="container prototypes visual ver01">
-    <div class="sec_visual">
+    <!-- Container -->
+    <section class="sec_visual">
         <div class="sticky">
             <div class="inner">
                 <div class="txt_wrap">
@@ -33,7 +38,13 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+    <section class="" style="height: 100vh; border: 2px solid;"></section>
+    <!-- //Container -->
+
+    <!-- Footer -->
+    <footer id="footer" class="include_footer"></footer>
+    <!-- //Footer -->
 </div>
 <script src="/resources/js/include.js"></script>
 <script src="/resources/js/libraries/gsap.js"></script>
@@ -44,37 +55,136 @@
 <script src="/resources/js/libraries/swiper4.5.1.js"></script>
 <script src="/resources/js/common.js"></script>
 <script>
-    const $secVisual = $(".sec_visual");
-    const $secVisualTxtWrap = $secVisual.find(".txt_wrap");
-    const $secVisualTxt = [$secVisualTxtWrap.find("span"), $secVisualTxtWrap.find("p")];
-    const $secVisualBgWrap = $secVisual.find(".bg_wrap");
-    const $secVisualBg = $secVisualBgWrap.find(".bg");
-    const $secVisualDim = $secVisualBgWrap.find(".dim");
-    const $sourceInfo = $secVisual.find(".source_info");
+    let pcEvent,
+        moEvent,
+        txtHeight,
+        secVisualTl,
+        oneMotion = true;
+
+    const $secVisual = $(".sec_visual"),
+        $txtWrap = $secVisual.find(".txt_wrap"),
+        $txt = [$txtWrap.find("span"), $txtWrap.find("p")],
+        $bgWrap = $secVisual.find(".bg_wrap"),
+        $bg = $bgWrap.find(".bg"),
+        $dim = $bgWrap.find(".dim"),
+        $sourceInfo = $secVisual.find(".source_info");
 
     const commonAnimationProps = {
         duration: 0.5,
         ease: "none"
     };
 
-    let secVisualTl = gsap.timeline({
-        scrollTrigger: {
-            trigger: $secVisual,
-            start: "top top",
-            end: "bottom bottom",
-            scrub: 1,
-            invalidateOnRefresh: true,
-            markers: false
-        }
-    });
+    function webMotion() {
+        clearTimeout(pcEvent);
+        pcEvent = setTimeout(() => {
+            // moMotion Reset
+            ScrollTrigger.getAll().forEach((st) => {
+                if (st.vars.id === "moMotion") {
+                    st.kill();
+                }
+            });
+            secVisualTl && secVisualTl.kill();
+            secVisualTl = "";
+            gsap.set([$txtWrap, $txt, $bgWrap, $bg, $dim, $sourceInfo], {clearProps: "all"});
 
-    secVisualTl
-        .to($secVisualTxtWrap, { top: "50%", y: "-50%", ...commonAnimationProps })
-        .to($sourceInfo, { color: "#FFFFFF", ...commonAnimationProps }, 0)
-        .to($secVisualTxt, { color: "#FFFFFF", ...commonAnimationProps }, 0)
-        .to($secVisualBgWrap, { "--clip": "0% 0% 0% 0%", ...commonAnimationProps }, 0)
-        .to($secVisualBg, { y: 0, ...commonAnimationProps }, 0)
-        .to($secVisualDim, { alpha: 1, ...commonAnimationProps });
+            secVisualTl = gsap.timeline({
+                scrollTrigger: {
+                    id: "webMotion",
+                    trigger: $secVisual,
+                    start: "top top",
+                    end: "bottom bottom",
+                    scrub: 1,
+                    invalidateOnRefresh: true,
+                    markers: false
+                }
+            });
+
+            secVisualTl
+                .to($txtWrap, {top: "50%", y: "-50%", ...commonAnimationProps})
+                .to($sourceInfo, {color: "#FFFFFF", ...commonAnimationProps}, 0)
+                .to($txt, {color: "#FFFFFF", ...commonAnimationProps}, 0)
+                .to($bgWrap, {"--clip": "0% 0% 0% 0%", ...commonAnimationProps}, 0)
+                .to($bg, {y: 0, ...commonAnimationProps}, 0)
+                .to($dim, {alpha: 1, ...commonAnimationProps});
+        }, 100);
+    }
+
+    function moMotion() {
+        clearTimeout(moEvent);
+        moEvent = setTimeout(() => {
+            // webMotion Reset
+            ScrollTrigger.getAll().forEach((st) => {
+                if (st.vars.id === "webMotion") {
+                    st.kill();
+                }
+            });
+            secVisualTl && secVisualTl.kill();
+            secVisualTl = "";
+            gsap.set([$txtWrap, $txt, $bgWrap, $bg, $dim, $sourceInfo], {clearProps: "all"});
+
+            // txtHeight 계산
+            txtHeight = $txtWrap.outerHeight();
+            $bgWrap.css("margin-top", txtHeight);
+
+            secVisualTl = gsap.timeline({
+                scrollTrigger: {
+                    id: "moMotion",
+                    trigger: $secVisual,
+                    endTrigger: $bg,
+                    start: "top top",
+                    end: "top top",
+                    scrub: 1,
+                    markers: false,
+                    onLeave: () => {
+                        $txtWrap.removeAttr("style").css({
+                            "position": "absolute",
+                            "top": $bg.offset().top + Number($bg.css("padding-top").split("px")[0])
+                        });
+                    },
+                    onEnterBack: () => {
+                        $txtWrap.removeAttr("style");
+                    }
+                }
+            });
+
+            secVisualTl
+                .to($txt, {color: "#FFFFFF", ...commonAnimationProps}, 0)
+                .to($bgWrap, {"--clip": "0 0px 0 0px", ...commonAnimationProps}, 0)
+                .to($dim, {alpha: 1, ...commonAnimationProps});
+        }, 100);
+    }
+
+    function breakPoint(mediaQuery) {
+        if (mediaQuery.matches) {
+            oneMotion = true;
+        } else {
+            oneMotion = true;
+        }
+    }
+
+    breakPoint(mediaQuery);
+    mediaQuery.addEventListener("change", breakPoint);
+
+    $(window).on("load resize", () => {
+        setTimeout(() => {
+            if (windowWidth > 1024 && !isTouchDevice) {
+                // WEB 1025 ~
+                webMotion();
+            } else if (windowWidth > 1024 && isTouchDevice) {
+                // WEB 1025 && TABLET
+                if (oneMotion) {
+                    webMotion();
+                    oneMotion = false;
+                }
+            } else if (windowWidth < 1025) {
+                // MOBILE ~ 1024
+                if (oneMotion) {
+                    moMotion();
+                    oneMotion = false;
+                }
+            }
+        }, 10);
+    });
 </script>
 </body>
 </html>

@@ -3,8 +3,7 @@ const mediaQuery = window.matchMedia("(min-width: 1025px)");
 const body = document.body;
 const header = document.getElementById("header");
 const footer = document.getElementById("footer");
-let lenis;
-let scrollT, currentT;
+let lenis, scrollT, currentT, windowWidth, isTouchDevice;
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -97,6 +96,11 @@ door.utils = {
         door.utils.dataMotion();
     }
 };
+
+$(window).on('load resize', function () {
+    windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    isTouchDevice = (getComputedStyle(document.documentElement).getPropertyValue("--pointer")) == "coarse";
+});
 
 door.utils.init();
 

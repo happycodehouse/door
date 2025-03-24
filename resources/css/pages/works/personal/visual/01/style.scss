@@ -3,69 +3,103 @@
 @import "../../../../../base/mixin";
 
 .sec_visual {
-  height: 200vh;
+    height: 200vh;
 
-  .inner {
-    position: relative;
-    height: 100%;
+    .inner {
+        position: relative;
+        height: 100%;
+    }
 
     .txt_wrap {
-      position: absolute;
-      top: to_vw(120);
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 1;
-      width: 100%;
-      text-align: center;
+        position: absolute;
+        top: to_vw(170);
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1;
+        width: 100%;
+        text-align: center;
 
-      span {
-        display: block;
-        @include fontSize(18);
-        font-weight: 700;
-        margin-bottom: to_vw(10);
-      }
+        span {
+            display: block;
+            @include fontSize(18);
+            font-weight: 700;
+            margin-bottom: to_vw(10);
+        }
 
-      p {
-        @include fontSize(12, 18);
-        font-weight: 300;
-      }
+        p {
+            @include fontSize(12, 18);
+            font-weight: 300;
+        }
     }
 
     .bg_wrap {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      --clip: 44% 13% 0 13%;
-      clip-path: inset(var(--clip));
-
-      .bg {
-        width: 100%;
-        height: 100%;
-        @include background("works/personal/cloud.jpg", 100% 100%, no-repeat, cover);
-        transform: translateY(50%);
-      }
-
-      .dim {
         position: absolute;
+        top: 0;
         left: 0;
-        bottom: 0;
         width: 100%;
         height: 100%;
-        opacity: 0;
-        background-color: rgba(0, 0, 0, 0.2);
-      }
+        --clip: 44% 13% 0 13%;
+        clip-path: inset(var(--clip));
+
+        .bg {
+            width: 100%;
+            height: 100%;
+            @include background("works/personal/cloud.jpg", 100% 100%, no-repeat, cover);
+            transform: translateY(50%);
+        }
+
+        .dim {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            background-color: rgba(0, 0, 0, 0.2);
+        }
     }
 
     .source_info {
-      position: absolute;
-      bottom: to_vw(20);
-      left: to_vw(20);
+        position: absolute;
+        bottom: to_vw(20);
+        left: to_vw(20);
 
-      span {
-        @include fontSize(12);
-      }
+        span {
+            @include fontSize(12);
+        }
     }
-  }
+
+    @include media(false, tablet) {
+        height: auto;
+
+        .sticky {
+            height: auto;
+        }
+
+        .inner {
+            padding-top: to_vw(130);
+        }
+
+        .txt_wrap {
+            position: fixed;
+            top: to_vw(130);
+            width: 100%;
+        }
+
+        .bg_wrap {
+            position: relative;
+            height: to_vw(440);
+            margin-top: to_vw(90);
+            padding-top: to_vw(30);
+            inset: auto;
+            transform: none;
+            --clip: 0 20px 0 20px;
+
+            .bg {
+                padding-top: to_vw(130);
+                @include background("works/personal/cloud_m.jpg", center, no-repeat, cover);
+                transform: translateY(0);
+            }
+        }
+    }
 }
