@@ -112,10 +112,28 @@
         }
 
         .circle {
+            position: relative;
             width: to_vw(372);
             height: to_vw(372);
             background-color: $gray-50;
             border-radius: inherit;
+            overflow: hidden;
+
+            li {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                visibility: hidden;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
         }
 
         .quarter_box {

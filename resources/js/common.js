@@ -11,20 +11,6 @@ door.utils = {
     header: () => {
         scrollT = 0;
         currentT = 0;
-
-        $(window).on("scroll", function (e) {
-            e.preventDefault();
-            scrollT = $(this).scrollTop();
-
-            // console.log(scrollT);
-            if (scrollT > currentT) {
-                body.setAttribute("data-scroll", "down");
-            } else if (scrollT < currentT) {
-                body.setAttribute("data-scroll", "up");
-            }
-
-            currentT = scrollT;
-        });
     },
     /*    gnbSpot: (spot) => {
             const $gnb = $("#gnb");

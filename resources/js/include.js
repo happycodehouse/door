@@ -50,7 +50,33 @@
         }
     });
 
-    $(window).on("scroll", function () {
+    window.addEventListener("scroll", function (e) {
+        e.preventDefault();
+        scrollT = window.scrollY; // 현재 스크롤 위치 가져오기
 
+        // 스크롤 방향 확인
+        if (scrollT > currentT) {
+            body.setAttribute("data-scroll", "down");
+        } else if (scrollT < currentT) {
+            body.setAttribute("data-scroll", "up");
+        }
+
+        if (scrollT > 0) {
+            if (body.getAttribute("data-scroll") === "down") {
+                // scroll down
+                header.classList.add("hide");
+                header.classList.remove("show");
+            } else if (body.getAttribute("data-scroll") === "up") {
+                // scroll up
+                header.classList.remove("hide");
+                header.classList.add("show");
+            }
+        } else if (scrollT === 0) {
+            if (header.classList.contains("show")) {
+                header.classList.remove("show");
+            }
+        }
+
+        currentT = scrollT;
     });
 })();

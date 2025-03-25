@@ -4,6 +4,15 @@
     left: 0;
     z-index: 9999;
     width: 100%;
+    transition: top 0.5s;
+
+    &.hide {
+        top: -100%;
+    }
+
+    &.show {
+        border-bottom: to_vw(1) solid $lineColor-100;
+    }
 
     .header_inner {
         display: flex;
@@ -11,6 +20,8 @@
         justify-content: space-between;
         gap: to_vw(20);
         height: to_vw(100);
+        padding: 0 to_vw(80);
+        background-color: $white;
     }
 
     .logo {

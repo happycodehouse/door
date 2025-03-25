@@ -234,10 +234,26 @@
   border-radius: max(calc(999px * var(--base-ratio)), calc(calc(999 / var(--base-size)) * var(--base-percent)));
 }
 .sec_heritage .circle_area .circle {
+  position: relative;
   width: max(calc(372px * var(--base-ratio)), calc(calc(372 / var(--base-size)) * var(--base-percent)));
   height: max(calc(372px * var(--base-ratio)), calc(calc(372 / var(--base-size)) * var(--base-percent)));
   background-color: #EDEDED;
   border-radius: inherit;
+  overflow: hidden;
+}
+.sec_heritage .circle_area .circle li {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+}
+.sec_heritage .circle_area .circle li img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .sec_heritage .circle_area .quarter_box {
   position: absolute;

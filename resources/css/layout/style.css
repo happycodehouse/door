@@ -150,6 +150,13 @@
   left: 0;
   z-index: 9999;
   width: 100%;
+  transition: top 0.5s;
+}
+#header.hide {
+  top: -100%;
+}
+#header.show {
+  border-bottom: max(calc(1px * var(--base-ratio)), calc(calc(1 / var(--base-size)) * var(--base-percent))) solid #f3f3f3;
 }
 #header .header_inner {
   display: flex;
@@ -157,6 +164,8 @@
   justify-content: space-between;
   gap: max(calc(20px * var(--base-ratio)), calc(calc(20 / var(--base-size)) * var(--base-percent)));
   height: max(calc(100px * var(--base-ratio)), calc(calc(100 / var(--base-size)) * var(--base-percent)));
+  padding: 0 max(calc(80px * var(--base-ratio)), calc(calc(80 / var(--base-size)) * var(--base-percent)));
+  background-color: #FFFFFF;
 }
 #header .logo {
   position: absolute;
