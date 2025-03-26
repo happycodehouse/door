@@ -186,7 +186,7 @@
 .sec_heritage {
   display: flex;
   position: relative;
-  height: 350vh;
+  height: 400vh;
 }
 .sec_heritage .timeline_wrap {
   position: absolute;
@@ -200,7 +200,10 @@
   display: flex;
 }
 .sec_heritage .timeline li {
-  width: 33%;
+  width: 25%;
+}
+.sec_heritage .timeline li.active span {
+  opacity: 1;
 }
 .sec_heritage .timeline li a {
   display: flex;
@@ -214,6 +217,7 @@
   letter-spacing: 0.02em;
   font-weight: 700;
   color: #0A0A0A;
+  opacity: 0.5;
 }
 .sec_heritage .circle_area,
 .sec_heritage .desc_area {

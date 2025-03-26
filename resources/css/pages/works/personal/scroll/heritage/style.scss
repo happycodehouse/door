@@ -23,8 +23,6 @@
         }
     }
 
-
-
     .bg_wrap {
         position: absolute;
         bottom: 0;
@@ -59,7 +57,7 @@
 .sec_heritage {
     display: flex;
     position: relative;
-    height: 350vh;
+    height: 400vh;
 
     .timeline_wrap {
         position: absolute;
@@ -74,7 +72,13 @@
         display: flex;
 
         li {
-            width: 33%;
+            width: 25%;
+
+            &.active {
+                span {
+                    opacity: 1;
+                }
+            }
 
             a {
                 display: flex;
@@ -87,6 +91,7 @@
                 @include fontSize(14);
                 font-weight: 700;
                 color: $black;
+                opacity: 0.5;
             }
         }
     }
