@@ -287,7 +287,7 @@
   min-height: calc(100vh - max(calc(90px * var(--base-ratio)), calc(calc(90 / var(--base-size)) * var(--base-percent))));
 }
 .sec_heritage .desc_area .title {
-  margin-bottom: max(calc(24px * var(--base-ratio)), calc(calc(24 / var(--base-size)) * var(--base-percent)));
+  margin-bottom: max(calc(48px * var(--base-ratio)), calc(calc(48 / var(--base-size)) * var(--base-percent)));
   font-size: max(calc(24px * var(--base-ratio)), calc(calc(24 / var(--base-size)) * var(--base-percent)));
   line-height: 1;
   letter-spacing: 0.02em;

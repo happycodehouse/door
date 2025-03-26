@@ -173,7 +173,7 @@
         }
 
         .title {
-            margin-bottom: to_vw(24);
+            margin-bottom: to_vw(48);
             @include fontSize(24);
             font-weight: 700;
             color: $black;
