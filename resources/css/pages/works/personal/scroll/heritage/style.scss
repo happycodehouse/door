@@ -168,8 +168,16 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            position: absolute;
+            top: 0;
+            right: 0;
             width: 45%;
             min-height: calc(100vh - to_vw(90));
+            transform: translateY(100%);
+
+            &.active {
+                transform: translateY(0);
+            }
         }
 
         .title {

@@ -76,6 +76,9 @@
                             <li data-year-img="2017">
                                 <img src="/resources/images/works/personal/heritage/img_2017.jpg" alt="">
                             </li>
+                            <li data-year-img="2016">
+                                <img src="/resources/images/works/personal/heritage/img_2016.jpg" alt="">
+                            </li>
                             <li data-year-img="2015">
                                 <img src="/resources/images/works/personal/heritage/img_2015.jpg" alt="">
                             </li>
@@ -113,7 +116,7 @@
                                 <img src="/resources/images/works/personal/heritage/img_1979.jpg" alt="">
                             </li>
                         </ul>
-                        <div class="quarter_box">
+                        <div id="quarterBox" class="quarter_box">
                             <div class="quarter_bg">
                                 <!-- pc용 SVG -->
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 231 231" fill="none" class="m_none">
@@ -149,6 +152,13 @@
                                 <p>
                                     "Coco" is released in North America <br>
                                     and becomes Mexico's highest-grossing film of all time.
+                                </p>
+                            </li>
+                            <li data-year="2016">
+                                <em>2016</em>
+                                <p>
+                                    "The Toy Story Hotel" and "Buzz Lightyear Planet Rescue" attraction debut <br>
+                                    with the opening of Shanghai Disney Resort.
                                 </p>
                             </li>
                         </ul>
@@ -283,15 +293,32 @@
 <script src="/resources/js/libraries/swiper4.5.1.js"></script>
 <script src="/resources/js/common.js"></script>
 <script>
-    $timelineWrap = $("#timelineWrap");
-    $timelineItem = $timelineWrap.find("li");
+    const
+        $secHeritage = $(".sec_heritage"),
+        $timelineWrap = $("#timelineWrap"),
+        $timelineItem = $timelineWrap.find("li"),
+        $quarterBox = $("#quarterBox"),
+        $desc = $secHeritage.find(".desc");
 
-    function currentTimeline($item, idx) {
 
+    function init(){
+        $desc.eq(0).addClass("active");
+        $timelineItem.eq(0).addClass("active");
     }
 
-    $timelineWrap.on("click", function (){
+    init();
 
+    function activeTimeline(idx) {
+        $timelineItem.removeClass("active").eq(idx).addClass("active");
+        $desc.removeClass("active").eq(idx).addClass("active");
+    }
+
+    $timelineItem.on("click", function () {
+        let idx = $(this).index();
+
+        console.log(idx);
+
+        activeTimeline(idx);
     });
 </script>
 </body>
