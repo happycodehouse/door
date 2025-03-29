@@ -258,13 +258,13 @@
 
         .desc_area {
             position: static;
-            padding: to_vw(40);
 
             .desc {
                 justify-content: flex-start;
                 width: 100%;
                 height: auto;
-                padding: to_vw(112) 0;
+                padding: to_vw(112) to_vw(40);
+                border-top: to_vw(1) solid $gray-50;
 
                 &:first-child {
                     //padding-top: to_vw(160);
@@ -288,7 +288,10 @@
 
     @include media(false, mobile) {
         .desc_area {
-            padding: 0 to_vw(20);
+
+            .desc {
+                padding: to_vw(112) to_vw(20);
+            }
 
             li {
                 flex-direction: column;

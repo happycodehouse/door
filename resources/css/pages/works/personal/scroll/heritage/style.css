@@ -215,7 +215,7 @@
   z-index: 9;
   width: 100%;
   background-color: #FFFFFF;
-  border-bottom: max(calc(2px * var(--base-ratio)), calc(calc(2 / var(--base-size)) * var(--base-percent))) solid #EDEDED;
+  border-bottom: max(calc(2px * var(--base-ratio)), calc(calc(2 / var(--base-size)) * var(--base-percent))) solid #E8E8E8;
 }
 .sec_heritage .timeline_wrap.fixed {
   position: fixed;
@@ -268,8 +268,8 @@
   position: relative;
   width: max(calc(372px * var(--base-ratio)), calc(calc(372 / var(--base-size)) * var(--base-percent)));
   height: max(calc(372px * var(--base-ratio)), calc(calc(372 / var(--base-size)) * var(--base-percent)));
-  background-color: #EDEDED;
-  border: max(calc(2px * var(--base-ratio)), calc(calc(2 / var(--base-size)) * var(--base-percent))) solid #EDEDED;
+  background-color: #E8E8E8;
+  border: max(calc(2px * var(--base-ratio)), calc(calc(2 / var(--base-size)) * var(--base-percent))) solid #E8E8E8;
   border-radius: inherit;
   overflow: hidden;
 }
@@ -365,13 +365,13 @@
   }
   .sec_heritage .desc_area {
     position: static;
-    padding: max(calc(40px * var(--base-ratio)), calc(calc(40 / var(--base-size)) * var(--base-percent)));
   }
   .sec_heritage .desc_area .desc {
     justify-content: flex-start;
     width: 100%;
     height: auto;
-    padding: max(calc(112px * var(--base-ratio)), calc(calc(112 / var(--base-size)) * var(--base-percent))) 0;
+    padding: max(calc(112px * var(--base-ratio)), calc(calc(112 / var(--base-size)) * var(--base-percent))) max(calc(40px * var(--base-ratio)), calc(calc(40 / var(--base-size)) * var(--base-percent)));
+    border-top: max(calc(1px * var(--base-ratio)), calc(calc(1 / var(--base-size)) * var(--base-percent))) solid #E8E8E8;
   }
   .sec_heritage .desc_area li {
     margin-bottom: max(calc(56px * var(--base-ratio)), calc(calc(56 / var(--base-size)) * var(--base-percent)));
@@ -389,8 +389,8 @@
   }
 }
 @media (max-width: 767px) {
-  .sec_heritage .desc_area {
-    padding: 0 max(calc(20px * var(--base-ratio)), calc(calc(20 / var(--base-size)) * var(--base-percent)));
+  .sec_heritage .desc_area .desc {
+    padding: max(calc(112px * var(--base-ratio)), calc(calc(112 / var(--base-size)) * var(--base-percent))) max(calc(20px * var(--base-ratio)), calc(calc(20 / var(--base-size)) * var(--base-percent)));
   }
   .sec_heritage .desc_area li {
     flex-direction: column;
