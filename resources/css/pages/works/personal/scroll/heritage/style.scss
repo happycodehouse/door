@@ -193,8 +193,8 @@
 
         li {
             display: flex;
+            width: fit-content;
             margin-bottom: to_vw(32);
-
 
             &.active {
                 em {

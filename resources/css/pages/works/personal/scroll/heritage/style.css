@@ -306,6 +306,7 @@
 }
 .sec_heritage .desc_area li {
   display: flex;
+  width: fit-content;
   margin-bottom: max(calc(32px * var(--base-ratio)), calc(calc(32 / var(--base-size)) * var(--base-percent)));
 }
 .sec_heritage .desc_area li.active em {
