@@ -11,7 +11,7 @@
     <title>Works | HappyCodeHouse</title>
 </head>
 <body>
-<div id="wrap" class="wrap">
+<div id="wrap" class="wrap sticky_exist">
     <!-- Header -->
     <header id="header" class="include_header"></header>
     <!-- //Header -->
@@ -33,6 +33,7 @@
             </div>
         </section>
         <section class="sec_heritage">
+            <div class="blank"></div>
             <div class="sticky">
                 <div id="timelineWrap" class="timeline_wrap">
                     <ul class="timeline">
@@ -132,7 +133,6 @@
                     </div>
                 </div>
                 <div class="desc_area">
-                    <div class="blank"></div>
                     <div class="desc">
                         <span class="title">Present - 2016</span>
                         <ul>
@@ -297,7 +297,6 @@
 <script src="/resources/js/common.js"></script>
 <script>
     const
-        $secVisual = $(".sec_visual"),
         $secHeritage = $(".sec_heritage"),
         $timelineWrap = $("#timelineWrap"),
         $timelineItem = $timelineWrap.find("li"),
@@ -308,15 +307,23 @@
         $desc = $descArea.find(".desc"),
         $descTxt = $desc.find("li");
 
-    let mouseenterFlag = false;
+    let pcSecHeritageTl,
+        moSecHeritageTl,
+        moDescTl,
+        mouseenterFlag = false,
+        isPc = false;
 
-    function init(){
+    function pcInit(){
+        $timelineWrap.removeClass("fixed");
         $timelineItem.eq(0).addClass("active");
         $circleImgList.eq(0).find("li").eq(0).addClass("active");
         $desc.find("li").eq(0).addClass("active");
     }
 
-    init();
+    function moInit() {
+        $circleImg.removeClass("active");
+        $descTxt.removeClass("active");
+    }
 
     $desc.find("li").on("mouseenter", function () {
         let _$this = $(this);
@@ -339,57 +346,129 @@
         if (idx === -1) {
             idx = 0;
         }
-        $timelineItem.removeClass("active").eq(idx).addClass("active");
-
-        if (mouseenterFlag === false) {
-            $circleImg.removeClass("active");
-            $circleImgList.eq(idx).find("li").eq(0).addClass("active");
-            $descTxt.removeClass("active");
-            $desc.eq(idx).find("li").eq(0).addClass("active");
+        if (isPc) {
+            $timelineItem.removeClass("active").eq(idx).addClass("active");
+            if (mouseenterFlag === false) {
+                $circleImg.removeClass("active");
+                $circleImgList.eq(idx).find("li").eq(0).addClass("active");
+                $descTxt.removeClass("active");
+                $desc.eq(idx).find("li").eq(0).addClass("active");
+            }
+            gsap.to($descArea, {
+                translateY: 100 * -idx + "vh",
+                ease: "power1.easeOut"
+            });
+            gsap.to($quarterBox, {
+                rotate: (90 * idx) + "deg",
+                ease: "power1.easeOut"
+            });
+        } else {
+            gsap.to(window, {
+                scrollTo: $desc.eq(idx).offset().top - $timelineWrap.height(),
+                ease: "none"
+            })
         }
-
-        gsap.to($descArea, {
-            translateY: 100 * -idx + "vh",
-            ease: "power1.easeOut"
-        });
-        gsap.to($quarterBox, {
-            rotate: (90 * idx) + "deg",
-            ease: "power1.easeOut"
-        });
     }
 
-    let secHeritageTl = gsap.timeline({
-        scrollTrigger: {
-            id: "secHeritageTl",
-            trigger: $secHeritage,
-            start: "top top",
-            end: "bottom bottom",
-            scrub: 1,
-            invalidateOnRefresh: true,
-            markers: false
+    ScrollTrigger.matchMedia({
+        // PC
+        "(min-width: 1025px)": function() {
+            pcSecHeritageTl = gsap.timeline({
+                scrollTrigger: {
+                    id: "pcSecHeritageTl",
+                    trigger: $secHeritage,
+                    start: "top top",
+                    end: "bottom bottom",
+                    scrub: 1,
+                    invalidateOnRefresh: true,
+                    markers: false
+                }
+            }).to($(".blank"), {
+                y: 100,
+                ease: "none"
+            });
+
+            $timelineItem.each(function(idx) {
+                pcSecHeritageTl.to({}, {
+                    onStart: () => activeTimeline(idx),
+                    onComplete: () => {
+                        mouseenterFlag = false;
+                    },
+                    onReverseComplete: () => {
+                        mouseenterFlag = false;
+                        activeTimeline(idx - 1);
+                    }
+                });
+            });
+        },
+        // 모바일
+        "(max-width: 1024px)": function() {
+            moSecHeritageTl = gsap.timeline({
+                scrollTrigger: {
+                    id: "moSecHeritageTl",
+                    trigger: $secHeritage,
+                    start: "top top",
+                    end: "bottom bottom",
+                    scrub: 1,
+                    invalidateOnRefresh: true,
+                    markers: false,
+                    onEnter: () => {
+                        $timelineWrap.addClass("fixed");
+                    },
+                    onLeaveBack: () => {
+                        $timelineWrap.removeClass("fixed");
+                    }
+                }
+            });
+            $desc.each(function (idx, item) {
+                moDescTl = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: $(item),
+                        start: "top top",
+                        end: "bottom bottom",
+                        scrub: 1,
+                        invalidateOnRefresh: true,
+                        markers: true,
+                        onEnter: () => {
+                            $timelineItem.removeClass("active");
+                            $timelineItem.eq(idx).addClass("active");
+                        },
+                        onLeaveBack: () => {
+                            $timelineItem.removeClass("active");
+                            $timelineItem.eq(idx - 1).addClass("active");
+                            if (idx === 0) {
+                                $timelineItem.removeClass("active");
+                                $timelineItem.eq(0).addClass("active");
+                            }
+                        }
+                    }
+                })
+            })
         }
-    }).to($(".blank"), {
-        y: 100,
-        ease: "none"
     });
 
-    $timelineItem.each(function(idx) {
-        secHeritageTl.to({}, {
-            onStart: () => activeTimeline(idx),
-            onComplete: () => {
-                mouseenterFlag = false;
-            },
-            onReverseComplete: () => {
-                mouseenterFlag = false;
-                activeTimeline(idx - 1);
-            }
-        });
-    });
 
     $timelineItem.on("click", function () {
         let idx = $(this).index();
         activeTimeline(idx);
     });
+
+    function breakPoint(mediaQuery){
+        if (mediaQuery.matches) {
+            // pc
+            console.log("pc");
+            pcInit();
+            isPc = true;
+        } else {
+            // mo
+            moInit();
+            isPc = false;
+            console.log("mo");
+        }
+    }
+
+    breakPoint(mediaQuery);
+    mediaQuery.addEventListener("change", breakPoint);
 </script>
 </body>
 </html>

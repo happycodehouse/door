@@ -20,6 +20,7 @@
     const dim = document.getElementById("dim");
     const gridGuide = document.getElementById("gridGuide");
 
+
     sitemap.querySelector(".gnb_wrap").appendChild(gnbClone);
 
     const toggleElements = (state) => {
@@ -50,6 +51,21 @@
         }
     });
 
+    const wrap = document.getElementById("wrap");
+    const secVisual = document.querySelector(".sec_visual");
+    let secVisualHeight;
+    if (secVisual) {
+        secVisualHeight = secVisual.clientHeight;
+        // console.log(secVisualHeight);
+
+        window.addEventListener("resize", function () {
+            secVisualHeight = secVisual.clientHeight;
+            console.log(secVisualHeight);
+        });
+    } else {
+        // console.log("no sticky_exist");
+    }
+
     window.addEventListener("scroll", function (e) {
         e.preventDefault();
         scrollT = window.scrollY; // 현재 스크롤 위치 가져오기
@@ -70,7 +86,18 @@
                 // scroll up
                 header.classList.remove("hide");
                 header.classList.add("show");
+
+                if (wrap.classList.contains("sticky_exist")) {
+                    header.classList.remove("show");
+                    header.classList.add("hide");
+
+                    if (secVisualHeight > scrollT) {
+                        header.classList.remove("hide");
+                        header.classList.add("show");
+                    }
+                }
             }
+
         } else if (scrollT === 0) {
             if (header.classList.contains("show")) {
                 header.classList.remove("show");

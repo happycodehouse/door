@@ -8,16 +8,16 @@
 
     &[data-motion] {
         .bg_wrap {
-            .bg {
-                width: 0;
+            &::before {
+                width: 100%;
                 transition: 1s;
             }
         }
 
         &.active {
             .bg_wrap {
-                .bg {
-                    width: 100%;
+                &::before {
+                    width: 0;
                 }
             }
         }
@@ -29,6 +29,16 @@
         left: 0;
         width: 100%;
         height: 60vh;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $white;
+        }
 
         .bg {
             width: 100%;
@@ -52,6 +62,18 @@
             color: $black;
         }
     }
+
+    @include media(false, tablet) {
+        height: 50vh;
+
+        .bg_wrap {
+            height: 50%;
+
+            .bg {
+                background-attachment: initial;
+            }
+        }
+    }
 }
 
 .sec_heritage {
@@ -67,6 +89,10 @@
         width: 100%;
         background-color: $white;
         border-bottom: to_vw(2) solid $gray-50;
+
+        &.fixed {
+            position: fixed;
+        }
     }
 
     .timeline {
@@ -138,6 +164,7 @@
                 height: 100%;
                 opacity: 0;
                 visibility: hidden;
+                transition: opacity .7s;
 
                 &.active {
                     opacity: 1;
@@ -213,6 +240,63 @@
             p {
                 @include wordBreak;
                 @include fontSize(12, 18);
+            }
+        }
+    }
+
+    @include media(false, tablet) {
+        height: auto;
+
+        .sticky {
+            position: static;
+            height: auto;
+        }
+
+        .circle_area {
+            display: none;
+        }
+
+        .desc_area {
+            position: static;
+            padding: to_vw(40);
+
+            .desc {
+                justify-content: flex-start;
+                width: 100%;
+                height: auto;
+                padding: to_vw(60) 0;
+
+                &:first-child {
+                    padding-top: to_vw(120);
+                }
+            }
+
+            li {
+                em {
+                    @include fontSize(14, 21);
+                    color: $black;
+                }
+
+                p {
+                    @include fontSize(14, 21);
+                }
+            }
+        }
+    }
+
+    @include media(false, mobile) {
+        .desc_area {
+            padding: 0 to_vw(20);
+
+            li {
+                flex-direction: column;
+                gap: to_vw(12);
+
+                p {
+                    br {
+                        display: none;
+                    }
+                }
             }
         }
     }
