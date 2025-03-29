@@ -308,6 +308,7 @@
         $desc = $descArea.find(".desc"),
         $descTxt = $desc.find("li");
 
+    let mouseenterFlag = false;
 
     function init(){
         $timelineItem.eq(0).addClass("active");
@@ -320,6 +321,8 @@
     $desc.find("li").on("mouseenter", function () {
         let _$this = $(this);
         let _$thisYear = $(this).data("year");
+
+        mouseenterFlag = true;
 
         _$this.siblings().removeClass("active");
         _$this.addClass("active");
@@ -336,12 +339,14 @@
         if (idx === -1) {
             idx = 0;
         }
-
         $timelineItem.removeClass("active").eq(idx).addClass("active");
-        $circleImg.removeClass("active");
-        $circleImgList.eq(idx).find("li").eq(0).addClass("active");
-        $descTxt.removeClass("active");
-        $desc.eq(idx).find("li").eq(0).addClass("active");
+
+        if (mouseenterFlag === false) {
+            $circleImg.removeClass("active");
+            $circleImgList.eq(idx).find("li").eq(0).addClass("active");
+            $descTxt.removeClass("active");
+            $desc.eq(idx).find("li").eq(0).addClass("active");
+        }
 
         gsap.to($descArea, {
             translateY: 100 * -idx + "vh",
@@ -371,7 +376,13 @@
     $timelineItem.each(function(idx) {
         secHeritageTl.to({}, {
             onStart: () => activeTimeline(idx),
-            onReverseComplete: () => activeTimeline(idx - 1)
+            onComplete: () => {
+                mouseenterFlag = false;
+            },
+            onReverseComplete: () => {
+                mouseenterFlag = false;
+                activeTimeline(idx - 1);
+            }
         });
     });
 
