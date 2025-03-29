@@ -364,7 +364,7 @@
             });
         } else {
             gsap.to(window, {
-                scrollTo: $desc.eq(idx).offset().top - $timelineWrap.height(),
+                scrollTo: $desc.eq(idx).offset().top,
                 ease: "none"
             })
         }
@@ -424,11 +424,11 @@
                 moDescTl = gsap.timeline({
                     scrollTrigger: {
                         trigger: $(item),
-                        start: "top top",
+                        start: "top-=" + $timelineWrap.height() * 2 + " top",
                         end: "bottom bottom",
                         scrub: 1,
                         invalidateOnRefresh: true,
-                        markers: true,
+                        markers: false,
                         onEnter: () => {
                             $timelineItem.removeClass("active");
                             $timelineItem.eq(idx).addClass("active");

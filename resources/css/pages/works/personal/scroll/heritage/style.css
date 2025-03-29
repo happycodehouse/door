@@ -371,20 +371,20 @@
     justify-content: flex-start;
     width: 100%;
     height: auto;
-    padding: max(calc(60px * var(--base-ratio)), calc(calc(60 / var(--base-size)) * var(--base-percent))) 0;
+    padding: max(calc(112px * var(--base-ratio)), calc(calc(112 / var(--base-size)) * var(--base-percent))) 0;
   }
-  .sec_heritage .desc_area .desc:first-child {
-    padding-top: max(calc(120px * var(--base-ratio)), calc(calc(120 / var(--base-size)) * var(--base-percent)));
+  .sec_heritage .desc_area li {
+    margin-bottom: max(calc(56px * var(--base-ratio)), calc(calc(56 / var(--base-size)) * var(--base-percent)));
   }
   .sec_heritage .desc_area li em {
-    font-size: max(calc(14px * var(--base-ratio)), calc(calc(14 / var(--base-size)) * var(--base-percent)));
-    line-height: 1.5;
+    font-size: max(calc(15px * var(--base-ratio)), calc(calc(15 / var(--base-size)) * var(--base-percent)));
+    line-height: 1.4666666667;
     letter-spacing: 0.02em;
     color: #0A0A0A;
   }
   .sec_heritage .desc_area li p {
-    font-size: max(calc(14px * var(--base-ratio)), calc(calc(14 / var(--base-size)) * var(--base-percent)));
-    line-height: 1.5;
+    font-size: max(calc(15px * var(--base-ratio)), calc(calc(15 / var(--base-size)) * var(--base-percent)));
+    line-height: 1.4666666667;
     letter-spacing: 0.02em;
   }
 }
