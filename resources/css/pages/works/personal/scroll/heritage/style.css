@@ -186,7 +186,7 @@
 .sec_heritage {
   display: flex;
   position: relative;
-  height: 400vh;
+  height: 450vh;
 }
 .sec_heritage .timeline_wrap {
   position: absolute;
@@ -194,10 +194,13 @@
   left: 0;
   z-index: 9;
   width: 100%;
+  background-color: #FFFFFF;
   border-bottom: max(calc(2px * var(--base-ratio)), calc(calc(2 / var(--base-size)) * var(--base-percent))) solid #EDEDED;
 }
 .sec_heritage .timeline {
   display: flex;
+  max-width: 1536px;
+  margin: 0 auto;
 }
 .sec_heritage .timeline li {
   width: 25%;
@@ -209,10 +212,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: max(calc(90px * var(--base-ratio)), calc(calc(90 / var(--base-size)) * var(--base-percent)));
+  height: max(calc(56px * var(--base-ratio)), calc(calc(56 / var(--base-size)) * var(--base-percent)));
 }
 .sec_heritage .timeline li span {
-  font-size: max(calc(14px * var(--base-ratio)), calc(calc(14 / var(--base-size)) * var(--base-percent)));
+  font-size: max(calc(12px * var(--base-ratio)), calc(calc(12 / var(--base-size)) * var(--base-percent)));
   line-height: 1;
   letter-spacing: 0.02em;
   font-weight: 700;
@@ -223,14 +226,15 @@
 .sec_heritage .desc_area {
   display: flex;
   position: absolute;
-  top: max(calc(90px * var(--base-ratio)), calc(calc(90 / var(--base-size)) * var(--base-percent)));
+  top: 0;
   left: 0;
 }
 .sec_heritage .circle_area {
   align-items: center;
   justify-content: center;
   width: 50%;
-  height: calc(100vh - max(calc(90px * var(--base-ratio)), calc(calc(90 / var(--base-size)) * var(--base-percent))));
+  height: 100vh;
+  padding-top: max(calc(72px * var(--base-ratio)), calc(calc(72 / var(--base-size)) * var(--base-percent)));
 }
 .sec_heritage .circle_area .circle_box {
   position: relative;
@@ -242,6 +246,7 @@
   width: max(calc(372px * var(--base-ratio)), calc(calc(372 / var(--base-size)) * var(--base-percent)));
   height: max(calc(372px * var(--base-ratio)), calc(calc(372 / var(--base-size)) * var(--base-percent)));
   background-color: #EDEDED;
+  border: max(calc(2px * var(--base-ratio)), calc(calc(2 / var(--base-size)) * var(--base-percent))) solid #EDEDED;
   border-radius: inherit;
   overflow: hidden;
 }
@@ -253,6 +258,10 @@
   height: 100%;
   opacity: 0;
   visibility: hidden;
+}
+.sec_heritage .circle_area .circle li.active {
+  opacity: 1;
+  visibility: visible;
 }
 .sec_heritage .circle_area .circle li img {
   width: 100%;
@@ -283,15 +292,9 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  position: absolute;
-  top: 0;
-  right: 0;
   width: 45%;
-  min-height: calc(100vh - max(calc(90px * var(--base-ratio)), calc(calc(90 / var(--base-size)) * var(--base-percent))));
-  transform: translateY(100%);
-}
-.sec_heritage .desc_area .desc.active {
-  transform: translateY(0);
+  height: 100vh;
+  padding-top: max(calc(72px * var(--base-ratio)), calc(calc(72 / var(--base-size)) * var(--base-percent)));
 }
 .sec_heritage .desc_area .title {
   margin-bottom: max(calc(48px * var(--base-ratio)), calc(calc(48 / var(--base-size)) * var(--base-percent)));
@@ -305,13 +308,17 @@
   display: flex;
   margin-bottom: max(calc(32px * var(--base-ratio)), calc(calc(32 / var(--base-size)) * var(--base-percent)));
 }
+.sec_heritage .desc_area li.active em {
+  color: #0A0A0A;
+}
 .sec_heritage .desc_area li em {
   width: max(calc(88px * var(--base-ratio)), calc(calc(88 / var(--base-size)) * var(--base-percent)));
   font-size: max(calc(12px * var(--base-ratio)), calc(calc(12 / var(--base-size)) * var(--base-percent)));
   line-height: 1.5;
   letter-spacing: 0.02em;
   font-weight: 900;
-  color: #666666;
+  color: #DDDDDD;
+  transition: color 0.7s;
 }
 .sec_heritage .desc_area li p {
   word-break: keep-all;
