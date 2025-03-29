@@ -302,6 +302,9 @@
   flex-wrap: wrap;
   gap: max(calc(12px * var(--base-ratio)), calc(calc(12 / var(--base-size)) * var(--base-percent)));
 }
+.works .sec .personal_list + .personal_list {
+  margin-top: max(calc(24px * var(--base-ratio)), calc(calc(24 / var(--base-size)) * var(--base-percent)));
+}
 .works .sec .personal_list li {
   width: calc((100% - max(calc(36px * var(--base-ratio)), calc(calc(36 / var(--base-size)) * var(--base-percent)))) / 3);
 }
@@ -328,7 +331,7 @@
 .works .sec .personal_list .txt_wrap {
   display: flex;
   flex-direction: column;
-  gap: max(calc(4px * var(--base-ratio)), calc(calc(4 / var(--base-size)) * var(--base-percent)));
+  gap: max(calc(8px * var(--base-ratio)), calc(calc(8 / var(--base-size)) * var(--base-percent)));
 }
 .works .sec .personal_list .txt_wrap em {
   font-size: max(calc(12px * var(--base-ratio)), calc(calc(12 / var(--base-size)) * var(--base-percent)));

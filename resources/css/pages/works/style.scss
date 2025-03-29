@@ -179,6 +179,10 @@
             flex-wrap: wrap;
             gap: to_vw(12);
 
+            & + .personal_list {
+                margin-top: to_vw(24);
+            }
+
             li {
                 width: calc((100% - to_vw(36)) / 3);
             }
@@ -209,7 +213,7 @@
             .txt_wrap {
                 display: flex;
                 flex-direction: column;
-                gap: to_vw(4);
+                gap: to_vw(8);
 
                 em {
                     @include fontSize(12);
