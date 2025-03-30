@@ -23,7 +23,7 @@
 
     .sec {
         &_intro_title {
-            margin-bottom: to_vw(48);
+            margin: to_vw(24) 0 to_vw(48);
             text-align: right;
 
             h2 {
@@ -40,6 +40,10 @@
                     font-weight: 500;
                     color: $black;
                 }
+            }
+
+            @include media(false, tablet) {
+
             }
         }
 
