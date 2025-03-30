@@ -91,7 +91,7 @@
                     header.classList.remove("show");
                     header.classList.add("hide");
 
-                    if (secVisualHeight > scrollT) {
+                    if (secVisualHeight - 1 > scrollT) {
                         header.classList.remove("hide");
                         header.classList.add("show");
                     }

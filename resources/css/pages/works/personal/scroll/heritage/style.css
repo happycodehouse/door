@@ -220,13 +220,21 @@
 .sec_heritage .timeline_wrap.fixed {
   position: fixed;
 }
+.sec_heritage .timeline_wrap .scroll {
+  overflow-y: hidden;
+  overflow-x: auto;
+  height: 100%;
+}
 .sec_heritage .timeline {
   display: flex;
+  width: fit-content;
   max-width: 1536px;
   margin: 0 auto;
+  white-space: nowrap;
 }
 .sec_heritage .timeline li {
-  width: 25%;
+  width: auto;
+  padding: 0 max(calc(80px * var(--base-ratio)), calc(calc(80 / var(--base-size)) * var(--base-percent)));
 }
 .sec_heritage .timeline li.active span {
   opacity: 1;
@@ -359,6 +367,14 @@
   .sec_heritage .sticky {
     position: static;
     height: auto;
+  }
+  .sec_heritage .timeline li {
+    padding: 0 max(calc(20px * var(--base-ratio)), calc(calc(20 / var(--base-size)) * var(--base-percent)));
+  }
+  .sec_heritage .timeline li span {
+    font-size: max(calc(14px * var(--base-ratio)), calc(calc(14 / var(--base-size)) * var(--base-percent)));
+    line-height: 1;
+    letter-spacing: 0.02em;
   }
   .sec_heritage .circle_area {
     display: none;

@@ -36,28 +36,30 @@
             <div class="blank"></div>
             <div class="sticky">
                 <div id="timelineWrap" class="timeline_wrap">
-                    <ul class="timeline">
-                        <li>
-                            <a href="javascript:void(0);">
-                                <span>Present - 2016</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0);">
-                                <span>2015 - 2007</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0);">
-                                <span>2006 - 1995</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0);">
-                                <span>1991 - 1979</span>
-                            </a>
-                        </li>
-                    </ul>
+                    <div class="scroll">
+                        <ul class="timeline">
+                            <li>
+                                <a href="javascript:void(0);">
+                                    <span>Present - 2016</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);">
+                                    <span>2015 - 2007</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);">
+                                    <span>2006 - 1995</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);">
+                                    <span>1991 - 1979</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="circle_area">
                     <div class="circle_box">
@@ -311,7 +313,8 @@
         moSecHeritageTl,
         moDescTl,
         mouseenterFlag = false,
-        isPc = false;
+        isPc = false,
+        isScrolling = false;
 
     function pcInit(){
         $timelineWrap.removeClass("fixed");
@@ -342,10 +345,26 @@
         });
     });
 
+    function scrollToItem(idx) {
+        if (isScrolling) return; // 현재 스크롤 중이면 무시
+
+        isScrolling = true; // 스크롤 시작
+        let _$scroll = $timelineWrap.find(".scroll");
+        let _$item = $timelineItem.eq(idx);
+
+        if (_$item.length > 0) {
+            let _scrollLeft = _$item.position().left + _$item.outerWidth() / 2 - _$scroll.outerWidth() / 2;
+            _$scroll.animate({ scrollLeft: _scrollLeft }, 300, () => {
+                isScrolling = false;
+            });
+        }
+    }
+
     function activeTimeline(idx) {
         if (idx === -1) {
             idx = 0;
         }
+
         if (isPc) {
             $timelineItem.removeClass("active").eq(idx).addClass("active");
             if (mouseenterFlag === false) {
@@ -365,8 +384,9 @@
         } else {
             gsap.to(window, {
                 scrollTo: $desc.eq(idx).offset().top,
-                ease: "none"
-            })
+                ease: "none",
+                onComplete: () => scrollToItem(idx)
+            });
         }
     }
 
@@ -407,7 +427,7 @@
                 scrollTrigger: {
                     id: "moSecHeritageTl",
                     trigger: $secHeritage,
-                    start: "top top",
+                        start: "top top",
                     end: "bottom bottom",
                     scrub: 1,
                     invalidateOnRefresh: true,
@@ -432,10 +452,13 @@
                         onEnter: () => {
                             $timelineItem.removeClass("active");
                             $timelineItem.eq(idx).addClass("active");
+                            scrollToItem(idx);
                         },
                         onLeaveBack: () => {
                             $timelineItem.removeClass("active");
                             $timelineItem.eq(idx - 1).addClass("active");
+                            scrollToItem(idx);
+
                             if (idx === 0) {
                                 $timelineItem.removeClass("active");
                                 $timelineItem.eq(0).addClass("active");

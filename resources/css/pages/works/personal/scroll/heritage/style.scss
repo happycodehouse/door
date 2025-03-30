@@ -93,15 +93,24 @@
         &.fixed {
             position: fixed;
         }
+
+        .scroll {
+            overflow-y: hidden;
+            overflow-x: auto;
+            height: 100%;
+        }
     }
 
     .timeline {
         display: flex;
+        width: fit-content;
         max-width: 1536px;
         margin: 0 auto;
+        white-space: nowrap;
 
         li {
-            width: 25%;
+            width: auto;
+            padding: 0 to_vw(80);
 
             &.active {
                 span {
@@ -250,6 +259,16 @@
         .sticky {
             position: static;
             height: auto;
+        }
+
+        .timeline {
+            li {
+                padding: 0 to_vw(20);
+
+                span {
+                    @include fontSize(14);
+                }
+            }
         }
 
         .circle_area {
