@@ -52,7 +52,7 @@
     });
 
     const wrap = document.getElementById("wrap");
-    const secVisual = document.querySelector(".sec_visual");
+    const secVisual = document.querySelector(".sec_intro");
     let secVisualHeight;
     if (secVisual) {
         secVisualHeight = secVisual.clientHeight;

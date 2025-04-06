@@ -1,3 +1,43 @@
 @charset "UTF-8";
 @import "../../../../../base/variable";
 @import "../../../../../base/mixin";
+
+.timeline_wrap {
+
+}
+
+.timeline {
+
+}
+
+.sec_intro {
+    position: relative;
+    height: 100vh;
+
+    .title_wrap {
+        position: relative;
+        z-index: 1;
+
+        h3 {
+
+        }
+    }
+
+    .bg_wrap {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        .bg {
+            width: 100%;
+            height: 100%;
+            @include background("works/personal/history/intro_bg.jpg", center, no-repeat, cover);
+        }
+    }
+}
+
+.sec_history {
+
+}
