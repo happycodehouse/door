@@ -172,7 +172,7 @@
   background-position: bottom;
 }
 .works .sec_intro_title {
-  margin-bottom: max(calc(48px * var(--base-ratio)), calc(calc(48 / var(--base-size)) * var(--base-percent)));
+  margin: max(calc(24px * var(--base-ratio)), calc(calc(24 / var(--base-size)) * var(--base-percent))) 0 max(calc(48px * var(--base-ratio)), calc(calc(48 / var(--base-size)) * var(--base-percent)));
   text-align: right;
 }
 .works .sec_intro_title h2 {
