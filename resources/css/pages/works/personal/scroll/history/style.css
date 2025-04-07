@@ -144,13 +144,71 @@
     position: relative;
   }
 }
+.timeline_wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  width: 100%;
+  background-color: #FFFFFF;
+  border-bottom: max(calc(2px * var(--base-ratio)), calc(calc(2 / var(--base-size)) * var(--base-percent))) solid #E8E8E8;
+}
+.timeline_wrap.fixed {
+  position: fixed;
+}
+.timeline_wrap .scroll {
+  overflow-y: hidden;
+  overflow-x: auto;
+  height: 100%;
+}
+
+.timeline {
+  display: flex;
+  width: fit-content;
+  max-width: 1536px;
+  margin: 0 auto;
+  white-space: nowrap;
+}
+.timeline li {
+  width: auto;
+  padding: 0 max(calc(80px * var(--base-ratio)), calc(calc(80 / var(--base-size)) * var(--base-percent)));
+}
+.timeline li.active span {
+  color: #594031;
+  opacity: 1;
+}
+.timeline li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: max(calc(72px * var(--base-ratio)), calc(calc(72 / var(--base-size)) * var(--base-percent)));
+}
+.timeline li span {
+  font-size: max(calc(18px * var(--base-ratio)), calc(calc(18 / var(--base-size)) * var(--base-percent)));
+  line-height: 1;
+  letter-spacing: 0.02em;
+  font-weight: 700;
+  color: #0A0A0A;
+  opacity: 0.5;
+}
+
 .sec_intro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
   height: 100vh;
 }
 .sec_intro .title_wrap {
   position: relative;
   z-index: 1;
+}
+.sec_intro .title_wrap h3 {
+  font-size: max(calc(22px * var(--base-ratio)), calc(calc(22 / var(--base-size)) * var(--base-percent)));
+  line-height: 1;
+  letter-spacing: 0.02em;
+  font-weight: 700;
+  color: #FFFFFF;
 }
 .sec_intro .bg_wrap {
   position: absolute;
@@ -162,6 +220,62 @@
 .sec_intro .bg_wrap .bg {
   width: 100%;
   height: 100%;
-  background: url("/resources/images/works/personal/history/intro_bg.jpg") center no-repeat;
+  background: url("/resources/images/works/personal/pixar/intro_bg02.jpg") center no-repeat;
   background-size: cover;
+}
+
+.sec_history {
+  position: relative;
+}
+.sec_history .history_title_area.sticky {
+  height: fit-content;
+  padding: max(calc(160px * var(--base-ratio)), calc(calc(160 / var(--base-size)) * var(--base-percent))) 0;
+}
+.sec_history .history_title_area h3 {
+  font-size: max(calc(48px * var(--base-ratio)), calc(calc(48 / var(--base-size)) * var(--base-percent)));
+  line-height: 1;
+  letter-spacing: 0.02em;
+  font-weight: 700;
+  color: #0A0A0A;
+}
+.sec_history .history_detail_area {
+  padding: max(calc(160px * var(--base-ratio)), calc(calc(160 / var(--base-size)) * var(--base-percent))) 0;
+}
+.sec_history .history_detail {
+  display: flex;
+  flex-direction: column;
+  gap: max(calc(88px * var(--base-ratio)), calc(calc(88 / var(--base-size)) * var(--base-percent)));
+}
+.sec_history .history_detail li {
+  display: flex;
+  gap: max(calc(24px * var(--base-ratio)), calc(calc(24 / var(--base-size)) * var(--base-percent)));
+}
+.sec_history .history_detail li .dot {
+  position: relative;
+}
+.sec_history .history_detail li em {
+  display: block;
+  word-break: keep-all;
+  word-wrap: break-word;
+  font-size: max(calc(14px * var(--base-ratio)), calc(calc(14 / var(--base-size)) * var(--base-percent)));
+  line-height: 1;
+  letter-spacing: 0.02em;
+  font-weight: 700;
+  color: #0A0A0A;
+}
+.sec_history .history_detail li span {
+  font-size: max(calc(14px * var(--base-ratio)), calc(calc(14 / var(--base-size)) * var(--base-percent)));
+  line-height: 1;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+  color: #0A0A0A;
+}
+.sec_history .history_detail li .img_wrap {
+  margin-top: max(calc(12px * var(--base-ratio)), calc(calc(12 / var(--base-size)) * var(--base-percent)));
+  width: 48%;
+}
+.sec_history .history_detail li .img_wrap img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }

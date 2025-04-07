@@ -43,7 +43,7 @@
         .bg {
             width: 100%;
             height: 100%;
-            @include background("works/personal/heritage/intro_bg.jpg", bottom, no-repeat, cover);
+            @include background("works/personal/pixar/intro_bg01.jpg", bottom, no-repeat, cover);
             background-attachment: fixed;
         }
     }
