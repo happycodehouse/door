@@ -115,7 +115,7 @@ $historyColor-200: #BFAC95;
     .history_detail {
         display: flex;
         flex-direction: column;
-        gap: to_vw(88);
+        gap: to_vw(120);
 
         li {
             display: flex;
@@ -130,15 +130,23 @@ $historyColor-200: #BFAC95;
             em {
                 display: block;
                 @include wordBreak;
-                @include fontSize(14);
+                @include fontSize(14, 21);
                 font-weight: 700;
                 color: $black;
             }
 
-            span {
-                @include fontSize(14);
-                font-weight: 500;
-                color: $black;
+            .txt_wrap {
+                p {
+                    max-width: 80%;
+                    @include wordBreak;
+                    @include fontSize(14, 21);
+                    font-weight: 500;
+                    color: $black;
+
+                    & + p {
+                        margin-top: to_vw(16);
+                    }
+                }
             }
 
             .img_wrap {

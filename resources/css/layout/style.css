@@ -402,38 +402,6 @@
   visibility: visible;
 }
 
-#footer {
-  background-color: #0A0A0A;
-}
-#footer .top_area {
-  padding: max(calc(48px * var(--base-ratio)), calc(calc(48 / var(--base-size)) * var(--base-percent))) max(calc(12px * var(--base-ratio)), calc(calc(12 / var(--base-size)) * var(--base-percent)));
-  margin-bottom: max(calc(24px * var(--base-ratio)), calc(calc(24 / var(--base-size)) * var(--base-percent)));
-  border-bottom: max(calc(4px * var(--base-ratio)), calc(calc(4 / var(--base-size)) * var(--base-percent))) dotted #E8E8E8;
-  text-align: right;
-}
-#footer .top_area a {
-  font-family: "Lexend Giga", sans-serif;
-  font-size: max(calc(14px * var(--base-ratio)), calc(calc(14 / var(--base-size)) * var(--base-percent)));
-  line-height: 1;
-  letter-spacing: 0.02em;
-  font-weight: 700;
-  color: #DDDDDD;
-}
-#footer .bottom_area {
-  padding: max(calc(24px * var(--base-ratio)), calc(calc(24 / var(--base-size)) * var(--base-percent))) 0 max(calc(36px * var(--base-ratio)), calc(calc(36 / var(--base-size)) * var(--base-percent)));
-}
-#footer .slogan p {
-  font-family: "Lexend Giga", sans-serif;
-  font-size: max(calc(162px * var(--base-ratio)), calc(calc(162 / var(--base-size)) * var(--base-percent)));
-  line-height: 1;
-  letter-spacing: 0.02em;
-  line-height: 0.9;
-  letter-spacing: -0.1em;
-  font-weight: 900;
-  color: #E8E8E8;
-  opacity: 0.2;
-}
-
 html {
   --window-w: 100vw;
   --window-h: 100vh;

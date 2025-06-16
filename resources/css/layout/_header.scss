@@ -21,7 +21,7 @@
         gap: to_vw(20);
         height: to_vw(100);
         padding: 0 to_vw(80);
-        background-color: $white;
+        background-color: transparent;
     }
 
     .logo {
@@ -57,7 +57,7 @@
     @include media(false, mobile) {
         .header_inner {
             height: to_vw(70);
-            padding: 0 to_vw(20);
+            padding: 0 to_vw($spaceM-100);
         }
     }
 }
