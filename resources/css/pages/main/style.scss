@@ -109,15 +109,18 @@
       .bg {
         width: 100%;
         height: 60vh;
-        @include background("main/bear-motocycle.svg", center, no-repeat, contain);
+        @include background("main/bear-motorcycle.svg", center, no-repeat, contain);
       }
 
       @include media(false, tablet) {
+        top: 50%;
+        transform: translateY(-50%);
         align-items: center;
         height: 30vh;
 
         .bg {
           height: 100%;
+          @include background("main/bear-hug.jpg", center, no-repeat, cover);
         }
       }
     }
