@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="/resources/images/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/resources/css/reset/style.min.css">
+    <link rel="stylesheet" type="text/css" href="/resources/css/font/style.min.css">
+    <link rel="stylesheet" type="text/css" href="/resources/css/layout/style.min.css">
+    <link rel="stylesheet" type="text/css" href="/resources/css/pages/works/personal/visual/01/style.min.css">
+    <title>Works | HappyCodeHouse</title>
+</head>
+<body>
+<div id="wrap" class="wrap">
+    <!-- Header -->
+    <header id="header" class="include_header"></header>
+    <!-- //Header -->
+
+    <!-- Container -->
+    <div id="container" class="container">
+        <section class="sec_visual">
+            <div class="sticky">
+                <div class="inner">
+                    <div class="txt_wrap">
+                        <span>Speed of Cloud Movement</span>
+                        <p>
+                            Clouds are influenced by the wind, <br>
+                            which means their speed varies depending on the wind's strength and direction. <br>
+                            Sometimes they move quickly, while at other times they drift slowly. <br>
+                            The cold wind that accompanies the clouds can bring us showers.
+                        </p>
+                    </div>
+                    <div class="bg_wrap">
+                        <div class="bg"></div>
+                        <div class="dim"></div>
+                    </div>
+                    <div class="source_info">
+                        <span>Image source: Unsplash.com</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+    </div>
+
+    </section>
+    <!-- //Container -->
+
+    <!-- Footer -->
+    <footer id="footer" class="include_footer"></footer>
+    <!-- //Footer -->
+</div>
+<script src="/resources/js/include.js"></script>
+<script src="/resources/js/libraries/gsap.js"></script>
+<script src="/resources/js/libraries/jquery-3.4.1.min.js"></script>
+<script src="/resources/js/libraries/lenis.min.js"></script>
+<script src="/resources/js/libraries/ScrollToPlugin.js"></script>
+<script src="/resources/js/libraries/ScrollTrigger.js"></script>
+<script src="/resources/js/libraries/swiper4.5.1.js"></script>
+<script src="/resources/js/common.js"></script>
+<script>
+    let pcEvent,
+        moEvent,
+        txtHeight,
+        secVisualTl,
+        oneMotion = true;
+
+    const $secVisual = $(".sec_visual"),
+        $txtWrap = $secVisual.find(".txt_wrap"),
+        $txt = [$txtWrap.find("span"), $txtWrap.find("p")],
+        $bgWrap = $secVisual.find(".bg_wrap"),
+        $bg = $bgWrap.find(".bg"),
+        $dim = $bgWrap.find(".dim"),
+        $sourceInfo = $secVisual.find(".source_info");
+
+    const commonAnimationProps = {
+        duration: 0.5,
+        ease: "none"
+    };
+
+    function webMotion() {
+        clearTimeout(pcEvent);
+        pcEvent = setTimeout(() => {
+            // moMotion Reset
+            ScrollTrigger.getAll().forEach((st) => {
+                if (st.vars.id === "moMotion") {
+                    st.kill();
+                }
+            });
+            secVisualTl && secVisualTl.kill();
+            secVisualTl = "";
+            gsap.set([$txtWrap, $txt, $bgWrap, $bg, $dim, $sourceInfo], {clearProps: "all"});
+
+            secVisualTl = gsap.timeline({
+                scrollTrigger: {
+                    id: "webMotion",
+                    trigger: $secVisual,
+                    start: "top top",
+                    end: "bottom bottom",
+                    scrub: 1,
+                    invalidateOnRefresh: true,
+                    markers: false
+                }
+            });
+
+            secVisualTl
+                .to($txtWrap, {top: "50%", y: "-50%", ...commonAnimationProps})
+                .to($sourceInfo, {color: "#FFFFFF", alpha: 1, ...commonAnimationProps}, 0)
+                .to($txt, {color: "#FFFFFF", ...commonAnimationProps}, 0)
+                .to($bgWrap, {"--clip": "0% 0% 0% 0%", ...commonAnimationProps}, 0)
+                .to($bg, {y: 0, ...commonAnimationProps}, 0)
+                .to($dim, {alpha: 1, ...commonAnimationProps});
+        }, 100);
+    }
+
+    function moMotion() {
+        clearTimeout(moEvent);
+        moEvent = setTimeout(() => {
+            // webMotion Reset
+            ScrollTrigger.getAll().forEach((st) => {
+                if (st.vars.id === "webMotion") {
+                    st.kill();
+                }
+            });
+            secVisualTl && secVisualTl.kill();
+            secVisualTl = "";
+            gsap.set([$txtWrap, $txt, $bgWrap, $bg, $dim, $sourceInfo], {clearProps: "all"});
+
+            // txtHeight 계산
+            txtHeight = $txtWrap.outerHeight();
+            $bgWrap.css("margin-top", txtHeight);
+
+            secVisualTl = gsap.timeline({
+                scrollTrigger: {
+                    id: "moMotion",
+                    trigger: $secVisual,
+                    endTrigger: $bg,
+                    start: "top top",
+                    end: "top top",
+                    scrub: 1,
+                    markers: false,
+                    onLeave: () => {
+                        $txtWrap.removeAttr("style").css({
+                            "position": "absolute",
+                            "top": $bg.offset().top + Number($bg.css("padding-top").split("px")[0])
+                        });
+                    },
+                    onEnterBack: () => {
+                        $txtWrap.removeAttr("style");
+                    }
+                }
+            });
+
+            secVisualTl
+                .to($txt, {color: "#FFFFFF", ...commonAnimationProps}, 0)
+                .to($sourceInfo, {color: "#FFFFFF", alpha: 1, ...commonAnimationProps}, 0)
+                .to($bgWrap, {"--clip": "0 0px 0 0px", ...commonAnimationProps}, 0)
+                .to($dim, {alpha: 1, ...commonAnimationProps});
+        }, 100);
+    }
+
+    function breakPoint(mediaQuery) {
+        if (mediaQuery.matches) {
+            oneMotion = true;
+        } else {
+            oneMotion = true;
+        }
+    }
+
+    breakPoint(mediaQuery);
+    mediaQuery.addEventListener("change", breakPoint);
+
+    $(window).on("load resize", () => {
+        setTimeout(() => {
+            if (windowWidth > 1024 && !isTouchDevice) {
+                // WEB 1025 ~
+                webMotion();
+            } else if (windowWidth > 1024 && isTouchDevice) {
+                // WEB 1025 && TABLET
+                if (oneMotion) {
+                    webMotion();
+                    oneMotion = false;
+                }
+            } else if (windowWidth < 1025) {
+                // MOBILE ~ 1024
+                if (oneMotion) {
+                    moMotion();
+                    oneMotion = false;
+                }
+            }
+        }, 10);
+    });
+</script>
+</body>
+</html>
