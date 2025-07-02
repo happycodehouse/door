@@ -30,6 +30,36 @@
 
 @font-face {
     font-family: 'SUIT';
+    font-weight: 300;
+    src: url('../../fonts/SUIT-Light.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'SUIT';
+    font-weight: 400;
+    src: url('../../fonts/SUIT-Regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'NanumMyeongjo';
+    font-weight: 400;
+    src: url('../../fonts/NanumMyeongjo-Regular.woff') format('woff2');
+}
+
+@font-face {
+    font-family: 'NanumMyeongjo';
+    font-weight: 700;
+    src: url('../../fonts/NanumMyeongjo-Bold.woff') format('woff2');
+}
+
+@font-face {
+    font-family: 'NanumMyeongjo';
+    font-weight: 800;
+    src: url('../../fonts/NanumMyeongjo-ExtraBold.woff') format('woff2');
+}
+
+@font-face {
+    font-family: 'SUIT';
     font-weight: 900;
     src: url('../../fonts/SUIT-Heavy.woff2') format('woff2');
 }

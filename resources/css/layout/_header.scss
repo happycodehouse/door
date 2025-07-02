@@ -29,10 +29,11 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        text-align: center;
 
         a {
             font-family: $LexendGiga;
-            @include fontSize(16);
+            @include fontSize(14, 18);
             font-weight: 900;
             color: $black;
         }
@@ -65,8 +66,8 @@
 #hamburger {
     position: relative;
     z-index: 9999999;
-    width: to_vw(40);
-    height: to_vw(18);
+    width: to_vw(32);
+    height: to_vw(16);
 
     span {
         position: absolute;
@@ -118,15 +119,15 @@
 
     li {
         a {
-            font-family: $LexendGiga;
+            font-family: $NanumMyeongjo;
             @include fontSize(14);
-            font-weight: 500;
+            font-weight: 700;
             color: $black;
         }
 
         &.active {
             a {
-                font-weight: 700;
+                font-weight: 800;
             }
         }
     }
@@ -172,12 +173,12 @@
         display: block;
         margin-bottom: to_vw(8);
         @include fontSize(14);
-        font-weight: 700;
+        font-weight: 800;
     }
 
     .gnb_title {
         @include fontSize(14);
-        font-weight: 700;
+        font-weight: 800;
 
         &.sitemap_only {
             display: block;
@@ -226,7 +227,7 @@
                 span {
                     font-family: $Suit;
                     @include fontSize(10);
-                    font-weight: 500;
+                    font-weight: 700;
                     color: $txtColor-200;
                 }
             }
