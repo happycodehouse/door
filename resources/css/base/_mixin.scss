@@ -208,3 +208,20 @@ $breakpoints: (
         }
     }
 }
+
+@mixin button-style($shadow-type: normal) {
+    display: inline-block;
+    padding: to_vw(12) to_vw(24);
+    background: #FAFAFA;
+    border-radius: 5px;
+    text-align: center;
+    @include fontSize(12);
+    font-weight: 600;
+    color: #707070;
+
+    @if $shadow-type == inset {
+        box-shadow: inset -3px -3px 7px #fafafa73, inset 3px 3px 5px rgba(94, 104, 121, .288);
+    } @else {
+        box-shadow: -3px -3px 7px #fafafa73, 3px 3px 5px rgba(94, 104, 121, .288);
+    }
+}

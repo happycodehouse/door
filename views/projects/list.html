@@ -52,13 +52,15 @@
 
                     <!-- modal body -->
                     <div class="uk-modal-body">
-                      <iframe src="./db-hitek/view.html" width="100%" height="70vh" frameborder="0"></iframe>
+                      <iframe src="./db-hitek/view.html" width="100%"></iframe>
                     </div>
 
                     <!-- modal footer -->
                     <div class="uk-modal-footer uk-text-right">
-                      <button class="uk-button uk-button-default uk-modal-close" type="button">Close</button>
-                      <a href="#xi-elevator" class="uk-button uk-button-primary" uk-toggle>Next</a>
+                      <div>
+                        <a href="#xi-elevator" class="uk-button uk-button-primary" uk-toggle>Next</a>
+                      </div>
+                      <button class="uk-button uk-button-default uk-modal-close close-btn" type="button">Close</button>
                     </div>
                   </div>
                 </div>
@@ -95,9 +97,11 @@
 
                     <!-- modal footer -->
                     <div class="uk-modal-footer uk-text-right">
-                      <a href="#db-hitek" class="uk-button uk-button-primary" uk-toggle>Previous</a>
-                      <a href="#iframe-modal-2" class="uk-button uk-button-primary" uk-toggle>Next</a>
-                      <button class="uk-button uk-button-default uk-modal-close" type="button">Close</button>
+                      <div>
+                        <a href="#db-hitek" class="uk-button uk-button-primary" uk-toggle>Previous</a>
+                        <a href="#iframe-modal-2" class="uk-button uk-button-primary" uk-toggle>Next</a>
+                      </div>
+                      <button class="uk-button uk-button-default uk-modal-close close-btn" type="button">Close</button>
                     </div>
                   </div>
                 </div>
@@ -250,5 +254,11 @@
 <script src="/resources/js/libraries/uikit.min.js"></script>
 <script src="/resources/js/common.js"></script>
 <script src="/resources/js/include.js"></script>
+<script>
+  $('.close-btn').on('click', function() {
+    const $modal = $(this).closest('.uk-modal');
+    $modal.scrollTop(0);
+  });
+</script>
 </body>
 </html>

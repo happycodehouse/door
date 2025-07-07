@@ -216,6 +216,7 @@
                 .img_wrap {
                     width: to_vw(90);
                     height: to_vw(90);
+                    margin-bottom: to_vw(4);
 
                     img {
                         width: 100%;
@@ -227,7 +228,6 @@
                 span {
                     font-family: $Suit;
                     @include fontSize(10);
-                    font-weight: 700;
                     color: $txtColor-200;
                 }
             }
