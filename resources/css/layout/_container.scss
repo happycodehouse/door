@@ -357,7 +357,82 @@ html {
   }
 }
 
-/* uikit - modal, lightbox */
+/* uikit - lightbox */
+.uk-lightbox-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: to_vw(8);
+  right: to_vw(8);
+  width: to_vw(26);
+  height: to_vw(26);
+  border-radius: 50%;
+  background-color: $gray-50;
+  opacity: .8;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  svg {
+    width: to_vw(12);
+    height: to_vw(12);
+
+    line {
+      stroke-width: 5;
+      //stroke: #FFFFFF !important;
+    }
+  }
+}
+
+.uk-slidenav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: to_vw(24);
+  height: to_vw(24);
+  opacity: .5;
+
+  @include media(tablet, false, $and: "pointer: fine") {
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+
+  svg {
+    width: 100%;
+    height: 100%;
+
+    polyline {
+      stroke: $white;
+      stroke-width: 5;
+    }
+  }
+
+  &-previous {
+    left: to_vw(24);
+  }
+
+  &-next {
+    right: to_vw(24);
+  }
+
+  @include media(false, tablet) {
+    opacity: .3;
+
+    &-previous {
+      left: to_vw(12);
+    }
+
+    &-next {
+      right: to_vw(12);
+    }
+  }
+}
+
+/* uikit - modal */
 .uk-modal-body {
   height: 100%;
   background-color: $white;
@@ -395,63 +470,6 @@ html {
   }
 }
 
-/* projects - projects detail  */
-.projects_detail_wrap {
-  height: 100%;
 
-  .content {
-    position: relative;
-    height: 100%;
-
-    &.kor .content_inner.kor,
-    &.eng .content_inner.eng {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    * {
-      font-family: $Suit;
-    }
-
-    .content_inner {
-      display: flex;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity .3s;
-    }
-
-    .select_language {
-      display: flex;
-      align-items: center;
-      gap: to_vw(8);
-      position: absolute;
-      top: 0;
-      right: to_vw(8);
-      z-index: 22;
-
-      button {
-        @include button-style;
-
-        &:hover,
-        &.selected {
-          @include button-style(inset);
-        }
-      }
-    }
-
-    .desc_area {
-
-    }
-
-    .visual_area {
-
-    }
-  }
-}
 
 

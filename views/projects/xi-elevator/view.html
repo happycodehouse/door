@@ -8,18 +8,34 @@
   <link rel="stylesheet" type="text/css" href="/resources/css/reset/style.min.css">
   <link rel="stylesheet" type="text/css" href="/resources/css/font/style.min.css">
   <link rel="stylesheet" type="text/css" href="/resources/css/layout/style.min.css">
+  <link rel="stylesheet" type="text/css" href="/resources/css/pages/projects/style.min.css">
   <title>Document</title>
 </head>
 <body>
 <div class="projects_detail_wrap">
-  <div class="flex_box">
-    <div class="desc_area">
-      desc
+  <div id="content" class="content eng">
+    <div id="selectLanguage" class="select_language">
+      <button id="eng" class="selected">ENG</button>
+      <button id="kor">KOR</button>
     </div>
-    <div class="visual_area">
-      visual
+    <div class="content_inner kor">
+      <div class="desc_area">
+        한국어
+      </div>
+      <div class="visual_area">
+        입니다
+      </div>
+    </div>
+    <div class="content_inner eng">
+      <div class="desc_area">
+        eng
+      </div>
+      <div class="visual_area">
+      </div>
     </div>
   </div>
 </div>
+<script src="/resources/js/libraries/jquery-3.4.1.min.js"></script>
+<script src="/resources/js/modal.js"></script>
 </body>
 </html>
