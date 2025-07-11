@@ -231,6 +231,20 @@
                     <h5>Daedong Website Operation & Maintenance</h5>
                   </div>
                 </a>
+                <div class="floating_box">
+                  <dl>
+                    <dt>Duration: </dt>
+                    <dd></dd>
+                  </dl>
+                  <dl>
+                    <dt>Used Skills: </dt>
+                    <dd></dd>
+                  </dl>
+                  <dl>
+                    <dt>Remarkable Points: </dt>
+                    <dd></dd>
+                  </dl>
+                </div>
               </li>
 
             </ul>
@@ -255,9 +269,10 @@
 <script src="/resources/js/common.js"></script>
 <script src="/resources/js/include.js"></script>
 <script>
-  $('.close-btn').on('click', function() {
-    const $modal = $(this).closest('.uk-modal');
-    $modal.scrollTop(0);
+  $(".uk-modal .uk-button").on('click', function() {
+/*    const $modal = $(this).closest('.uk-modal');
+    $modal.scrollTop(0);*/
+    $(".uk-modal").scrollTop(0);
   });
 </script>
 </body>

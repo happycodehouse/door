@@ -17,6 +17,8 @@
         }
 
         li {
+          position: relative;
+
           &.vertical {
             a {
               flex-direction: column;
@@ -37,7 +39,7 @@
             }
           }
 
-          a {
+          > *:not(.floating_box, .uk-modal-full) {
             display: flex;
             gap: to_vw(8);
             width: fit-content;
@@ -142,6 +144,10 @@
               }
             }
           }
+        }
+
+        .floating_box {
+          display: none;
         }
 
         @include media(false, tablet) {
